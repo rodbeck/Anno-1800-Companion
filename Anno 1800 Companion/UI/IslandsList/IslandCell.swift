@@ -14,7 +14,7 @@ struct IslandCell: View {
     var body: some View {
         HStack {
             Text(island.description)
-            Image(island.region.image)
+            Image(island.region.img)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 25, height: 25)

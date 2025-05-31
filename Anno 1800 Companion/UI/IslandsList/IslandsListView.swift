@@ -15,8 +15,20 @@ struct IslandsListView: View {
             NavigationStack {
                 self.content
                     .navigationTitle("Islands")
+                    .toolbar {
+                        ToolbarItem(id: "add", placement: .topBarTrailing) {
+                            Button("Ajouter", systemImage: "plus.square") {
+                                viewModel.showingSheet.toggle()
+                            }
+                        }
+                        ToolbarItem(id: "edit", placement: .topBarLeading) {
+                            EditButton()
+                        }
+                    }
+                    .sheet(isPresented: $viewModel.showingSheet) {
+                        IslandDetailsView(viewModel: .init(island: Island()))
+                    }
             }
-            
         }
     }
     
@@ -38,6 +50,7 @@ private extension IslandsListView {
             
             if showLoading {
                 ProgressView()
+                    .padding()
             }
             
             List(islands) { island in

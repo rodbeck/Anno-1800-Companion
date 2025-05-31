@@ -10,7 +10,10 @@ import Foundation
 extension IslandsListView {
     @Observable
     class ViewModel {
-        var islands: [Island] = []
+        
+        var showingSheet: Bool = false
+        
+        var islands: [Island] = [.newWorldExample, .oldWorldExample, .enbesaExample, .theArcticExample]
         
         static var example: ViewModel {
             let vm = ViewModel()

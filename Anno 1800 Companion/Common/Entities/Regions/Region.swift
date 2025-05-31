@@ -16,10 +16,11 @@ protocol Region {
 }
 
 enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
-    var id: Self { self }
+    //var id: Self { self }
     
     case oldWorld
     case newWorld
+    case capeTrelawney
     case theArctic
     case enbesa
     
@@ -29,10 +30,27 @@ enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
             return "The Old World"
         case .newWorld:
             return "The New World"
+        case .capeTrelawney:
+            return "The New World"
         case .theArctic:
             return "The Arctic"
         case .enbesa:
             return "Enbesa"
+        }
+    }
+    
+    var id: Int {
+        switch self {
+        case .oldWorld:
+            return 1
+        case .newWorld:
+            return 2
+        case .capeTrelawney:
+            return 3
+        case .theArctic:
+            return 4
+        case .enbesa:
+            return 5
         }
     }
     
@@ -42,6 +60,8 @@ enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
             return "regions/the-old-world"
         case .newWorld:
             return "regions/the-new-world"
+        case .capeTrelawney:
+            return "regions/cape-trelawney"
         case .theArctic:
             return "regions/the-arctic"
         case .enbesa:

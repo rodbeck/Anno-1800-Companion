@@ -10,8 +10,8 @@ import Foundation
 struct Island: Identifiable {
     var id: UUID = UUID()
     
-    var name: String
-    var region: RegionEnum
+    var name: String = ""
+    var region: RegionEntry = .oldWorld
     
     // The Old World
     var farmers: Int = 0
@@ -33,15 +33,19 @@ struct Island: Identifiable {
     var elders: Int = 0
     
     var population: Int {
-        switch region {
-        case .oldWorld:
+        switch region.id {
+        case 1:
             return farmers + workers + artisans + engineers + investors
-        case .newWorld:
+        case 2:
             return jornaleros + obreros
-        case .theArctic:
+        case 3:
+            return farmers + workers + artisans + engineers + investors
+        case 4:
             return explorers + technicians
-        case .enbesa:
+        case 5:
             return sheperds + elders
+        default:
+            return 0
         }
     }
     

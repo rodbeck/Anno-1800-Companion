@@ -12,6 +12,11 @@
 		18119B9B2DE99D9800CD23E5 /* IslandsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119B9A2DE99D9800CD23E5 /* IslandsListViewModel.swift */; };
 		18119B9D2DE99F0000CD23E5 /* IslandsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119B9C2DE99F0000CD23E5 /* IslandsListView.swift */; };
 		18119B9F2DE9E66300CD23E5 /* IslandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119B9E2DE9E66300CD23E5 /* IslandCell.swift */; };
+		18119BA12DE9FD0700CD23E5 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119BA02DE9FD0700CD23E5 /* Consumption.swift */; };
+		18119BA52DEA208500CD23E5 /* population.json in Resources */ = {isa = PBXBuildFile; fileRef = 18119BA42DEA208500CD23E5 /* population.json */; };
+		18119BA72DEA216900CD23E5 /* Population.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119BA62DEA216900CD23E5 /* Population.swift */; };
+		18119BA92DEA535500CD23E5 /* producers.json in Resources */ = {isa = PBXBuildFile; fileRef = 18119BA82DEA535500CD23E5 /* producers.json */; };
+		18119BAB2DEAF4F300CD23E5 /* Producers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119BAA2DEAF4F300CD23E5 /* Producers.swift */; };
 		1897325A2DE272D10032112E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189732542DE272D10032112E /* Preview Assets.xcassets */; };
 		1897325B2DE272D10032112E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189732572DE272D10032112E /* Assets.xcassets */; };
 		1897325C2DE272D10032112E /* Anno_1800_CompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732562DE272D10032112E /* Anno_1800_CompanionApp.swift */; };
@@ -22,17 +27,16 @@
 		189732692DE582BA0032112E /* IslandDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732682DE582BA0032112E /* IslandDetailsViewModel.swift */; };
 		1897326B2DE583070032112E /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897326A2DE583070032112E /* Region.swift */; };
 		189732782DE6E51C0032112E /* consumption.json in Resources */ = {isa = PBXBuildFile; fileRef = 189732772DE6E51C0032112E /* consumption.json */; };
-		1897327C2DE6E5A40032112E /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 1897327B2DE6E5A40032112E /* regions.json */; };
 		1897329E2DE724240032112E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897329D2DE724240032112E /* Extensions.swift */; };
 		189732A02DE759B20032112E /* OldWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897329F2DE759B20032112E /* OldWorld.swift */; };
-		189732A22DE75B8C0032112E /* Population.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732A12DE75B8C0032112E /* Population.swift */; };
-		189732A42DE75E5B0032112E /* Farmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732A32DE75E5B0032112E /* Farmer.swift */; };
 		189732A72DE75FA00032112E /* BasicNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732A62DE75FA00032112E /* BasicNeed.swift */; };
 		189732A92DE75FB80032112E /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732A82DE75FB80032112E /* Fish.swift */; };
 		189732AD2DE760D40032112E /* Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732AC2DE760D40032112E /* Need.swift */; };
 		189732AF2DE7616A0032112E /* LuxuryNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732AE2DE7616A0032112E /* LuxuryNeed.swift */; };
 		189732B12DE761AB0032112E /* Shnaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732B02DE761AB0032112E /* Shnaps.swift */; };
 		189732B32DE762E50032112E /* WorkClothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732B22DE762E50032112E /* WorkClothes.swift */; };
+		18A8C3E32DEB3036006767CF /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A8C3E22DEB3036006767CF /* regions.json */; };
+		18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C3E42DEB30A1006767CF /* Regions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,11 @@
 		18119B9A2DE99D9800CD23E5 /* IslandsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandsListViewModel.swift; sourceTree = "<group>"; };
 		18119B9C2DE99F0000CD23E5 /* IslandsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandsListView.swift; sourceTree = "<group>"; };
 		18119B9E2DE9E66300CD23E5 /* IslandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandCell.swift; sourceTree = "<group>"; };
+		18119BA02DE9FD0700CD23E5 /* Consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
+		18119BA42DEA208500CD23E5 /* population.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = population.json; sourceTree = "<group>"; };
+		18119BA62DEA216900CD23E5 /* Population.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Population.swift; sourceTree = "<group>"; };
+		18119BA82DEA535500CD23E5 /* producers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = producers.json; sourceTree = "<group>"; };
+		18119BAA2DEAF4F300CD23E5 /* Producers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producers.swift; sourceTree = "<group>"; };
 		189732272DE272B70032112E /* Anno 1800 Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anno 1800 Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189732372DE272B90032112E /* Anno 1800 CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anno 1800 CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189732412DE272B90032112E /* Anno 1800 CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anno 1800 CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,11 +80,8 @@
 		189732682DE582BA0032112E /* IslandDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsViewModel.swift; sourceTree = "<group>"; };
 		1897326A2DE583070032112E /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		189732772DE6E51C0032112E /* consumption.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = consumption.json; sourceTree = "<group>"; };
-		1897327B2DE6E5A40032112E /* regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		1897329D2DE724240032112E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1897329F2DE759B20032112E /* OldWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldWorld.swift; sourceTree = "<group>"; };
-		189732A12DE75B8C0032112E /* Population.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Population.swift; sourceTree = "<group>"; };
-		189732A32DE75E5B0032112E /* Farmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmer.swift; sourceTree = "<group>"; };
 		189732A52DE75EA20032112E /* Anno-1800-Companion-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Anno-1800-Companion-Info.plist"; sourceTree = SOURCE_ROOT; };
 		189732A62DE75FA00032112E /* BasicNeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNeed.swift; sourceTree = "<group>"; };
 		189732A82DE75FB80032112E /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
@@ -83,6 +89,8 @@
 		189732AE2DE7616A0032112E /* LuxuryNeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuxuryNeed.swift; sourceTree = "<group>"; };
 		189732B02DE761AB0032112E /* Shnaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shnaps.swift; sourceTree = "<group>"; };
 		189732B22DE762E50032112E /* WorkClothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkClothes.swift; sourceTree = "<group>"; };
+		18A8C3E22DEB3036006767CF /* regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
+		18A8C3E42DEB30A1006767CF /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,10 @@
 		18119B922DE98F7B00CD23E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18A8C3E22DEB3036006767CF /* regions.json */,
+				18119BA82DEA535500CD23E5 /* producers.json */,
+				18119BA42DEA208500CD23E5 /* population.json */,
+				189732772DE6E51C0032112E /* consumption.json */,
 				189732572DE272D10032112E /* Assets.xcassets */,
 				189732A52DE75EA20032112E /* Anno-1800-Companion-Info.plist */,
 			);
@@ -140,7 +152,14 @@
 		18119B942DE98F8E00CD23E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				189732A82DE75FB80032112E /* Fish.swift */,
+				189732B02DE761AB0032112E /* Shnaps.swift */,
+				189732B22DE762E50032112E /* WorkClothes.swift */,
 				18119B972DE9981700CD23E5 /* Island.swift */,
+				18119BA02DE9FD0700CD23E5 /* Consumption.swift */,
+				18119BA62DEA216900CD23E5 /* Population.swift */,
+				18119BAA2DEAF4F300CD23E5 /* Producers.swift */,
+				18A8C3E42DEB30A1006767CF /* Regions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,19 +262,9 @@
 			isa = PBXGroup;
 			children = (
 				1897327E2DE6EB2D0032112E /* Entities */,
-				1897327D2DE6EB200032112E /* Data */,
 				1897329D2DE724240032112E /* Extensions.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		1897327D2DE6EB200032112E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				189732772DE6E51C0032112E /* consumption.json */,
-				1897327B2DE6E5A40032112E /* regions.json */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		1897327E2DE6EB2D0032112E /* Entities */ = {
@@ -263,29 +272,16 @@
 			children = (
 				18119B8C2DE8A82B00CD23E5 /* Regions */,
 				189732AB2DE760570032112E /* Consumption */,
-				189732AA2DE760440032112E /* Population */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		189732AA2DE760440032112E /* Population */ = {
-			isa = PBXGroup;
-			children = (
-				189732A12DE75B8C0032112E /* Population.swift */,
-				189732A32DE75E5B0032112E /* Farmer.swift */,
-			);
-			path = Population;
 			sourceTree = "<group>";
 		};
 		189732AB2DE760570032112E /* Consumption */ = {
 			isa = PBXGroup;
 			children = (
 				189732A62DE75FA00032112E /* BasicNeed.swift */,
-				189732A82DE75FB80032112E /* Fish.swift */,
 				189732AC2DE760D40032112E /* Need.swift */,
 				189732AE2DE7616A0032112E /* LuxuryNeed.swift */,
-				189732B02DE761AB0032112E /* Shnaps.swift */,
-				189732B22DE762E50032112E /* WorkClothes.swift */,
 			);
 			path = Consumption;
 			sourceTree = "<group>";
@@ -402,10 +398,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18119BA52DEA208500CD23E5 /* population.json in Resources */,
 				189732782DE6E51C0032112E /* consumption.json in Resources */,
 				1897325A2DE272D10032112E /* Preview Assets.xcassets in Resources */,
+				18119BA92DEA535500CD23E5 /* producers.json in Resources */,
 				1897325B2DE272D10032112E /* Assets.xcassets in Resources */,
-				1897327C2DE6E5A40032112E /* regions.json in Resources */,
+				18A8C3E32DEB3036006767CF /* regions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,21 +428,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189732A22DE75B8C0032112E /* Population.swift in Sources */,
 				189732AD2DE760D40032112E /* Need.swift in Sources */,
+				18119BA12DE9FD0700CD23E5 /* Consumption.swift in Sources */,
+				18119BA72DEA216900CD23E5 /* Population.swift in Sources */,
 				18119B982DE9981700CD23E5 /* Island.swift in Sources */,
 				189732A72DE75FA00032112E /* BasicNeed.swift in Sources */,
 				1897325C2DE272D10032112E /* Anno_1800_CompanionApp.swift in Sources */,
 				18119B9D2DE99F0000CD23E5 /* IslandsListView.swift in Sources */,
 				18119B9F2DE9E66300CD23E5 /* IslandCell.swift in Sources */,
 				18119B8E2DE8ABEE00CD23E5 /* IslandDetailsView.swift in Sources */,
-				189732A42DE75E5B0032112E /* Farmer.swift in Sources */,
 				1897325D2DE272D10032112E /* ContentView.swift in Sources */,
 				189732B12DE761AB0032112E /* Shnaps.swift in Sources */,
 				189732A92DE75FB80032112E /* Fish.swift in Sources */,
 				189732A02DE759B20032112E /* OldWorld.swift in Sources */,
 				189732AF2DE7616A0032112E /* LuxuryNeed.swift in Sources */,
 				189732B32DE762E50032112E /* WorkClothes.swift in Sources */,
+				18119BAB2DEAF4F300CD23E5 /* Producers.swift in Sources */,
+				18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */,
 				1897329E2DE724240032112E /* Extensions.swift in Sources */,
 				1897326B2DE583070032112E /* Region.swift in Sources */,
 				189732692DE582BA0032112E /* IslandDetailsViewModel.swift in Sources */,
