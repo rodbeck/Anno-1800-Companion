@@ -20,6 +20,23 @@ struct Consumption: Codable {
     let technicians: PopulationClass
     let shepherds: PopulationClass
     let elders: PopulationClass
+    
+    var entries: [String: PopulationClass] {
+        return [
+            "farmers": farmers,
+            "workers": workers,
+            "artisans": artisans,
+            "engineers": engineers,
+            "investors": investors,
+            "scholars": scholars,
+            "jornaleros": jornaleros,
+            "obreros": obreros,
+            "explorers": explorers,
+            "technicians": technicians,
+            "shepherds": shepherds,
+            "elders": elders
+        ]
+    }
 }
 
 struct PopulationClass: Codable {

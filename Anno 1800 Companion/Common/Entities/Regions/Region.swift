@@ -16,8 +16,6 @@ protocol Region {
 }
 
 enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
-    //var id: Self { self }
-    
     case oldWorld
     case newWorld
     case capeTrelawney
@@ -39,6 +37,21 @@ enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
         }
     }
     
+    var populationIDs: [Int] {
+        switch self {
+        case .oldWorld:
+            return [1,2,3,4,5,8]
+        case .newWorld:
+            return [6,7]
+        case .capeTrelawney:
+            return [1,2,3,4,5,8]
+        case .theArctic:
+            return [9,10]
+        case .enbesa:
+            return [11,12]
+        }
+    }
+    
     var id: Int {
         switch self {
         case .oldWorld:
@@ -54,7 +67,7 @@ enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
         }
     }
     
-    var image: String {
+    var img: String {
         switch self {
         case .oldWorld:
             return "regions/the-old-world"

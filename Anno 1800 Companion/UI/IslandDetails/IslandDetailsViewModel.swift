@@ -25,7 +25,9 @@ extension IslandDetailsView {
         var population: Population
         var producers: Producers
         var regions: Regions
-        var calculatedNeeds: [Need]
+        var calculatedNeeds: [ProductionNeed]
+        var residenceCount: [String: Int]
+        
         
         init(island: Island = Island()) {
             self.island = island
@@ -34,28 +36,62 @@ extension IslandDetailsView {
             self.producers = Bundle.main.decode(Producers.self, from: "producers.json")
             self.regions = Bundle.main.decode(Regions.self, from: "regions.json")
             self.calculatedNeeds = []
+            self.residenceCount = [:]
+        }
+        
+        func calculateProductionNeeds() -> [ProductionNeed] {
+            var results: [ProductionNeed] = []
+
+            for (populationKey, populationEntry) in population.entries {
+                // 1) Nombre de maisons pour cette population sur ton île
+                let populationCount = (self.island.populationValues[populationKey] ?? 0)
+                if populationCount == 0 { continue }
+                //guard let populationCount = island.value(forKey: populationKey) as? Int else { continue }
+                let residences = populationCount / populationEntry.residence
+
+                // 2) Besoins : basic + luxury
+                let needsGroups = [
+                    need.entries[populationKey]?.basic,
+                    need.entries[populationKey]?.luxury
+                ]
+                
+                for needs in needsGroups.compactMap({ $0 }) {
+                    for (needName, entry) in needs where entry.value != nil {
+                        let consumptionPerResident = entry.value!
+                        let totalConsumption = Double(residences) * consumptionPerResident
+
+                        // Trouver le bâtiment qui produit ce bien
+                        guard let producerEntry = producers.entries.first(where: { $0.value.product == needName }) else {
+                            continue // Pas de producteur trouvé pour ce bien
+                        }
+
+                        let productionPerMin = 60.0 / Double(producerEntry.value.productionTime)
+                        let buildingsNeededExact = totalConsumption / productionPerMin
+                        let buildingsNeeded = Int(ceil(totalConsumption / productionPerMin))
+                        let usage = buildingsNeededExact / Double(buildingsNeeded)
+
+                        let productionNeed = ProductionNeed(
+                            populationType: populationKey,
+                            goodName: needName,
+                            producerName: producerEntry.value.building,
+                            residences: residences,
+                            consumptionPerResident: consumptionPerResident,
+                            totalConsumptionPerMin: totalConsumption,
+                            productionPerMin: productionPerMin,
+                            buildingsNeeded: buildingsNeeded,
+                            usagePercentage: usage
+                        )
+
+                        results.append(productionNeed)
+                    }
+                }
+            }
+
+            return results
         }
         
         func calculate() {
-            for region in regions.entries {
-                
-            }
-            
-            switch island.region.id {
-            case 0:
-                print("calculate")
-                
-//                let farmerResidenceCount = island.farmers / population.farmers.residence
-//                
-//                let fish = Fish(value: Double((need.farmers.basic["Fish"]?.value ?? 0)) * Double(farmerResidenceCount))
-//                let workClothes = WorkClothes(value: Double(need.farmers.basic["Work Clothes"]?.value ?? 0) * Double(farmerResidenceCount))
-//                let shnaps = Shnaps(value: Double(need.farmers.basic["Shnaps"]?.value ?? 0) * Double(farmerResidenceCount))
-//                calculatedNeeds.append(fish)
-//                calculatedNeeds.append(workClothes)
-//                calculatedNeeds.append(shnaps)
-            default:
-                print("Default")
-            }
+            calculatedNeeds = calculateProductionNeeds()
         }
     }
     
@@ -68,4 +104,6 @@ extension IslandDetailsView {
     }
 }
 
-
+struct ConsumptionEntry: Codable {
+    let value: Double?
+}

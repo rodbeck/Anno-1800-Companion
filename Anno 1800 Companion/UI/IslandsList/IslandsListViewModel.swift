@@ -12,6 +12,7 @@ extension IslandsListView {
     class ViewModel {
         
         var showingSheet: Bool = false
+        var selectedIslandId: Int?
         
         var islands: [Island] = [.newWorldExample, .oldWorldExample, .enbesaExample, .theArcticExample]
         

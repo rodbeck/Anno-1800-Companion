@@ -37,6 +37,8 @@
 		189732B32DE762E50032112E /* WorkClothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732B22DE762E50032112E /* WorkClothes.swift */; };
 		18A8C3E32DEB3036006767CF /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A8C3E22DEB3036006767CF /* regions.json */; };
 		18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C3E42DEB30A1006767CF /* Regions.swift */; };
+		18ADDD132E183B61005BD42A /* ProductionNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD122E183B61005BD42A /* ProductionNeed.swift */; };
+		18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD142E187785005BD42A /* IslandCalculationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		189732B22DE762E50032112E /* WorkClothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkClothes.swift; sourceTree = "<group>"; };
 		18A8C3E22DEB3036006767CF /* regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		18A8C3E42DEB30A1006767CF /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
+		18ADDD122E183B61005BD42A /* ProductionNeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionNeed.swift; sourceTree = "<group>"; };
+		18ADDD142E187785005BD42A /* IslandCalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandCalculationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,7 @@
 			children = (
 				189732682DE582BA0032112E /* IslandDetailsViewModel.swift */,
 				18119B8D2DE8ABEE00CD23E5 /* IslandDetailsView.swift */,
+				18ADDD142E187785005BD42A /* IslandCalculationView.swift */,
 			);
 			path = IslandDetails;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			children = (
 				18119B8C2DE8A82B00CD23E5 /* Regions */,
 				189732AB2DE760570032112E /* Consumption */,
+				18ADDD122E183B61005BD42A /* ProductionNeed.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -440,12 +446,14 @@
 				1897325D2DE272D10032112E /* ContentView.swift in Sources */,
 				189732B12DE761AB0032112E /* Shnaps.swift in Sources */,
 				189732A92DE75FB80032112E /* Fish.swift in Sources */,
+				18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */,
 				189732A02DE759B20032112E /* OldWorld.swift in Sources */,
 				189732AF2DE7616A0032112E /* LuxuryNeed.swift in Sources */,
 				189732B32DE762E50032112E /* WorkClothes.swift in Sources */,
 				18119BAB2DEAF4F300CD23E5 /* Producers.swift in Sources */,
 				18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */,
 				1897329E2DE724240032112E /* Extensions.swift in Sources */,
+				18ADDD132E183B61005BD42A /* ProductionNeed.swift in Sources */,
 				1897326B2DE583070032112E /* Region.swift in Sources */,
 				189732692DE582BA0032112E /* IslandDetailsViewModel.swift in Sources */,
 				18119B9B2DE99D9800CD23E5 /* IslandsListViewModel.swift in Sources */,

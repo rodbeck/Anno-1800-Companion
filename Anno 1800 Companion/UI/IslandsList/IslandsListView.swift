@@ -53,11 +53,18 @@ private extension IslandsListView {
                     .padding()
             }
             
-            List(islands) { island in
-                NavigationLink(
-                    destination: self.detailsView(island: island)
-                ) {
-                    IslandCell(island: island)
+            List(selection: $viewModel.selectedIslandId) {
+                ForEach(RegionEnum.allCases, id:\.self) { region in
+                    let islandsForRegions = islands.filter { $0.region == region }
+                    if !islandsForRegions.isEmpty {
+                        Section(header: Text(region.description.capitalized)) {
+                            ForEach(islandsForRegions) { island in
+                                NavigationLink(destination: self.detailsView(island: island)) {
+                                    IslandCell(island: island)
+                                }
+                            }
+                        }
+                    }
                 }
             }
             .id(UUID())

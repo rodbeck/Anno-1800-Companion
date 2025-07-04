@@ -11,7 +11,7 @@ struct Island: Identifiable {
     var id: UUID = UUID()
     
     var name: String = ""
-    var region: RegionEntry = .oldWorld
+    var region: RegionEnum = .oldWorld
     
     // The Old World
     var farmers: Int = 0
@@ -49,12 +49,28 @@ struct Island: Identifiable {
         }
     }
     
+    var populationValues: [String: Int] {
+        return [
+            "farmers": farmers,
+            "workers": workers,
+            "artisans": artisans,
+            "engineers": engineers,
+            "investors": investors,
+            "jornaleros": jornaleros,
+            "obreros": obreros,
+            "explorers": explorers,
+            "technicians": technicians,
+            "sheperds": sheperds,
+            "elders": elders
+        ]
+    }
+    
     var description: String {
         "\(name) - \(population)"
     }
     
     static var oldWorldExample: Island {
-        .init(name: "Old World Island", region: .oldWorld, farmers: 100, workers: 200, artisans: 300, engineers: 400, investors: 500)
+        .init(name: "Old World Island", region: .oldWorld, farmers: 1200, workers: 0, artisans: 0, engineers: 0, investors: 0)
     }
     
     static var newWorldExample: Island {

@@ -26,36 +26,28 @@ struct IslandDetailsView: View {
                                     Image(viewModel.regions.entries[key]!.img)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 10, height: 10)
+                                        .frame(width: 20, height: 20)
                                     Text(viewModel.regions.entries[key]!.name)
                                 }
                                 .tag(viewModel.regions.entries[key]!)
                             }
-                            
-                            
-//                            ForEach(RegionEnum.allCases) { option in
-//                                HStack {
-//                                    Image(option.image)
-//                                        .resizable()
-//                                        .aspectRatio(contentMode: .fit)
-//                                        .frame(width: 10, height: 10)
-//                                    Text(String(describing: option))
-//                                }
-//                                .tag(option)
-//                            }
                         }
                     }, label: {
                         Image(viewModel.island.region.img)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20)
-                        Text(viewModel.island.region.name)
+                        Text(viewModel.island.region.description)
                     })
                     Button("Calculate") {
-                        print("Calculate")
+                        calculate()
                     }
+                    .disabled(!isCalculateEnabled)
+                    Button("Save") {
+                        print("Save")
+                    }
+                    .disabled(!isSaveEnabled)
                 }
-                
                 
                 // MARK: - The Old World
                 
@@ -73,7 +65,7 @@ struct IslandDetailsView: View {
                 
                 if viewModel.island.region.id == 2 {
                     
-                    Section("The New World") {
+                    Section(header: Text("The New World")) {
                         
                         workerDisplay(workerName: "jornaleros", rightImageId: "icons/workforce-jornaleros", count: $viewModel.island.jornaleros)
                         workerDisplay(workerName: "obreros", rightImageId: "icons/workforce-obreros", count: $viewModel.island.obreros)
@@ -84,7 +76,11 @@ struct IslandDetailsView: View {
                 
                 if viewModel.island.region.id == 3 {
                     Section("Cape Treylawney") {
-                        
+                        workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
+                        workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $viewModel.island.workers)
+                        workerDisplay(workerName: "artisans", rightImageId: "icons/workforce-artisans", count: $viewModel.island.artisans)
+                        workerDisplay(workerName: "engineers", rightImageId: "icons/workforce-engineers", count: $viewModel.island.engineers)
+                        workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $viewModel.island.investors)
                     }
                 }
                 
@@ -129,6 +125,31 @@ private extension IslandDetailsView {
                 .scaledToFit()
                 .frame(width: 40, height: 40)
         }
+    }
+}
+
+private extension IslandDetailsView {
+    var isCalculateEnabled: Bool {
+        switch viewModel.island.region.id {
+        case 1, 4:
+            return viewModel.island.name != "" && viewModel.island.farmers > 50
+        case 2, 3, 5:
+            return viewModel.island.name != "" && viewModel.island.population > 0
+        default:
+            return false
+        }
+    }
+    
+    var isSaveEnabled: Bool {
+        return viewModel.island.name != ""
+    }
+    
+    func calculate() {
+        viewModel.calculate()
+    }
+    
+    func save() {
+        
     }
 }
 
