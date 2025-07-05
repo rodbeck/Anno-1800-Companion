@@ -19,7 +19,7 @@
 		18119BAB2DEAF4F300CD23E5 /* Producers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119BAA2DEAF4F300CD23E5 /* Producers.swift */; };
 		1897325A2DE272D10032112E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189732542DE272D10032112E /* Preview Assets.xcassets */; };
 		1897325B2DE272D10032112E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189732572DE272D10032112E /* Assets.xcassets */; };
-		1897325C2DE272D10032112E /* Anno_1800_CompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732562DE272D10032112E /* Anno_1800_CompanionApp.swift */; };
+		1897325C2DE272D10032112E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732562DE272D10032112E /* App.swift */; };
 		1897325D2DE272D10032112E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732582DE272D10032112E /* ContentView.swift */; };
 		189732602DE272D50032112E /* Anno_1800_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897325E2DE272D50032112E /* Anno_1800_CompanionTests.swift */; };
 		189732642DE272D90032112E /* Anno_1800_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732612DE272D90032112E /* Anno_1800_CompanionUITests.swift */; };
@@ -33,6 +33,23 @@
 		18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD142E187785005BD42A /* IslandCalculationView.swift */; };
 		18ADDD172E1921BB005BD42A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD162E1921BB005BD42A /* Environment.swift */; };
 		18ADDD192E192419005BD42A /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD182E192419005BD42A /* Region.swift */; };
+		18ADDD1C2E196F61005BD42A /* Query+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD1B2E196F61005BD42A /* Query+Search.swift */; };
+		18ADDD1E2E196F8E005BD42A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD1D2E196F8E005BD42A /* ErrorView.swift */; };
+		18ADDD222E19700C005BD42A /* IslandsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD212E19700C005BD42A /* IslandsInteractor.swift */; };
+		18ADDD262E197168005BD42A /* ModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD252E197168005BD42A /* ModelContainer.swift */; };
+		18ADDD282E1971AA005BD42A /* AppSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD272E1971AA005BD42A /* AppSchema.swift */; };
+		18ADDD2B2E1972CA005BD42A /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD2A2E1972CA005BD42A /* WebRepository.swift */; };
+		18ADDD2D2E1973C4005BD42A /* IslandsDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD2C2E1973C4005BD42A /* IslandsDBRepository.swift */; };
+		18ADDD2F2E19796A005BD42A /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD2E2E19796A005BD42A /* DIContainer.swift */; };
+		18ADDD312E197C9E005BD42A /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD302E197C9E005BD42A /* AppEnvironment.swift */; };
+		18ADDDCA2E198039005BD42A /* RootViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDC92E198039005BD42A /* RootViewAppearance.swift */; };
+		18ADDDCC2E198096005BD42A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDCB2E198096005BD42A /* Helpers.swift */; };
+		18ADDDCE2E19829F005BD42A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDCD2E19829F005BD42A /* AppDelegate.swift */; };
+		18ADDDD02E19844A005BD42A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDCF2E19844A005BD42A /* Store.swift */; };
+		18ADDDD22E1984D2005BD42A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDD12E1984D2005BD42A /* AppState.swift */; };
+		18ADDDD52E198721005BD42A /* EnvironmentOverrides in Frameworks */ = {isa = PBXBuildFile; productRef = 18ADDDD42E198721005BD42A /* EnvironmentOverrides */; };
+		18ADDDD72E19893F005BD42A /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDD62E19893F005BD42A /* Loadable.swift */; };
+		18ADDDD92E198968005BD42A /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDD82E198968005BD42A /* CancelBag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +84,7 @@
 		189732372DE272B90032112E /* Anno 1800 CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anno 1800 CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189732412DE272B90032112E /* Anno 1800 CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anno 1800 CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189732542DE272D10032112E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		189732562DE272D10032112E /* Anno_1800_CompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anno_1800_CompanionApp.swift; sourceTree = "<group>"; };
+		189732562DE272D10032112E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		189732572DE272D10032112E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189732582DE272D10032112E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1897325E2DE272D50032112E /* Anno_1800_CompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anno_1800_CompanionTests.swift; sourceTree = "<group>"; };
@@ -83,6 +100,22 @@
 		18ADDD142E187785005BD42A /* IslandCalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandCalculationView.swift; sourceTree = "<group>"; };
 		18ADDD162E1921BB005BD42A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		18ADDD182E192419005BD42A /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		18ADDD1B2E196F61005BD42A /* Query+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+Search.swift"; sourceTree = "<group>"; };
+		18ADDD1D2E196F8E005BD42A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		18ADDD212E19700C005BD42A /* IslandsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandsInteractor.swift; sourceTree = "<group>"; };
+		18ADDD252E197168005BD42A /* ModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainer.swift; sourceTree = "<group>"; };
+		18ADDD272E1971AA005BD42A /* AppSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSchema.swift; sourceTree = "<group>"; };
+		18ADDD2A2E1972CA005BD42A /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
+		18ADDD2C2E1973C4005BD42A /* IslandsDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandsDBRepository.swift; sourceTree = "<group>"; };
+		18ADDD2E2E19796A005BD42A /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		18ADDD302E197C9E005BD42A /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		18ADDDC92E198039005BD42A /* RootViewAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewAppearance.swift; sourceTree = "<group>"; };
+		18ADDDCB2E198096005BD42A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		18ADDDCD2E19829F005BD42A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18ADDDCF2E19844A005BD42A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		18ADDDD12E1984D2005BD42A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		18ADDDD62E19893F005BD42A /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		18ADDDD82E198968005BD42A /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18ADDDD52E198721005BD42A /* EnvironmentOverrides in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +160,10 @@
 		18119B932DE98F8400CD23E5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				18ADDD1A2E196F40005BD42A /* Common */,
 				18119B992DE99D7A00CD23E5 /* IslandsList */,
 				189732672DE582AB0032112E /* IslandDetails */,
+				18ADDDC92E198039005BD42A /* RootViewAppearance.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -143,6 +179,7 @@
 				18119BA62DEA216900CD23E5 /* Population.swift */,
 				18119BAA2DEAF4F300CD23E5 /* Producers.swift */,
 				18A8C3E42DEB30A1006767CF /* Regions.swift */,
+				18ADDD272E1971AA005BD42A /* AppSchema.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,12 +225,14 @@
 		189732592DE272D10032112E /* Anno 1800 Companion */ = {
 			isa = PBXGroup;
 			children = (
-				189732762DE6E4EA0032112E /* Common */,
-				18119B942DE98F8E00CD23E5 /* Models */,
+				18ADDD322E197EF6005BD42A /* Core */,
+				18ADDD232E19712E005BD42A /* Repositories */,
+				18ADDD202E196FF7005BD42A /* Interactors */,
+				18ADDD1F2E196FB4005BD42A /* DependecyInjection */,
+				189732762DE6E4EA0032112E /* Utilities */,
 				18119B932DE98F8400CD23E5 /* UI */,
 				18119B922DE98F7B00CD23E5 /* Resources */,
 				189732552DE272D10032112E /* Preview Content */,
-				189732562DE272D10032112E /* Anno_1800_CompanionApp.swift */,
 				189732582DE272D10032112E /* ContentView.swift */,
 			);
 			path = "Anno 1800 Companion";
@@ -226,12 +265,79 @@
 			path = IslandDetails;
 			sourceTree = "<group>";
 		};
-		189732762DE6E4EA0032112E /* Common */ = {
+		189732762DE6E4EA0032112E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				18ADDD162E1921BB005BD42A /* Environment.swift */,
+				18ADDDCB2E198096005BD42A /* Helpers.swift */,
+				18ADDDCF2E19844A005BD42A /* Store.swift */,
+				18ADDDD62E19893F005BD42A /* Loadable.swift */,
+				18ADDDD82E198968005BD42A /* CancelBag.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		18ADDD1A2E196F40005BD42A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				18ADDD1B2E196F61005BD42A /* Query+Search.swift */,
+				18ADDD1D2E196F8E005BD42A /* ErrorView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		18ADDD1F2E196FB4005BD42A /* DependecyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				18ADDD2E2E19796A005BD42A /* DIContainer.swift */,
+				18ADDD302E197C9E005BD42A /* AppEnvironment.swift */,
+			);
+			path = DependecyInjection;
+			sourceTree = "<group>";
+		};
+		18ADDD202E196FF7005BD42A /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				18ADDD212E19700C005BD42A /* IslandsInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		18ADDD232E19712E005BD42A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				18ADDD292E1972B2005BD42A /* WebAPI */,
+				18ADDD242E197156005BD42A /* Database */,
+				18119B942DE98F8E00CD23E5 /* Models */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		18ADDD242E197156005BD42A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				18ADDD252E197168005BD42A /* ModelContainer.swift */,
+				18ADDD2C2E1973C4005BD42A /* IslandsDBRepository.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		18ADDD292E1972B2005BD42A /* WebAPI */ = {
+			isa = PBXGroup;
+			children = (
+				18ADDD2A2E1972CA005BD42A /* WebRepository.swift */,
+			);
+			path = WebAPI;
+			sourceTree = "<group>";
+		};
+		18ADDD322E197EF6005BD42A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				189732562DE272D10032112E /* App.swift */,
+				18ADDDCD2E19829F005BD42A /* AppDelegate.swift */,
+				18ADDDD12E1984D2005BD42A /* AppState.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +357,7 @@
 			);
 			name = "Anno 1800 Companion";
 			packageProductDependencies = (
+				18ADDDD42E198721005BD42A /* EnvironmentOverrides */,
 			);
 			productName = "Anno 1800 Companion";
 			productReference = 189732272DE272B70032112E /* Anno 1800 Companion.app */;
@@ -329,6 +436,9 @@
 			);
 			mainGroup = 1897321E2DE272B70032112E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				18ADDDD32E198721005BD42A /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 189732282DE272B70032112E /* Products */;
 			projectDirPath = "";
@@ -376,23 +486,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18ADDD2D2E1973C4005BD42A /* IslandsDBRepository.swift in Sources */,
 				18ADDD172E1921BB005BD42A /* Environment.swift in Sources */,
+				18ADDD2B2E1972CA005BD42A /* WebRepository.swift in Sources */,
+				18ADDD262E197168005BD42A /* ModelContainer.swift in Sources */,
+				18ADDDCE2E19829F005BD42A /* AppDelegate.swift in Sources */,
 				18119BA12DE9FD0700CD23E5 /* Consumption.swift in Sources */,
+				18ADDD1E2E196F8E005BD42A /* ErrorView.swift in Sources */,
 				18ADDD192E192419005BD42A /* Region.swift in Sources */,
+				18ADDDD92E198968005BD42A /* CancelBag.swift in Sources */,
 				18119BA72DEA216900CD23E5 /* Population.swift in Sources */,
 				18119B982DE9981700CD23E5 /* Island.swift in Sources */,
-				1897325C2DE272D10032112E /* Anno_1800_CompanionApp.swift in Sources */,
+				1897325C2DE272D10032112E /* App.swift in Sources */,
 				18119B9D2DE99F0000CD23E5 /* IslandsListView.swift in Sources */,
 				18119B9F2DE9E66300CD23E5 /* IslandCell.swift in Sources */,
+				18ADDDD22E1984D2005BD42A /* AppState.swift in Sources */,
 				18119B8E2DE8ABEE00CD23E5 /* IslandDetailsView.swift in Sources */,
 				1897325D2DE272D10032112E /* ContentView.swift in Sources */,
+				18ADDDD02E19844A005BD42A /* Store.swift in Sources */,
+				18ADDD282E1971AA005BD42A /* AppSchema.swift in Sources */,
+				18ADDDCC2E198096005BD42A /* Helpers.swift in Sources */,
+				18ADDD1C2E196F61005BD42A /* Query+Search.swift in Sources */,
 				18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */,
 				18119BAB2DEAF4F300CD23E5 /* Producers.swift in Sources */,
 				18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */,
 				1897329E2DE724240032112E /* Extensions.swift in Sources */,
+				18ADDDCA2E198039005BD42A /* RootViewAppearance.swift in Sources */,
 				18ADDD132E183B61005BD42A /* ProductionNeed.swift in Sources */,
+				18ADDD312E197C9E005BD42A /* AppEnvironment.swift in Sources */,
 				189732692DE582BA0032112E /* IslandDetailsViewModel.swift in Sources */,
+				18ADDD2F2E19796A005BD42A /* DIContainer.swift in Sources */,
+				18ADDDD72E19893F005BD42A /* Loadable.swift in Sources */,
 				18119B9B2DE99D9800CD23E5 /* IslandsListViewModel.swift in Sources */,
+				18ADDD222E19700C005BD42A /* IslandsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +850,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18ADDDD32E198721005BD42A /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/EnvironmentOverrides";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18ADDDD42E198721005BD42A /* EnvironmentOverrides */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18ADDDD32E198721005BD42A /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */;
+			productName = EnvironmentOverrides;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1897321F2DE272B70032112E /* Project object */;
 }

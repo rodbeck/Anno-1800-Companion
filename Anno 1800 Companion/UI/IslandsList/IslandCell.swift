@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IslandCell: View {
-    let island: Island
+    let island: DBModel.Island
     @Environment(\.locale) var locale: Locale
     
     var body: some View {

@@ -9,7 +9,8 @@ import SwiftData
 import SwiftUI
 
 struct IslandDetailsView: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.injected) private var injected: DIContainer
+    @Environment(\.dismiss) var dismiss
     @State private(set) var viewModel: ViewModel
     
     var body: some View {
@@ -33,7 +34,7 @@ struct IslandDetailsView: View {
                             }
                         }
                     }, label: {
-                        Image(viewModel.island.region.img)
+                        Image(viewModel.regions.entries.first(where: { $0.value.id == viewModel.island.region })!.value.img)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20)
@@ -44,13 +45,16 @@ struct IslandDetailsView: View {
                     }
                     .disabled(!isCalculateEnabled)
                     Button("Save") {
-                        save()
+                        Task {
+                            await save()
+                        }
+                        dismiss()
                     }
                     .disabled(!isSaveEnabled)
                 }
                 
                 // MARK: - The Old World
-                if viewModel.island.region.id == 1 {
+                if viewModel.island.region == 1 {
                     Section(header: Text("The Old World")) {
                         workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
                         workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $viewModel.island.workers)
@@ -60,14 +64,14 @@ struct IslandDetailsView: View {
                     }
                 }
                 // MARK: - The New World
-                if viewModel.island.region.id == 2 {
+                if viewModel.island.region == 2 {
                     Section(header: Text("The New World")) {
                         workerDisplay(workerName: "jornaleros", rightImageId: "icons/workforce-jornaleros", count: $viewModel.island.jornaleros)
                         workerDisplay(workerName: "obreros", rightImageId: "icons/workforce-obreros", count: $viewModel.island.obreros)
                     }
                 }
                 // MARK: - Cape Treylawney
-                if viewModel.island.region.id == 3 {
+                if viewModel.island.region == 3 {
                     Section("Cape Treylawney") {
                         workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
                         workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $viewModel.island.workers)
@@ -77,14 +81,14 @@ struct IslandDetailsView: View {
                     }
                 }
                 // MARK: - The Arctic
-                if viewModel.island.region.id == 4 {
+                if viewModel.island.region == 4 {
                     Section("The Arctics") {
                         workerDisplay(workerName: "explorers", rightImageId: "icons/workforce-explorers", count: $viewModel.island.explorers)
                         workerDisplay(workerName: "technicians", rightImageId: "icons/workforce-technicians", count: $viewModel.island.technicians)
                     }
                 }
                 // MARK: - Enbesa
-                if viewModel.island.region.id == 5 {
+                if viewModel.island.region == 5 {
                     Section("Enbesa") {
                         workerDisplay(workerName: "shepherds", rightImageId: "icons/workforce-shepherds", count: $viewModel.island.elders)
                         workerDisplay(workerName: "elders", rightImageId: "icons/workforce-elders", count: $viewModel.island.elders)
@@ -124,7 +128,7 @@ private extension IslandDetailsView {
 
 private extension IslandDetailsView {
     var isCalculateEnabled: Bool {
-        switch viewModel.island.region.id {
+        switch viewModel.island.region {
         case 1, 4:
             return viewModel.island.name != "" && viewModel.island.farmers > 50
         case 2, 3, 5:
@@ -142,9 +146,9 @@ private extension IslandDetailsView {
         viewModel.calculate()
     }
     
-    func save() {
+    func save() async {
         do {
-            try modelContext.save()
+            try await injected.interactors.islands.store(island: viewModel.island)
         } catch {
             print("Failed to save \(error)")
         }

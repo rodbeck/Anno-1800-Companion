@@ -22,11 +22,12 @@ extension IslandDetailsView {
     @Observable
     class ViewModel {
         
-        var island: Island {
+        var island: ApiModel.Island {
             didSet {
                 calculate()
             }
         }
+        
         var need: Consumption
         var population: Population
         var producers: Producers
@@ -34,7 +35,7 @@ extension IslandDetailsView {
         var calculatedNeeds: [ProductionNeed]
         var residenceCount: [String: Int]
         
-        init(island: Island = Island()) {
+        init(island: ApiModel.Island = .init()) {
             self.island = island
             self.need = Bundle.main.decode(Consumption.self, from: "consumption.json")
             self.population = Bundle.main.decode(Population.self, from: "population.json")
@@ -100,13 +101,13 @@ extension IslandDetailsView {
         }
     }
     
-    static var oldWorldExample: ViewModel {
-        ViewModel(island: .oldWorldExample)
-    }
-    
-    static var newWorldExample: ViewModel {
-        ViewModel(island: .newWorldExample)
-    }
+//    static var oldWorldExample: ViewModel {
+//        ViewModel(island: .oldWorldExample)
+//    }
+//    
+//    static var newWorldExample: ViewModel {
+//        ViewModel(island: .newWorldExample)
+//    }
 }
 
 struct ConsumptionEntry: Codable {
