@@ -14,7 +14,13 @@ extension IslandsListView {
         var showingSheet: Bool = false
         var selectedIslandId: Int?
         
-        var islands: [Island] = [.newWorldExample, .oldWorldExample, .enbesaExample, .theArcticExample]
+        var islands: [Island] = []
+        
+        init() {
+            if EnvironmentTesting.isRunningOnSimulator {
+                islands = [.newWorldExample, .oldWorldExample, .enbesaExample, .theArcticExample]
+            }
+        }
         
         static var example: ViewModel {
             let vm = ViewModel()

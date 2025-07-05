@@ -39,6 +39,7 @@
 		18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C3E42DEB30A1006767CF /* Regions.swift */; };
 		18ADDD132E183B61005BD42A /* ProductionNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD122E183B61005BD42A /* ProductionNeed.swift */; };
 		18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD142E187785005BD42A /* IslandCalculationView.swift */; };
+		18ADDD172E1921BB005BD42A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD162E1921BB005BD42A /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		18A8C3E42DEB30A1006767CF /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 		18ADDD122E183B61005BD42A /* ProductionNeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionNeed.swift; sourceTree = "<group>"; };
 		18ADDD142E187785005BD42A /* IslandCalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandCalculationView.swift; sourceTree = "<group>"; };
+		18ADDD162E1921BB005BD42A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			children = (
 				1897327E2DE6EB2D0032112E /* Entities */,
 				1897329D2DE724240032112E /* Extensions.swift */,
+				18ADDD162E1921BB005BD42A /* Environment.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				189732AD2DE760D40032112E /* Need.swift in Sources */,
+				18ADDD172E1921BB005BD42A /* Environment.swift in Sources */,
 				18119BA12DE9FD0700CD23E5 /* Consumption.swift in Sources */,
 				18119BA72DEA216900CD23E5 /* Population.swift in Sources */,
 				18119B982DE9981700CD23E5 /* Island.swift in Sources */,
