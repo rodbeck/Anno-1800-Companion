@@ -13,8 +13,9 @@ struct ProductionNeed {
     let producerName: String
     let residences: Int
     let consumptionPerResident: Double
-    let totalConsumptionPerMin: Double
+    var totalConsumptionPerMin: Double
     let productionPerMin: Double
-    let buildingsNeeded: Int
-    let usagePercentage: Double
+    var buildingsNeeded: Int
+    var usagePercentage: Double
+    let img: String
 }

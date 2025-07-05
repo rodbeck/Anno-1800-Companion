@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Island: Identifiable {
-    var id: UUID = UUID()
+@Observable
+class Island: Identifiable {
+    var id: UUID
     
     var name: String = ""
     var region: RegionEnum = .oldWorld
@@ -65,12 +66,29 @@ struct Island: Identifiable {
         ]
     }
     
+    init(id: UUID = UUID(), name: String = "", region: RegionEnum = .oldWorld, farmers: Int = 0, workers: Int = 0, artisans: Int = 0, engineers: Int = 0, investors: Int = 0, jornaleros: Int = 0, obreros: Int = 0, explorers: Int = 0, technicians: Int = 0, sheperds: Int = 0, elders: Int = 0) {
+        self.id = id
+        self.name = name
+        self.region = region
+        self.farmers = farmers
+        self.workers = workers
+        self.artisans = artisans
+        self.engineers = engineers
+        self.investors = investors
+        self.jornaleros = jornaleros
+        self.obreros = obreros
+        self.explorers = explorers
+        self.technicians = technicians
+        self.sheperds = sheperds
+        self.elders = elders
+    }
+    
     var description: String {
         "\(name) - \(population)"
     }
     
     static var oldWorldExample: Island {
-        .init(name: "Old World Island", region: .oldWorld, farmers: 1200, workers: 0, artisans: 0, engineers: 0, investors: 0)
+        .init(name: "Old World Island", region: .oldWorld, farmers: 1200, workers: 800, artisans: 500, engineers: 0, investors: 0)
     }
     
     static var newWorldExample: Island {

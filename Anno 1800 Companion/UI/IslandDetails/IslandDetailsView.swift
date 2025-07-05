@@ -11,11 +11,9 @@ struct IslandDetailsView: View {
     @State private(set) var viewModel: ViewModel
     
     var body: some View {
-        
         NavigationStack {
             Form {
                 // MARK: - Global Section
-                
                 Section("Global") {
                     TextField("Name", text: $viewModel.island.name)
                     
@@ -50,7 +48,6 @@ struct IslandDetailsView: View {
                 }
                 
                 // MARK: - The Old World
-                
                 if viewModel.island.region.id == 1 {
                     Section(header: Text("The Old World")) {
                         workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
@@ -60,20 +57,14 @@ struct IslandDetailsView: View {
                         workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $viewModel.island.investors)
                     }
                 }
-                
-                //MARK: - The New World
-                
+                // MARK: - The New World
                 if viewModel.island.region.id == 2 {
-                    
                     Section(header: Text("The New World")) {
-                        
                         workerDisplay(workerName: "jornaleros", rightImageId: "icons/workforce-jornaleros", count: $viewModel.island.jornaleros)
                         workerDisplay(workerName: "obreros", rightImageId: "icons/workforce-obreros", count: $viewModel.island.obreros)
                     }
                 }
-                
-                //MARK: - Cape Treylawney
-                
+                // MARK: - Cape Treylawney
                 if viewModel.island.region.id == 3 {
                     Section("Cape Treylawney") {
                         workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
@@ -83,48 +74,52 @@ struct IslandDetailsView: View {
                         workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $viewModel.island.investors)
                     }
                 }
-                
-                //MARK: - The Arctic
-                
+                // MARK: - The Arctic
                 if viewModel.island.region.id == 4 {
                     Section("The Arctics") {
                         workerDisplay(workerName: "explorers", rightImageId: "icons/workforce-explorers", count: $viewModel.island.explorers)
                         workerDisplay(workerName: "technicians", rightImageId: "icons/workforce-technicians", count: $viewModel.island.technicians)
                     }
                 }
-                
-                //MARK: - Enbesa
-                
+                // MARK: - Enbesa
                 if viewModel.island.region.id == 5 {
                     Section("Enbesa") {
                         workerDisplay(workerName: "shepherds", rightImageId: "icons/workforce-shepherds", count: $viewModel.island.elders)
                         workerDisplay(workerName: "elders", rightImageId: "icons/workforce-elders", count: $viewModel.island.elders)
                     }
                 }
+                
+                IslandCalculationView(calculatedNeeds: viewModel.calculatedNeeds)
             }
+        }
+        .onAppear {
+            viewModel.calculate()
         }
     }
 }
 
 private extension IslandDetailsView {
     func workerDisplay(workerName: String, rightImageId: String, count: Binding<Int>) -> some View {
-        HStack(alignment: .center) {
-            
+        HStack(alignment: .center, spacing: 16) {
             Image("population/\(workerName.lowercased())", label: Text(workerName.capitalized))
                 .resizable()
                 .scaledToFit()
-                .frame(width: 40, height: 40)
-            VStack(alignment: .center) {
+                .frame(width: 36, height: 36)
+            VStack(alignment: .leading, spacing: 4) {
                 Text(workerName.capitalized)
+                    .font(.body)
                 TextField("Number", value: count, format: .number)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .keyboardType(.numberPad)
+                    .frame(maxWidth: 80)
             }
+            Spacer()
             Image(rightImageId)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 40, height: 40)
+                .frame(width: 36, height: 36)
         }
+        .padding(.vertical, 4)
     }
 }
 

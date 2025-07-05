@@ -11,13 +11,34 @@ struct IslandCalculationView: View {
     var calculatedNeeds: [ProductionNeed] = []
     
     var body: some View {
-        VStack {
-            if calculatedNeeds.count > 0 {
-                List(calculatedNeeds, id:\.goodName) { need in
+        if calculatedNeeds.count > 0 {
+            Section(header: Text("Production Summary").font(.title2).bold()) {
+                ForEach(calculatedNeeds, id: \.goodName) { need in
                     HStack {
-                        Text("\(need.producerName)")
-                        Text("\(need.buildingsNeeded)")
-                        Text("\(Int(need.usagePercentage*100))%")
+                        VStack(alignment: .leading) {
+                            Image("buildings/\(need.img)")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 36, height: 36)
+                            Text("^[\(need.buildingsNeeded) \(need.producerName)](inflect: true)")
+                                .font(.subheadline)
+                        }
+                        Spacer()
+                        ZStack {
+                            Circle()
+                                .stroke(lineWidth: 4)
+                                .opacity(0.3)
+                                .foregroundColor(.blue)
+                            Circle()
+                                .trim(from: 0.0, to: CGFloat(need.usagePercentage))
+                                .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .round))
+                                .foregroundColor(.blue)
+                                .rotationEffect(Angle(degrees: -90))
+                            Text("\(Int(need.usagePercentage * 100))%")
+                                .font(.caption)
+                                .bold()
+                        }
+                        .frame(width: 40, height: 40)
                     }
                     .padding(.vertical, 4)
                 }
