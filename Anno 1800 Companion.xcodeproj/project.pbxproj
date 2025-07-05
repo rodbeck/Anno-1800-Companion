@@ -25,21 +25,14 @@
 		189732642DE272D90032112E /* Anno_1800_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732612DE272D90032112E /* Anno_1800_CompanionUITests.swift */; };
 		189732652DE272D90032112E /* Anno_1800_CompanionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732622DE272D90032112E /* Anno_1800_CompanionUITestsLaunchTests.swift */; };
 		189732692DE582BA0032112E /* IslandDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732682DE582BA0032112E /* IslandDetailsViewModel.swift */; };
-		1897326B2DE583070032112E /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897326A2DE583070032112E /* Region.swift */; };
 		189732782DE6E51C0032112E /* consumption.json in Resources */ = {isa = PBXBuildFile; fileRef = 189732772DE6E51C0032112E /* consumption.json */; };
 		1897329E2DE724240032112E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897329D2DE724240032112E /* Extensions.swift */; };
-		189732A02DE759B20032112E /* OldWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897329F2DE759B20032112E /* OldWorld.swift */; };
-		189732A72DE75FA00032112E /* BasicNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732A62DE75FA00032112E /* BasicNeed.swift */; };
-		189732A92DE75FB80032112E /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732A82DE75FB80032112E /* Fish.swift */; };
-		189732AD2DE760D40032112E /* Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732AC2DE760D40032112E /* Need.swift */; };
-		189732AF2DE7616A0032112E /* LuxuryNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732AE2DE7616A0032112E /* LuxuryNeed.swift */; };
-		189732B12DE761AB0032112E /* Shnaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732B02DE761AB0032112E /* Shnaps.swift */; };
-		189732B32DE762E50032112E /* WorkClothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732B22DE762E50032112E /* WorkClothes.swift */; };
 		18A8C3E32DEB3036006767CF /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A8C3E22DEB3036006767CF /* regions.json */; };
 		18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C3E42DEB30A1006767CF /* Regions.swift */; };
 		18ADDD132E183B61005BD42A /* ProductionNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD122E183B61005BD42A /* ProductionNeed.swift */; };
 		18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD142E187785005BD42A /* IslandCalculationView.swift */; };
 		18ADDD172E1921BB005BD42A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD162E1921BB005BD42A /* Environment.swift */; };
+		18ADDD192E192419005BD42A /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDD182E192419005BD42A /* Region.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,22 +74,15 @@
 		189732612DE272D90032112E /* Anno_1800_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anno_1800_CompanionUITests.swift; sourceTree = "<group>"; };
 		189732622DE272D90032112E /* Anno_1800_CompanionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anno_1800_CompanionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		189732682DE582BA0032112E /* IslandDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsViewModel.swift; sourceTree = "<group>"; };
-		1897326A2DE583070032112E /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		189732772DE6E51C0032112E /* consumption.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = consumption.json; sourceTree = "<group>"; };
 		1897329D2DE724240032112E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		1897329F2DE759B20032112E /* OldWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldWorld.swift; sourceTree = "<group>"; };
 		189732A52DE75EA20032112E /* Anno-1800-Companion-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Anno-1800-Companion-Info.plist"; sourceTree = SOURCE_ROOT; };
-		189732A62DE75FA00032112E /* BasicNeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNeed.swift; sourceTree = "<group>"; };
-		189732A82DE75FB80032112E /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
-		189732AC2DE760D40032112E /* Need.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Need.swift; sourceTree = "<group>"; };
-		189732AE2DE7616A0032112E /* LuxuryNeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuxuryNeed.swift; sourceTree = "<group>"; };
-		189732B02DE761AB0032112E /* Shnaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shnaps.swift; sourceTree = "<group>"; };
-		189732B22DE762E50032112E /* WorkClothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkClothes.swift; sourceTree = "<group>"; };
 		18A8C3E22DEB3036006767CF /* regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		18A8C3E42DEB30A1006767CF /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 		18ADDD122E183B61005BD42A /* ProductionNeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionNeed.swift; sourceTree = "<group>"; };
 		18ADDD142E187785005BD42A /* IslandCalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandCalculationView.swift; sourceTree = "<group>"; };
 		18ADDD162E1921BB005BD42A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		18ADDD182E192419005BD42A /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,15 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18119B8C2DE8A82B00CD23E5 /* Regions */ = {
-			isa = PBXGroup;
-			children = (
-				1897329F2DE759B20032112E /* OldWorld.swift */,
-				1897326A2DE583070032112E /* Region.swift */,
-			);
-			path = Regions;
-			sourceTree = "<group>";
-		};
 		18119B922DE98F7B00CD23E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,9 +135,9 @@
 		18119B942DE98F8E00CD23E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				189732A82DE75FB80032112E /* Fish.swift */,
-				189732B02DE761AB0032112E /* Shnaps.swift */,
-				189732B22DE762E50032112E /* WorkClothes.swift */,
+				18ADDD182E192419005BD42A /* Region.swift */,
+				1897329D2DE724240032112E /* Extensions.swift */,
+				18ADDD122E183B61005BD42A /* ProductionNeed.swift */,
 				18119B972DE9981700CD23E5 /* Island.swift */,
 				18119BA02DE9FD0700CD23E5 /* Consumption.swift */,
 				18119BA62DEA216900CD23E5 /* Population.swift */,
@@ -215,7 +192,6 @@
 				18119B942DE98F8E00CD23E5 /* Models */,
 				18119B932DE98F8400CD23E5 /* UI */,
 				18119B922DE98F7B00CD23E5 /* Resources */,
-				189732662DE2F4BE0032112E /* Modules */,
 				189732552DE272D10032112E /* Preview Content */,
 				189732562DE272D10032112E /* Anno_1800_CompanionApp.swift */,
 				189732582DE272D10032112E /* ContentView.swift */,
@@ -240,14 +216,6 @@
 			path = "Anno 1800 CompanionUITests";
 			sourceTree = "<group>";
 		};
-		189732662DE2F4BE0032112E /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				1897326E2DE59DBC0032112E /* ConsumptionModule */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
 		189732672DE582AB0032112E /* IslandDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,41 +226,12 @@
 			path = IslandDetails;
 			sourceTree = "<group>";
 		};
-		1897326E2DE59DBC0032112E /* ConsumptionModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ConsumptionModule;
-			sourceTree = "<group>";
-		};
 		189732762DE6E4EA0032112E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1897327E2DE6EB2D0032112E /* Entities */,
-				1897329D2DE724240032112E /* Extensions.swift */,
 				18ADDD162E1921BB005BD42A /* Environment.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		1897327E2DE6EB2D0032112E /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				18119B8C2DE8A82B00CD23E5 /* Regions */,
-				189732AB2DE760570032112E /* Consumption */,
-				18ADDD122E183B61005BD42A /* ProductionNeed.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		189732AB2DE760570032112E /* Consumption */ = {
-			isa = PBXGroup;
-			children = (
-				189732A62DE75FA00032112E /* BasicNeed.swift */,
-				189732AC2DE760D40032112E /* Need.swift */,
-				189732AE2DE7616A0032112E /* LuxuryNeed.swift */,
-			);
-			path = Consumption;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,28 +376,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189732AD2DE760D40032112E /* Need.swift in Sources */,
 				18ADDD172E1921BB005BD42A /* Environment.swift in Sources */,
 				18119BA12DE9FD0700CD23E5 /* Consumption.swift in Sources */,
+				18ADDD192E192419005BD42A /* Region.swift in Sources */,
 				18119BA72DEA216900CD23E5 /* Population.swift in Sources */,
 				18119B982DE9981700CD23E5 /* Island.swift in Sources */,
-				189732A72DE75FA00032112E /* BasicNeed.swift in Sources */,
 				1897325C2DE272D10032112E /* Anno_1800_CompanionApp.swift in Sources */,
 				18119B9D2DE99F0000CD23E5 /* IslandsListView.swift in Sources */,
 				18119B9F2DE9E66300CD23E5 /* IslandCell.swift in Sources */,
 				18119B8E2DE8ABEE00CD23E5 /* IslandDetailsView.swift in Sources */,
 				1897325D2DE272D10032112E /* ContentView.swift in Sources */,
-				189732B12DE761AB0032112E /* Shnaps.swift in Sources */,
-				189732A92DE75FB80032112E /* Fish.swift in Sources */,
 				18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */,
-				189732A02DE759B20032112E /* OldWorld.swift in Sources */,
-				189732AF2DE7616A0032112E /* LuxuryNeed.swift in Sources */,
-				189732B32DE762E50032112E /* WorkClothes.swift in Sources */,
 				18119BAB2DEAF4F300CD23E5 /* Producers.swift in Sources */,
 				18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */,
 				1897329E2DE724240032112E /* Extensions.swift in Sources */,
 				18ADDD132E183B61005BD42A /* ProductionNeed.swift in Sources */,
-				1897326B2DE583070032112E /* Region.swift in Sources */,
 				189732692DE582BA0032112E /* IslandDetailsViewModel.swift in Sources */,
 				18119B9B2DE99D9800CD23E5 /* IslandsListViewModel.swift in Sources */,
 			);

@@ -7,14 +7,6 @@
 
 import Foundation
 
-protocol Region {
-    var name: String { get set }
-    var image: String { get set }
-    var id: Int { get set }
-    var dlcId: Int { get set }
-    var populationId: [Int] { get set }
-}
-
 enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
     case oldWorld
     case newWorld
