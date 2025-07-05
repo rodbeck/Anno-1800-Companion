@@ -92,60 +92,7 @@ extension IslandDetailsView {
                 }
             }
             return Array(resultsDict.values).sorted(by: { $0.populationType < $1.populationType })
-            }
-        
-//        func calculateProductionNeeds() -> [ProductionNeed] {
-//            var results: [ProductionNeed] = []
-//            var seenKeys: Set<String> = []
-//
-//            for (populationKey, populationEntry) in population.entries {
-//                let populationCount = (self.island.populationValues[populationKey] ?? 0)
-//                if populationCount == 0 { continue }
-//                let residences = populationCount / populationEntry.residence
-//
-//                let needsGroups = [
-//                    need.entries[populationKey]?.basic,
-//                    need.entries[populationKey]?.luxury
-//                ]
-//
-//                for needs in needsGroups.compactMap({ $0 }) {
-//                    for (needName, entry) in needs where entry.value != nil {
-//                        let uniqueKey = "\(populationKey)_\(needName)"
-//                        if seenKeys.contains(uniqueKey) { continue }
-//                        seenKeys.insert(uniqueKey)
-//                        print("✅ New key: \(uniqueKey)")
-//
-//                        let consumptionPerResident = entry.value!
-//                        let totalConsumption = Double(residences) * consumptionPerResident
-//
-//                        guard let producerEntry = producers.entries.first(where: { $0.value.product == needName }) else {
-//                            continue
-//                        }
-//
-//                        let productionPerMin = 60.0 / Double(producerEntry.value.productionTime)
-//                        let buildingsNeededExact = totalConsumption / productionPerMin
-//                        let buildingsNeeded = Int(ceil(buildingsNeededExact))
-//                        let usage = buildingsNeededExact / Double(buildingsNeeded)
-//
-//                        let productionNeed = ProductionNeed(
-//                            populationType: populationKey,
-//                            goodName: needName,
-//                            producerName: producerEntry.value.building,
-//                            residences: residences,
-//                            consumptionPerResident: consumptionPerResident,
-//                            totalConsumptionPerMin: totalConsumption,
-//                            productionPerMin: productionPerMin,
-//                            buildingsNeeded: buildingsNeeded,
-//                            usagePercentage: usage
-//                        )
-//
-//                        results.append(productionNeed)
-//                    }
-//                }
-//            }
-//
-//            return results
-//        }
+        }
         
         func calculate() {
             calculatedNeeds = calculateProductionNeeds()

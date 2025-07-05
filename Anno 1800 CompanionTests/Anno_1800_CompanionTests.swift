@@ -15,25 +15,12 @@ struct Anno_1800_CompanionTests {
         let results = vm.calculateProductionNeeds()
         
         #expect(results.count > 0)
-        
-        for result in results {
-            print(result.populationType)
-            print(result.goodName)
-            print(result.buildingsNeeded)
-            print("\(result.usagePercentage*100)%")
-        }
-        
-        
     }
     
     @Test func importPopulationNeeds() async throws {
         let vm = IslandDetailsView.ViewModel(island: .oldWorldExample)
         let population = vm.population
         let need = vm.need
-        
-        for p in population.entries {
-            print("Population: \(p.value.name) = \(p.value.id)")
-        }
         
         vm.calculate()
         
