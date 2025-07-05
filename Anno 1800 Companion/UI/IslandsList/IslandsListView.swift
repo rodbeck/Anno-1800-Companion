@@ -5,6 +5,7 @@
 //  Created by Rodolphe Beck on 30/05/2025.
 //
 
+import SwiftData
 import SwiftUI
 
 struct IslandsListView: View {
@@ -35,7 +36,6 @@ struct IslandsListView: View {
     @ViewBuilder private var content: some View {
         loadedView(viewModel.islands, showSearch: true, showLoading: false)
     }
-    
     
 }
 

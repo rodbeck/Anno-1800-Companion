@@ -6,13 +6,19 @@
 //
 
 import Foundation
+import SwiftData
 
 @Observable
 class Island: Identifiable {
     var id: UUID
     
     var name: String = ""
-    var region: RegionEnum = .oldWorld
+    var regionRaw: Int = RegionEnum.oldWorld.id
+
+    var region: RegionEnum {
+        get { RegionEnum(rawValue: regionRaw) }
+        set { regionRaw = newValue.id }
+    }
     
     // The Old World
     var farmers: Int = 0

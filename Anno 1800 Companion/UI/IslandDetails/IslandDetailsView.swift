@@ -5,9 +5,11 @@
 //  Created by Rodolphe Beck on 29/05/2025.
 //
 
+import SwiftData
 import SwiftUI
 
 struct IslandDetailsView: View {
+    @Environment(\.modelContext) var modelContext
     @State private(set) var viewModel: ViewModel
     
     var body: some View {
@@ -42,7 +44,7 @@ struct IslandDetailsView: View {
                     }
                     .disabled(!isCalculateEnabled)
                     Button("Save") {
-                        print("Save")
+                        save()
                     }
                     .disabled(!isSaveEnabled)
                 }
@@ -91,9 +93,6 @@ struct IslandDetailsView: View {
                 
                 IslandCalculationView(calculatedNeeds: viewModel.calculatedNeeds)
             }
-        }
-        .onAppear {
-            viewModel.calculate()
         }
     }
 }
@@ -144,7 +143,11 @@ private extension IslandDetailsView {
     }
     
     func save() {
-        
+        do {
+            try modelContext.save()
+        } catch {
+            print("Failed to save \(error)")
+        }
     }
 }
 

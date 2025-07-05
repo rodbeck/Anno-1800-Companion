@@ -21,6 +21,7 @@ extension IslandDetailsView {
 extension IslandDetailsView {
     @Observable
     class ViewModel {
+        
         var island: Island {
             didSet {
                 calculate()

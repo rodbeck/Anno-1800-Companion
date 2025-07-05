@@ -26,7 +26,7 @@ struct Anno_1800_CompanionTests {
         
         #expect(need.farmers.basic.count > 0)
         #expect(need.farmers.luxury.count > 0)
-        
+        #expect(population.entries.count > 0)
     }
 
 }
