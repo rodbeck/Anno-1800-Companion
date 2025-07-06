@@ -52,6 +52,7 @@
 		18B6BE002E1A7BCA00437591 /* IslandDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */; };
 		18B6BF2E2E1ABE7600437591 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BF2D2E1ABE7600437591 /* SnapshotHelper.swift */; };
 		18D448AD2E1AD4AC0097BE99 /* MockedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448AC2E1AD4AC0097BE99 /* MockedModel.swift */; };
+		18D448AF2E1B093F0097BE99 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 18D448AE2E1B093F0097BE99 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsViewModel.swift; sourceTree = "<group>"; };
 		18B6BF2D2E1ABE7600437591 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		18D448AC2E1AD4AC0097BE99 /* MockedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedModel.swift; sourceTree = "<group>"; };
+		18D448AE2E1B093F0097BE99 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				189732772DE6E51C0032112E /* consumption.json */,
 				189732572DE272D10032112E /* Assets.xcassets */,
 				189732A52DE75EA20032112E /* Anno-1800-Companion-Info.plist */,
+				18D448AE2E1B093F0097BE99 /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				1897325A2DE272D10032112E /* Preview Assets.xcassets in Resources */,
 				18119BA92DEA535500CD23E5 /* producers.json in Resources */,
 				1897325B2DE272D10032112E /* Assets.xcassets in Resources */,
+				18D448AF2E1B093F0097BE99 /* Localizable.xcstrings in Resources */,
 				18A8C3E32DEB3036006767CF /* regions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +629,7 @@
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -684,6 +689,7 @@
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
