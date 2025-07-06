@@ -52,6 +52,7 @@
 		18ADDDD92E198968005BD42A /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDD82E198968005BD42A /* CancelBag.swift */; };
 		18B6BDFE2E1A58DE00437591 /* IslandDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BDFD2E1A58DE00437591 /* IslandDetailsView.swift */; };
 		18B6BE002E1A7BCA00437591 /* IslandDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */; };
+		18B6BF2E2E1ABE7600437591 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BF2D2E1ABE7600437591 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		18ADDDD82E198968005BD42A /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		18B6BDFD2E1A58DE00437591 /* IslandDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsView.swift; sourceTree = "<group>"; };
 		18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsViewModel.swift; sourceTree = "<group>"; };
+		18B6BF2D2E1ABE7600437591 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 		189732632DE272D90032112E /* Anno 1800 CompanionUITests */ = {
 			isa = PBXGroup;
 			children = (
+				18B6BF2D2E1ABE7600437591 /* SnapshotHelper.swift */,
 				189732612DE272D90032112E /* Anno_1800_CompanionUITests.swift */,
 				189732622DE272D90032112E /* Anno_1800_CompanionUITestsLaunchTests.swift */,
 			);
@@ -552,6 +555,7 @@
 			files = (
 				189732642DE272D90032112E /* Anno_1800_CompanionUITests.swift in Sources */,
 				189732652DE272D90032112E /* Anno_1800_CompanionUITestsLaunchTests.swift in Sources */,
+				18B6BF2E2E1ABE7600437591 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
