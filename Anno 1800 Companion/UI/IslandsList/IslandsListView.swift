@@ -61,10 +61,22 @@ struct IslandsListView: View {
                 IslandDetailsView(island: DBModel.Island())
             }
         }
+        .onAppear {
+            loadIslandsList(forceReload: false)
+        }
     }
     
     @ViewBuilder private var content: some View {
-        loadedView()
+        switch islandsState {
+        case .notRequested:
+            defaultView()
+        case .isLoading:
+            loadingView()
+        case .loaded:
+            loadedView()
+        case .failed(let error):
+            failedView(error)
+        }
     }
 }
 
@@ -75,8 +87,9 @@ private extension IslandsListView {
         Text("").onAppear() {
             if !islands.isEmpty {
                 islandsState = .loaded(())
+            } else {
+                loadIslandsList(forceReload: false)
             }
-            loadIslandsList(forceReload: false)
         }
     }
     
@@ -127,35 +140,40 @@ private extension IslandsListView {
 private extension IslandsListView {
     @ViewBuilder
     func loadedView() -> some View {
-        ScrollView {
-            LazyVStack(spacing: 12) {
-                if islands.isEmpty && !searchText.isEmpty {
-                    emptySearchView()
-                } else if islands.isEmpty {
-                    emptyStateView()
-                } else {
-                    List {
-                        ForEach(islands) { island in
-                            NavigationLink {
-                                IslandDetailsView(island: island)
-                            } label: {
-                                IslandCell(island: island)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                        .onDelete(perform: delete)
+        if islands.isEmpty && !searchText.isEmpty {
+            emptySearchView()
+        } else if islands.isEmpty {
+            emptyStateView()
+        } else {
+            // Utiliser List directement sans ScrollView/LazyVStack
+            List {
+                ForEach(filteredIslands) { island in
+                    NavigationLink {
+                        IslandDetailsView(island: island)
+                    } label: {
+                        IslandCell(island: island)
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
+                .onDelete(perform: delete)
             }
-            .padding(.horizontal, 16)
-            .padding(.top, 8)
+            .listStyle(PlainListStyle())
+            .searchable(text: $searchText, prompt: "Search islands...")
+            .refreshable {
+                loadIslandsList(forceReload: true)
+            }
         }
-        .onAppear {
-            loadIslandsList(forceReload: true)
-        }
-        .searchable(text: $searchText, prompt: "Search islands...")
-        .refreshable {
-            loadIslandsList(forceReload: true)
+    }
+    
+    // Computed property pour filtrer les îles
+    var filteredIslands: [DBModel.Island] {
+        if searchText.isEmpty {
+            return islands
+        } else {
+            return islands.filter { island in
+                // Adaptez cette logique selon les propriétés de votre modèle Island
+                island.name.localizedCaseInsensitiveContains(searchText)
+            }
         }
     }
     
@@ -209,8 +227,22 @@ private extension IslandsListView {
 private extension IslandsListView {
     private func loadIslandsList(forceReload: Bool) {
         guard forceReload || islands.isEmpty else { return }
+        
+        // Mettre à jour l'état
+        //islandsState = .isLoading
+        
         Task {
-            self.islands = try await injected.interactors.islands.fetchIslandsList()
+            do {
+                let loadedIslands = try await injected.interactors.islands.fetchIslandsList()
+                await MainActor.run {
+                    self.islands = loadedIslands
+                    self.islandsState = .loaded(())
+                }
+            } catch {
+                await MainActor.run {
+                    self.islandsState = .failed(error)
+                }
+            }
         }
     }
     
@@ -220,9 +252,17 @@ private extension IslandsListView {
     
     private func delete(at offsets: IndexSet) {
         Task {
-            for index in offsets {
-                let island = self.islands[index]
-                try await injected.interactors.islands.delete(island: island)
+            do {
+                for index in offsets {
+                    let island = self.islands[index]
+                    try await injected.interactors.islands.delete(island: island)
+                }
+                await MainActor.run {
+                    self.islands.remove(atOffsets: offsets)
+                }
+            } catch {
+                // Gérer l'erreur de suppression
+                print("Error deleting island: \(error)")
             }
         }
     }

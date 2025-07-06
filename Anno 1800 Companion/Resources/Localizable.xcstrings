@@ -241,7 +241,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Résumé de la production"
+            "value" : "Production"
           }
         }
       }
@@ -291,7 +291,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sauvegarder les modifications"
+            "value" : "Sauvegarder"
           }
         }
       }
