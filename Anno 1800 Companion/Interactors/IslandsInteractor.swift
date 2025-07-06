@@ -8,6 +8,7 @@
 import Foundation
 
 protocol IslandsInteractor {
+    @MainActor
     func fetchIslandsList() async throws -> [DBModel.Island]
     func store(island: DBModel.Island) async throws
     func delete(island: DBModel.Island) async throws
@@ -16,6 +17,7 @@ protocol IslandsInteractor {
 struct RealIslandInteractor: IslandsInteractor {
     let dbRepository: IslandsDBRepository
     
+    @MainActor
     func fetchIslandsList() async throws -> [DBModel.Island] {
         try await dbRepository.fetchIslandsList()
     }
