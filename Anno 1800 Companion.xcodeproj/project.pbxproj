@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18119B8E2DE8ABEE00CD23E5 /* IslandDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119B8D2DE8ABEE00CD23E5 /* IslandDetailsView.swift */; };
+		18119B8E2DE8ABEE00CD23E5 /* NewIslandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119B8D2DE8ABEE00CD23E5 /* NewIslandView.swift */; };
 		18119B982DE9981700CD23E5 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119B972DE9981700CD23E5 /* Island.swift */; };
 		18119B9B2DE99D9800CD23E5 /* IslandsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119B9A2DE99D9800CD23E5 /* IslandsListViewModel.swift */; };
 		18119B9D2DE99F0000CD23E5 /* IslandsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119B9C2DE99F0000CD23E5 /* IslandsListView.swift */; };
@@ -24,7 +24,7 @@
 		189732602DE272D50032112E /* Anno_1800_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897325E2DE272D50032112E /* Anno_1800_CompanionTests.swift */; };
 		189732642DE272D90032112E /* Anno_1800_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732612DE272D90032112E /* Anno_1800_CompanionUITests.swift */; };
 		189732652DE272D90032112E /* Anno_1800_CompanionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732622DE272D90032112E /* Anno_1800_CompanionUITestsLaunchTests.swift */; };
-		189732692DE582BA0032112E /* IslandDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732682DE582BA0032112E /* IslandDetailsViewModel.swift */; };
+		189732692DE582BA0032112E /* NewIslandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189732682DE582BA0032112E /* NewIslandViewModel.swift */; };
 		189732782DE6E51C0032112E /* consumption.json in Resources */ = {isa = PBXBuildFile; fileRef = 189732772DE6E51C0032112E /* consumption.json */; };
 		1897329E2DE724240032112E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897329D2DE724240032112E /* Extensions.swift */; };
 		18A8C3E32DEB3036006767CF /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A8C3E22DEB3036006767CF /* regions.json */; };
@@ -50,6 +50,8 @@
 		18ADDDD52E198721005BD42A /* EnvironmentOverrides in Frameworks */ = {isa = PBXBuildFile; productRef = 18ADDDD42E198721005BD42A /* EnvironmentOverrides */; };
 		18ADDDD72E19893F005BD42A /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDD62E19893F005BD42A /* Loadable.swift */; };
 		18ADDDD92E198968005BD42A /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADDDD82E198968005BD42A /* CancelBag.swift */; };
+		18B6BDFE2E1A58DE00437591 /* IslandDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BDFD2E1A58DE00437591 /* IslandDetailsView.swift */; };
+		18B6BE002E1A7BCA00437591 /* IslandDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18119B8D2DE8ABEE00CD23E5 /* IslandDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsView.swift; sourceTree = "<group>"; };
+		18119B8D2DE8ABEE00CD23E5 /* NewIslandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIslandView.swift; sourceTree = "<group>"; };
 		18119B972DE9981700CD23E5 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		18119B9A2DE99D9800CD23E5 /* IslandsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandsListViewModel.swift; sourceTree = "<group>"; };
 		18119B9C2DE99F0000CD23E5 /* IslandsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandsListView.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		1897325E2DE272D50032112E /* Anno_1800_CompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anno_1800_CompanionTests.swift; sourceTree = "<group>"; };
 		189732612DE272D90032112E /* Anno_1800_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anno_1800_CompanionUITests.swift; sourceTree = "<group>"; };
 		189732622DE272D90032112E /* Anno_1800_CompanionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anno_1800_CompanionUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		189732682DE582BA0032112E /* IslandDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsViewModel.swift; sourceTree = "<group>"; };
+		189732682DE582BA0032112E /* NewIslandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIslandViewModel.swift; sourceTree = "<group>"; };
 		189732772DE6E51C0032112E /* consumption.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = consumption.json; sourceTree = "<group>"; };
 		1897329D2DE724240032112E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		189732A52DE75EA20032112E /* Anno-1800-Companion-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Anno-1800-Companion-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -116,6 +118,8 @@
 		18ADDDD12E1984D2005BD42A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		18ADDDD62E19893F005BD42A /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		18ADDDD82E198968005BD42A /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		18B6BDFD2E1A58DE00437591 /* IslandDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsView.swift; sourceTree = "<group>"; };
+		18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				18ADDD1A2E196F40005BD42A /* Common */,
+				18B6BDFC2E1A589700437591 /* IslandDetails */,
 				18119B992DE99D7A00CD23E5 /* IslandsList */,
-				189732672DE582AB0032112E /* IslandDetails */,
+				189732672DE582AB0032112E /* NewIsland */,
 				18ADDDC92E198039005BD42A /* RootViewAppearance.swift */,
 			);
 			path = UI;
@@ -255,14 +260,14 @@
 			path = "Anno 1800 CompanionUITests";
 			sourceTree = "<group>";
 		};
-		189732672DE582AB0032112E /* IslandDetails */ = {
+		189732672DE582AB0032112E /* NewIsland */ = {
 			isa = PBXGroup;
 			children = (
-				189732682DE582BA0032112E /* IslandDetailsViewModel.swift */,
-				18119B8D2DE8ABEE00CD23E5 /* IslandDetailsView.swift */,
+				189732682DE582BA0032112E /* NewIslandViewModel.swift */,
+				18119B8D2DE8ABEE00CD23E5 /* NewIslandView.swift */,
 				18ADDD142E187785005BD42A /* IslandCalculationView.swift */,
 			);
-			path = IslandDetails;
+			path = NewIsland;
 			sourceTree = "<group>";
 		};
 		189732762DE6E4EA0032112E /* Utilities */ = {
@@ -338,6 +343,15 @@
 				18ADDDD12E1984D2005BD42A /* AppState.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		18B6BDFC2E1A589700437591 /* IslandDetails */ = {
+			isa = PBXGroup;
+			children = (
+				18B6BDFD2E1A58DE00437591 /* IslandDetailsView.swift */,
+				18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */,
+			);
+			path = IslandDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18ADDD2D2E1973C4005BD42A /* IslandsDBRepository.swift in Sources */,
+				18B6BE002E1A7BCA00437591 /* IslandDetailsViewModel.swift in Sources */,
 				18ADDD172E1921BB005BD42A /* Environment.swift in Sources */,
 				18ADDD2B2E1972CA005BD42A /* WebRepository.swift in Sources */,
 				18ADDD262E197168005BD42A /* ModelContainer.swift in Sources */,
@@ -501,11 +516,12 @@
 				18119B9D2DE99F0000CD23E5 /* IslandsListView.swift in Sources */,
 				18119B9F2DE9E66300CD23E5 /* IslandCell.swift in Sources */,
 				18ADDDD22E1984D2005BD42A /* AppState.swift in Sources */,
-				18119B8E2DE8ABEE00CD23E5 /* IslandDetailsView.swift in Sources */,
+				18119B8E2DE8ABEE00CD23E5 /* NewIslandView.swift in Sources */,
 				1897325D2DE272D10032112E /* ContentView.swift in Sources */,
 				18ADDDD02E19844A005BD42A /* Store.swift in Sources */,
 				18ADDD282E1971AA005BD42A /* AppSchema.swift in Sources */,
 				18ADDDCC2E198096005BD42A /* Helpers.swift in Sources */,
+				18B6BDFE2E1A58DE00437591 /* IslandDetailsView.swift in Sources */,
 				18ADDD1C2E196F61005BD42A /* Query+Search.swift in Sources */,
 				18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */,
 				18119BAB2DEAF4F300CD23E5 /* Producers.swift in Sources */,
@@ -514,7 +530,7 @@
 				18ADDDCA2E198039005BD42A /* RootViewAppearance.swift in Sources */,
 				18ADDD132E183B61005BD42A /* ProductionNeed.swift in Sources */,
 				18ADDD312E197C9E005BD42A /* AppEnvironment.swift in Sources */,
-				189732692DE582BA0032112E /* IslandDetailsViewModel.swift in Sources */,
+				189732692DE582BA0032112E /* NewIslandViewModel.swift in Sources */,
 				18ADDD2F2E19796A005BD42A /* DIContainer.swift in Sources */,
 				18ADDDD72E19893F005BD42A /* Loadable.swift in Sources */,
 				18119B9B2DE99D9800CD23E5 /* IslandsListViewModel.swift in Sources */,

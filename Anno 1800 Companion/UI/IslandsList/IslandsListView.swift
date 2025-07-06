@@ -33,30 +33,22 @@ struct IslandsListView: View {
                         ToolbarItem(id: "edit", placement: .topBarLeading) {
                             EditButton()
                         }
+                        ToolbarItem(id: "refresh", placement: .bottomBar) {
+                            Button("Refresh", systemImage: "arrow.clockwise") {
+                                loadIslandsList(forceReload: true)
+                            }
+                        }
                     }
-                    .onAppear {
-                        loadIslandsList(forceReload: true)
-                    }
-                    .sheet(isPresented: $viewModel.showingSheet) {
-                        IslandDetailsView(viewModel: .init(island: .init()))
+                    .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
+                        NewIslandView(viewModel: .init(island: .init()))
                     }
             }
         }
     }
     
     @ViewBuilder private var content: some View {
-        switch islandsState {
-        case .notRequested:
-            defaultView()
-        case .isLoading:
-            loadingView()
-        case .loaded:
-            loadedView()
-        case let .failed(error):
-            failedView(error)
-        }
+        loadedView()
     }
-    
 }
 
 //MARK: - Loading Content
@@ -93,43 +85,20 @@ private extension IslandsListView {
             Text("No match found")
                 .font(.footnote)
         }
-        List(selection: $viewModel.selectedIslandId) {
-            ForEach(RegionEnum.allCases, id:\.self) { region in
-                let islandsForRegions = islands.filter { $0.region == region }
-                if !islandsForRegions.isEmpty {
-                    Section(header: Text(region.description.capitalized)) {
-                        ForEach(islandsForRegions) { island in
-                            NavigationLink(destination: self.detailsView(island: island)) {
-                                IslandCell(island: island)
-                            }
-                        }
-                    }
-                }
+        List(islands) { island in
+            NavigationLink {
+                IslandDetailsView(island: island)
+            } label: {
+                IslandCell(island: island)
             }
         }
-        .refreshable {
+        .onAppear {
             loadIslandsList(forceReload: true)
         }
         .searchable(text: $searchText)
-        .id(UUID())
-    }
-    
-    func detailsView(island: DBModel.Island) -> some View {
-        IslandDetailsView(viewModel: .init(island: .init(
-            name: island.name,
-            region: island.region.id,
-            farmers: island.farmers,
-            workers: island.workers,
-            artisans: island.artisans,
-            engineers: island.engineers,
-            investors: island.investors,
-            jornaleros: island.jornaleros,
-            obreros: island.obreros,
-            explorers: island.explorers,
-            technicians: island.technicians,
-            sheperds: island.sheperds,
-            elders: island.elders
-        )))
+        .refreshable {
+            loadIslandsList(forceReload: true)
+        }
     }
 }
 
@@ -139,6 +108,10 @@ private extension IslandsListView {
         Task {
             self.islands = try await injected.interactors.islands.fetchIslandsList()
         }
+    }
+    
+    private func reloadIslandsList() {
+        loadIslandsList(forceReload: true)
     }
 }
 

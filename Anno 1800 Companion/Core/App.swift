@@ -26,7 +26,7 @@ extension AppEnvironment {
             if isRunningTests {
                 Text("Running unit tests")
             } else {
-                ContentView()
+                IslandsListView()
                     .modelContainer(modelContainer)
                     .inject(diContainer)
                 if modelContainer.isStub {

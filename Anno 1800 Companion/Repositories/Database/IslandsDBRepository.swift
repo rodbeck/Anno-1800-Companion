@@ -12,6 +12,8 @@ protocol IslandsDBRepository {
     @MainActor
     func fetchIslandsList() async throws -> [DBModel.Island]
     func store(island: ApiModel.Island) async throws
+    @MainActor
+    func delete(island: DBModel.Island) async throws
 }
 
 extension MainDBRepository: IslandsDBRepository {
@@ -24,6 +26,12 @@ extension MainDBRepository: IslandsDBRepository {
         print("Fetching islands: \(islands.count)")
         
         return islands
+    }
+    
+    @MainActor
+    func delete(island: DBModel.Island) async throws {
+        modelContainer.mainContext.delete(island)
+        try modelContainer.mainContext.save()
     }
     
     func store(island: ApiModel.Island) async throws {

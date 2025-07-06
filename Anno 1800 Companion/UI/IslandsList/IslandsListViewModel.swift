@@ -14,17 +14,17 @@ extension IslandsListView {
         var showingSheet: Bool = false
         var selectedIslandId: Int?
         
-        var islands: [Island] = []
+        //var islands: [Island] = []
         
         init() {
             if EnvironmentTesting.isRunningOnSimulator {
-                islands = [.newWorldExample, .oldWorldExample, .enbesaExample, .theArcticExample]
+                //islands = [.newWorldExample, .oldWorldExample, .enbesaExample, .theArcticExample]
             }
         }
         
         static var example: ViewModel {
             let vm = ViewModel()
-            vm.islands = [.newWorldExample, .oldWorldExample, .enbesaExample, .theArcticExample]
+            //vm.islands = [.newWorldExample, .oldWorldExample, .enbesaExample, .theArcticExample]
             
             return vm
         }

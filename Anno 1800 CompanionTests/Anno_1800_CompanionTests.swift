@@ -11,14 +11,14 @@ import Testing
 struct Anno_1800_CompanionTests {
     
     @Test func calculateConsumption() async throws {
-        let vm = IslandDetailsView.ViewModel(island: .oldWorldExample)
+        let vm = NewIslandView.ViewModel(island: .oldWorldExample)
         let results = vm.calculateProductionNeeds()
         
         #expect(results.count > 0)
     }
     
     @Test func importPopulationNeeds() async throws {
-        let vm = IslandDetailsView.ViewModel(island: .oldWorldExample)
+        let vm = NewIslandView.ViewModel(island: .oldWorldExample)
         let population = vm.population
         let need = vm.need
         

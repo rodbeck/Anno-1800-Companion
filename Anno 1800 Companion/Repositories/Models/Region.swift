@@ -18,8 +18,9 @@ enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
         switch rawValue {
         case 1: self = .oldWorld
         case 2: self = .newWorld
-        case 3: self = .theArctic
-        case 4: self = .enbesa
+        case 3: self = .capeTrelawney
+        case 4: self = .theArctic
+        case 5: self = .enbesa
         default: self = .oldWorld
         }
     }
@@ -31,7 +32,7 @@ enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
         case .newWorld:
             return "The New World"
         case .capeTrelawney:
-            return "The New World"
+            return "Cape Trelawney"
         case .theArctic:
             return "The Arctic"
         case .enbesa:

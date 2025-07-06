@@ -13,7 +13,10 @@ struct IslandCell: View {
     
     var body: some View {
         HStack {
-            Text(island.description)
+            Text(island.name)
+            Spacer()
+            Text(island.population.description)
+            Spacer()
             Image(island.region.img)
                 .resizable()
                 .aspectRatio(contentMode: .fit)

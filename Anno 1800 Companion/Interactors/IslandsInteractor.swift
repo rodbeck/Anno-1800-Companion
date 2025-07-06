@@ -10,6 +10,7 @@ import Foundation
 protocol IslandsInteractor {
     func fetchIslandsList() async throws -> [DBModel.Island]
     func store(island: ApiModel.Island) async throws
+    func delete(island: DBModel.Island) async throws
 }
 
 struct RealIslandInteractor: IslandsInteractor {
@@ -23,12 +24,20 @@ struct RealIslandInteractor: IslandsInteractor {
         try await dbRepository.store(island: island)
     }
     
+    func delete(island: DBModel.Island) async throws {
+        try await dbRepository.delete(island: island)
+    }
+    
     
 }
 
 struct StubIslandInteractor: IslandsInteractor {
     func fetchIslandsList() async throws -> [DBModel.Island] {
         return []
+    }
+    
+    func delete(island: DBModel.Island) async throws {
+        
     }
     
     func store(island: ApiModel.Island) async throws {
