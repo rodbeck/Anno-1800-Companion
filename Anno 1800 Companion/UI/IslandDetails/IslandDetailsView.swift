@@ -42,19 +42,19 @@ private extension IslandDetailsView {
             
             Menu(content: {
                 Picker("Region", selection: $island.region) {
-                    ForEach(Array(viewModel.regions.entries.keys), id:\.self) { key in
+                    ForEach(RegionEnum.allCases, id:\.self) { region in
                         HStack {
-                            Image(viewModel.regions.entries[key]!.img)
+                            Image(region.img)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 20, height: 20)
-                            Text(viewModel.regions.entries[key]!.name)
+                            Text(region.description)
                         }
-                        .tag(viewModel.regions.entries[key]!)
+                        .tag(region)
                     }
                 }
             }, label: {
-                Image(viewModel.regions.entries.first(where: { $0.value.id == island.region.id })!.value.img)
+                Image(island.region.img)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20, height: 20)

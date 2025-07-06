@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RegionEnum: CaseIterable, Identifiable, CustomStringConvertible {
+enum RegionEnum: Int, CaseIterable, Identifiable, CustomStringConvertible, Hashable {
     case oldWorld
     case newWorld
     case capeTrelawney
