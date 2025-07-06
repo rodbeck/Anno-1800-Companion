@@ -11,15 +11,11 @@ import SwiftUI
 struct IslandDetailsView: View {
     @Environment(\.injected) private var injected: DIContainer
     @Environment(\.dismiss) var dismiss
-    @State var island: DBModel.Island
     @State private var edit = false
-    @State private var isSaveEnabled: Bool = false
-    @State private var isCalculateEnabled: Bool = false
     @State private(set) var viewModel: ViewModel
     
     init(island: DBModel.Island) {
-        viewModel = .init()
-        self.island = island
+        viewModel = .init(island: island)
     }
     
     var body: some View {
@@ -27,7 +23,11 @@ struct IslandDetailsView: View {
             Form {
                 globalSection()
                 populationSection()
+                calculationSection()
             }
+        }
+        .onAppear {
+            viewModel.calculate()
         }
     }
 }
@@ -38,10 +38,10 @@ private extension IslandDetailsView {
     @ViewBuilder
     func globalSection() -> some View {
         Section("Global") {
-            TextField("Name", text: $island.name)
+            TextField("Name", text: $viewModel.island.name)
             
             Menu(content: {
-                Picker("Region", selection: $island.region) {
+                Picker("Region", selection: $viewModel.island.region) {
                     ForEach(RegionEnum.allCases, id:\.self) { region in
                         HStack {
                             Image(region.img)
@@ -54,23 +54,16 @@ private extension IslandDetailsView {
                     }
                 }
             }, label: {
-                Image(island.region.img)
+                Image(viewModel.island.region.img)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20, height: 20)
-                Text(island.region.description)
+                Text(viewModel.island.region.description)
             })
             Button("Calculate") {
-                calculate()
+                viewModel.calculate()
             }
-            .disabled(!isCalculateEnabled)
-            Button("Save") {
-                Task {
-                    await save()
-                }
-                dismiss()
-            }
-            .disabled(!isSaveEnabled)
+            .disabled(!viewModel.isCalculateEnabled)
             Button("Delete") {
                 Task {
                     await delete()
@@ -86,37 +79,37 @@ private extension IslandDetailsView {
 private extension IslandDetailsView {
     @ViewBuilder
     func populationSection() -> some View {
-        switch island.region.id {
+        switch viewModel.island.region.id {
         case 1:
             Section(header: Text("The Old World")) {
-                workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $island.farmers)
-                workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $island.workers)
-                workerDisplay(workerName: "artisans", rightImageId: "icons/workforce-artisans", count: $island.artisans)
-                workerDisplay(workerName: "engineers", rightImageId: "icons/workforce-engineers", count: $island.engineers)
-                workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $island.investors)
+                workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
+                workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $viewModel.island.workers)
+                workerDisplay(workerName: "artisans", rightImageId: "icons/workforce-artisans", count: $viewModel.island.artisans)
+                workerDisplay(workerName: "engineers", rightImageId: "icons/workforce-engineers", count: $viewModel.island.engineers)
+                workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $viewModel.island.investors)
             }
         case 2:
             Section(header: Text("The New World")) {
-                workerDisplay(workerName: "jornaleros", rightImageId: "icons/workforce-jornaleros", count: $island.jornaleros)
-                workerDisplay(workerName: "obreros", rightImageId: "icons/workforce-obreros", count: $island.obreros)
+                workerDisplay(workerName: "jornaleros", rightImageId: "icons/workforce-jornaleros", count: $viewModel.island.jornaleros)
+                workerDisplay(workerName: "obreros", rightImageId: "icons/workforce-obreros", count: $viewModel.island.obreros)
             }
         case 3:
             Section("Cape Treylawney") {
-                workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $island.farmers)
-                workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $island.workers)
-                workerDisplay(workerName: "artisans", rightImageId: "icons/workforce-artisans", count: $island.artisans)
-                workerDisplay(workerName: "engineers", rightImageId: "icons/workforce-engineers", count: $island.engineers)
-                workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $island.investors)
+                workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
+                workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $viewModel.island.workers)
+                workerDisplay(workerName: "artisans", rightImageId: "icons/workforce-artisans", count: $viewModel.island.artisans)
+                workerDisplay(workerName: "engineers", rightImageId: "icons/workforce-engineers", count: $viewModel.island.engineers)
+                workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $viewModel.island.investors)
             }
         case 4:
             Section("The Arctics") {
-                workerDisplay(workerName: "explorers", rightImageId: "icons/workforce-explorers", count: $island.explorers)
-                workerDisplay(workerName: "technicians", rightImageId: "icons/workforce-technicians", count: $island.technicians)
+                workerDisplay(workerName: "explorers", rightImageId: "icons/workforce-explorers", count: $viewModel.island.explorers)
+                workerDisplay(workerName: "technicians", rightImageId: "icons/workforce-technicians", count: $viewModel.island.technicians)
             }
         case 5:
             Section("Enbesa") {
-                workerDisplay(workerName: "shepherds", rightImageId: "icons/workforce-shepherds", count: $island.elders)
-                workerDisplay(workerName: "elders", rightImageId: "icons/workforce-elders", count: $island.elders)
+                workerDisplay(workerName: "shepherds", rightImageId: "icons/workforce-shepherds", count: $viewModel.island.elders)
+                workerDisplay(workerName: "elders", rightImageId: "icons/workforce-elders", count: $viewModel.island.elders)
             }
         default:
             ContentUnavailableView("Unknown region", systemImage: "camera.metering.unknown")
@@ -149,18 +142,25 @@ private extension IslandDetailsView {
     }
 }
 
+// MARK: - Calculation Section
+
 extension IslandDetailsView {
-    func calculate() {
-        
+    @ViewBuilder
+    func calculationSection() -> some View {
+        if !viewModel.calculatedNeeds.isEmpty {
+            Section(header: Text("Calculation")) {
+                IslandCalculationView(calculatedNeeds: viewModel.calculatedNeeds)
+            }
+        }
     }
-    
-    func save() async {
-        
-    }
-    
+}
+
+// MARK: - Side Effects
+
+extension IslandDetailsView {
     func delete() async {
         do {
-            try await injected.interactors.islands.delete(island: island)
+            try await injected.interactors.islands.delete(island: viewModel.island)
         } catch {
             print("Failed to delete \(error)")
         }
