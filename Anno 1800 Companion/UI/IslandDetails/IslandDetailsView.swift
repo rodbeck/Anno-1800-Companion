@@ -13,6 +13,7 @@ struct IslandDetailsView: View {
     @Environment(\.dismiss) var dismiss
     @State private var edit = false
     @State private(set) var viewModel: ViewModel
+    @State private var showingDeleteAlert = false
     
     init(island: DBModel.Island) {
         viewModel = .init(island: island)
@@ -20,10 +21,70 @@ struct IslandDetailsView: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                globalSection()
-                populationSection()
-                calculationSection()
+            ZStack {
+                // Background gradient moderne
+                LinearGradient(
+                    colors: [Color(.systemGroupedBackground), Color(.systemBackground)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 24) {
+                        globalSection()
+                        populationSection()
+                        calculationSection()
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 24)
+                }
+            }
+            .navigationTitle("Island Details")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Button("Calculate", systemImage: "function") {
+                            viewModel.calculate()
+                        }
+                        .disabled(!viewModel.isCalculateEnabled)
+                        
+                        Button("Save", systemImage: "square.and.arrow.down") {
+                            Task {
+                                await save()
+                            }
+                        }
+                        .disabled(!viewModel.isSaveEnabled)
+                        
+                        Divider()
+                        
+                        Button("Delete", systemImage: "trash", role: .destructive) {
+                            showingDeleteAlert = true
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                    }
+                }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                    .fontWeight(.semibold)
+                }
+            }
+            .alert("Delete Island", isPresented: $showingDeleteAlert) {
+                Button("Cancel", role: .cancel) {}
+                Button("Delete", role: .destructive) {
+                    Task {
+                        await delete()
+                    }
+                }
+            } message: {
+                Text("Are you sure you want to delete this island? This action cannot be undone.")
             }
         }
         .onAppear {
@@ -37,45 +98,99 @@ struct IslandDetailsView: View {
 private extension IslandDetailsView {
     @ViewBuilder
     func globalSection() -> some View {
-        Section("Global") {
-            TextField("Name", text: $viewModel.island.name)
+        VStack(alignment: .leading, spacing: 16) {
+            Text("General Information")
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(.primary)
             
-            Menu(content: {
-                Picker("Region", selection: $viewModel.island.region) {
-                    ForEach(RegionEnum.allCases, id:\.self) { region in
+            VStack(spacing: 16) {
+                // Island name
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Island Name")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.secondary)
+                    
+                    TextField("Enter island name", text: $viewModel.island.name)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.body)
+                }
+                
+                // Region selector
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Region")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.secondary)
+                    
+                    Menu {
+                        ForEach(RegionEnum.allCases, id: \.self) { region in
+                            Button {
+                                viewModel.island.region = region
+                            } label: {
+                                HStack {
+                                    Image(region.img)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 20, height: 20)
+                                    Text(region.description)
+                                }
+                            }
+                        }
+                    } label: {
                         HStack {
-                            Image(region.img)
+                            Image(viewModel.island.region.img)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                            Text(region.description)
+                                .frame(width: 24, height: 24)
+                            
+                            Text(viewModel.island.region.description)
+                                .font(.body)
+                                .foregroundColor(.primary)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.down")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
                         }
-                        .tag(region)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 12)
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.regularMaterial)
+                                .stroke(.quaternary, lineWidth: 1)
+                        }
                     }
                 }
-            }, label: {
-                Image(viewModel.island.region.img)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 20, height: 20)
-                Text(viewModel.island.region.description)
-            })
-            Button("Calculate") {
-                viewModel.calculate()
-            }
-            .disabled(!viewModel.isCalculateEnabled)
-            Button("Save") {
-                Task {
-                    await save()
+                
+                // Action buttons
+                HStack(spacing: 12) {
+                    Button("Calculate") {
+                        viewModel.calculate()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
+                    .disabled(!viewModel.isCalculateEnabled)
+                    
+                    Button("Save Changes") {
+                        Task {
+                            await save()
+                            dismiss()
+                        }
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.large)
+                    .disabled(!viewModel.isSaveEnabled)
                 }
-                dismiss()
             }
-            .disabled(!viewModel.isSaveEnabled)
-            Button("Delete") {
-                Task {
-                    await delete()
-                }
-                dismiss()
+            .padding(.horizontal, 20)
+            .padding(.vertical, 20)
+            .background {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(.regularMaterial)
+                    .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 2)
             }
         }
     }
@@ -86,66 +201,113 @@ private extension IslandDetailsView {
 private extension IslandDetailsView {
     @ViewBuilder
     func populationSection() -> some View {
-        switch viewModel.island.region.id {
-        case 1:
-            Section(header: Text("The Old World")) {
-                workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
-                workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $viewModel.island.workers)
-                workerDisplay(workerName: "artisans", rightImageId: "icons/workforce-artisans", count: $viewModel.island.artisans)
-                workerDisplay(workerName: "engineers", rightImageId: "icons/workforce-engineers", count: $viewModel.island.engineers)
-                workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $viewModel.island.investors)
+        VStack(alignment: .leading, spacing: 16) {
+            switch viewModel.island.region.id {
+            case 1:
+                populationCard(title: "The Old World", workers: [
+                    ("farmers", "icons/workforce-farmers", $viewModel.island.farmers),
+                    ("workers", "icons/workforce-workers", $viewModel.island.workers),
+                    ("artisans", "icons/workforce-artisans", $viewModel.island.artisans),
+                    ("engineers", "icons/workforce-engineers", $viewModel.island.engineers),
+                    ("investors", "icons/icon-credits", $viewModel.island.investors)
+                ])
+            case 2:
+                populationCard(title: "The New World", workers: [
+                    ("jornaleros", "icons/workforce-jornaleros", $viewModel.island.jornaleros),
+                    ("obreros", "icons/workforce-obreros", $viewModel.island.obreros)
+                ])
+            case 3:
+                populationCard(title: "Cape Treylawney", workers: [
+                    ("farmers", "icons/workforce-farmers", $viewModel.island.farmers),
+                    ("workers", "icons/workforce-workers", $viewModel.island.workers),
+                    ("artisans", "icons/workforce-artisans", $viewModel.island.artisans),
+                    ("engineers", "icons/workforce-engineers", $viewModel.island.engineers),
+                    ("investors", "icons/icon-credits", $viewModel.island.investors)
+                ])
+            case 4:
+                populationCard(title: "The Arctics", workers: [
+                    ("explorers", "icons/workforce-explorers", $viewModel.island.explorers),
+                    ("technicians", "icons/workforce-technicians", $viewModel.island.technicians)
+                ])
+            case 5:
+                populationCard(title: "Enbesa", workers: [
+                    ("shepherds", "icons/workforce-shepherds", $viewModel.island.sheperds),
+                    ("elders", "icons/workforce-elders", $viewModel.island.elders)
+                ])
+            default:
+                ContentUnavailableView("Unknown region", systemImage: "questionmark.circle")
             }
-        case 2:
-            Section(header: Text("The New World")) {
-                workerDisplay(workerName: "jornaleros", rightImageId: "icons/workforce-jornaleros", count: $viewModel.island.jornaleros)
-                workerDisplay(workerName: "obreros", rightImageId: "icons/workforce-obreros", count: $viewModel.island.obreros)
-            }
-        case 3:
-            Section("Cape Treylawney") {
-                workerDisplay(workerName: "farmers", rightImageId: "icons/workforce-farmers", count: $viewModel.island.farmers)
-                workerDisplay(workerName: "workers", rightImageId: "icons/workforce-workers", count: $viewModel.island.workers)
-                workerDisplay(workerName: "artisans", rightImageId: "icons/workforce-artisans", count: $viewModel.island.artisans)
-                workerDisplay(workerName: "engineers", rightImageId: "icons/workforce-engineers", count: $viewModel.island.engineers)
-                workerDisplay(workerName: "investors", rightImageId: "icons/icon-credits", count: $viewModel.island.investors)
-            }
-        case 4:
-            Section("The Arctics") {
-                workerDisplay(workerName: "explorers", rightImageId: "icons/workforce-explorers", count: $viewModel.island.explorers)
-                workerDisplay(workerName: "technicians", rightImageId: "icons/workforce-technicians", count: $viewModel.island.technicians)
-            }
-        case 5:
-            Section("Enbesa") {
-                workerDisplay(workerName: "shepherds", rightImageId: "icons/workforce-shepherds", count: $viewModel.island.sheperds)
-                workerDisplay(workerName: "elders", rightImageId: "icons/workforce-elders", count: $viewModel.island.elders)
-            }
-        default:
-            ContentUnavailableView("Unknown region", systemImage: "camera.metering.unknown")
         }
     }
-}
-
-private extension IslandDetailsView {
-    func workerDisplay(workerName: String, rightImageId: String, count: Binding<Int>) -> some View {
-        HStack(alignment: .center, spacing: 16) {
-            Image("population/\(workerName.lowercased())", label: Text(workerName.capitalized))
+    
+    @ViewBuilder
+    func populationCard(title: String, workers: [(String, String, Binding<Int>)]) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text(title)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(.primary)
+            
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 12), count: 1), spacing: 12) {
+                ForEach(workers, id: \.0) { worker in
+                    workerCard(
+                        workerName: worker.0,
+                        rightImageId: worker.1,
+                        count: worker.2
+                    )
+                }
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 20)
+        .background {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(.regularMaterial)
+                .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 2)
+        }
+    }
+    
+    func workerCard(workerName: String, rightImageId: String, count: Binding<Int>) -> some View {
+        HStack(spacing: 16) {
+            // Worker image
+            Image("population/\(workerName.lowercased())")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 36, height: 36)
+                .frame(width: 40, height: 40)
+                .clipShape(Circle())
+                .background {
+                    Circle()
+                        .fill(.ultraThinMaterial)
+                        .frame(width: 48, height: 48)
+                }
+            
             VStack(alignment: .leading, spacing: 4) {
                 Text(workerName.capitalized)
-                    .font(.body)
-                TextField("Number", value: count, format: .number)
-                    .multilineTextAlignment(.leading)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
+                
+                TextField("0", value: count, format: .number)
+                    .textFieldStyle(.roundedBorder)
                     .keyboardType(.numberPad)
-                    .frame(maxWidth: 80)
+                    .frame(width: 100)
             }
+            
             Spacer()
+            
+            // Resource icon
             Image(rightImageId)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 36, height: 36)
+                .frame(width: 24, height: 24)
+                .foregroundColor(.secondary)
         }
-        .padding(.vertical, 4)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background {
+            RoundedRectangle(cornerRadius: 12)
+                .fill(.quaternary.opacity(0.5))
+        }
     }
 }
 
@@ -155,9 +317,7 @@ extension IslandDetailsView {
     @ViewBuilder
     func calculationSection() -> some View {
         if !viewModel.calculatedNeeds.isEmpty {
-            Section(header: Text("Calculation")) {
-                IslandCalculationView(calculatedNeeds: viewModel.calculatedNeeds)
-            }
+            IslandCalculationView(calculatedNeeds: viewModel.calculatedNeeds)
         }
     }
 }
@@ -184,5 +344,5 @@ extension IslandDetailsView {
 }
 
 #Preview {
-    //IslandDetailsView()
+    IslandDetailsView(island: DBModel.Island.oldWorldExample)
 }

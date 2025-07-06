@@ -12,23 +12,68 @@ struct IslandCell: View {
     @Environment(\.locale) var locale: Locale
     
     var body: some View {
-        HStack {
-            Text(island.name)
+        HStack(spacing: 16) {
+            // Image de région avec effet glassmorphism
+            ZStack {
+                Circle()
+                    .fill(.ultraThinMaterial)
+                    .frame(width: 50, height: 50)
+                    .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
+                
+                Image(island.region.img)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 28, height: 28)
+                    .clipShape(Circle())
+            }
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(island.name)
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.primary)
+                
+                HStack(spacing: 8) {
+                    Image(systemName: "person.3.fill")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    Text("\(island.population.formatted())")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .fontWeight(.medium)
+                }
+            }
+            
             Spacer()
-            Text(island.population.description)
-            Spacer()
-            Image(island.region.img)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 25, height: 25)
+            
+            // Chevron avec animation
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .fontWeight(.semibold)
+                .foregroundColor(.secondary)
+                .scaleEffect(0.8)
         }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: 60, alignment: .leading)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
-        
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
+        .background {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(.regularMaterial)
+                .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 2)
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(.quaternary, lineWidth: 1)
+        }
     }
 }
 
 #Preview {
-    IslandCell(island: .newWorldExample)
+    VStack(spacing: 12) {
+        IslandCell(island: .newWorldExample)
+        IslandCell(island: .enbesaExample)
+        IslandCell(island: .theArcticExample)
+    }
+    .padding()
+    .background(Color(.systemGroupedBackground))
 }

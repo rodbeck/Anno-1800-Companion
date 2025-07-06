@@ -20,28 +20,45 @@ struct IslandsListView: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            NavigationStack {
+        NavigationStack {
+            ZStack {
+                // Background gradient moderne
+                LinearGradient(
+                    colors: [Color(.systemGroupedBackground), Color(.systemBackground)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                
                 self.content
-                    .navigationTitle("Islands")
-                    .toolbar {
-                        ToolbarItem(id: "add", placement: .topBarTrailing) {
-                            Button("Ajouter", systemImage: "plus.square") {
-                                viewModel.showingSheet.toggle()
+            }
+            .navigationTitle("Islands")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        viewModel.showingSheet.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .frame(width: 36, height: 36)
+                            .background {
+                                Circle()
+                                    .fill(.blue.gradient)
+                                    .shadow(color: .blue.opacity(0.3), radius: 8, x: 0, y: 4)
                             }
-                        }
-                        ToolbarItem(id: "edit", placement: .topBarLeading) {
-                            EditButton()
-                        }
-                        ToolbarItem(id: "refresh", placement: .bottomBar) {
-                            Button("Refresh", systemImage: "arrow.clockwise") {
-                                loadIslandsList(forceReload: true)
-                            }
-                        }
                     }
-                    .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
-                        IslandDetailsView(island: DBModel.Island())
-                    }
+                }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                        .fontWeight(.semibold)
+                }
+            }
+            .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
+                IslandDetailsView(island: DBModel.Island())
             }
         }
     }
@@ -64,14 +81,43 @@ private extension IslandsListView {
     }
     
     func loadingView() -> some View {
-        ProgressView()
-            .progressViewStyle(CircularProgressViewStyle())
+        VStack(spacing: 16) {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                .scaleEffect(1.2)
+            
+            Text("Loading islands...")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(.systemGroupedBackground))
     }
     
     func failedView(_ error: Error) -> some View {
-        ErrorView(error: error, retryAction: {
-            loadIslandsList(forceReload: true)
-        })
+        VStack(spacing: 20) {
+            Image(systemName: "exclamationmark.triangle")
+                .font(.system(size: 48))
+                .foregroundColor(.orange)
+            
+            Text("Something went wrong")
+                .font(.headline)
+                .fontWeight(.semibold)
+            
+            Text(error.localizedDescription)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+            
+            Button("Try Again") {
+                loadIslandsList(forceReload: true)
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(.systemGroupedBackground))
     }
 }
 
@@ -81,27 +127,82 @@ private extension IslandsListView {
 private extension IslandsListView {
     @ViewBuilder
     func loadedView() -> some View {
-        if islands.isEmpty && !searchText.isEmpty {
-            Text("No match found")
-                .font(.footnote)
-        }
-        List {
-            ForEach(islands) { island in
-                NavigationLink {
-                    IslandDetailsView(island: island)
-                } label: {
-                    IslandCell(island: island)
+        ScrollView {
+            LazyVStack(spacing: 12) {
+                if islands.isEmpty && !searchText.isEmpty {
+                    emptySearchView()
+                } else if islands.isEmpty {
+                    emptyStateView()
+                } else {
+                    List {
+                        ForEach(islands) { island in
+                            NavigationLink {
+                                IslandDetailsView(island: island)
+                            } label: {
+                                IslandCell(island: island)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                        .onDelete(perform: delete)
+                    }
                 }
             }
-            .onDelete(perform: delete)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
         }
         .onAppear {
             loadIslandsList(forceReload: true)
         }
-        .searchable(text: $searchText)
+        .searchable(text: $searchText, prompt: "Search islands...")
         .refreshable {
             loadIslandsList(forceReload: true)
         }
+    }
+    
+    @ViewBuilder
+    func emptySearchView() -> some View {
+        VStack(spacing: 16) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 48))
+                .foregroundColor(.secondary)
+            
+            Text("No islands found")
+                .font(.headline)
+                .fontWeight(.semibold)
+            
+            Text("Try searching with different keywords")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+        }
+        .padding(.top, 60)
+    }
+    
+    @ViewBuilder
+    func emptyStateView() -> some View {
+        VStack(spacing: 24) {
+            Image(systemName: "map")
+                .font(.system(size: 64))
+                .foregroundColor(.blue)
+            
+            VStack(spacing: 8) {
+                Text("No Islands Yet")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                
+                Text("Create your first island to get started with Anno 1800 calculations")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+            }
+            
+            Button("Create Island") {
+                viewModel.showingSheet.toggle()
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+        }
+        .padding(32)
+        .padding(.top, 60)
     }
 }
 
@@ -128,5 +229,5 @@ private extension IslandsListView {
 }
 
 #Preview {
-    //IslandsListView(viewModel: .example)
+    IslandsListView()
 }
