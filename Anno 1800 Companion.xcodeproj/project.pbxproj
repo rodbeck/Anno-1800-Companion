@@ -51,6 +51,7 @@
 		18B6BDFE2E1A58DE00437591 /* IslandDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BDFD2E1A58DE00437591 /* IslandDetailsView.swift */; };
 		18B6BE002E1A7BCA00437591 /* IslandDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */; };
 		18B6BF2E2E1ABE7600437591 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6BF2D2E1ABE7600437591 /* SnapshotHelper.swift */; };
+		18D448AD2E1AD4AC0097BE99 /* MockedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448AC2E1AD4AC0097BE99 /* MockedModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		18B6BDFD2E1A58DE00437591 /* IslandDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsView.swift; sourceTree = "<group>"; };
 		18B6BDFF2E1A7BCA00437591 /* IslandDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailsViewModel.swift; sourceTree = "<group>"; };
 		18B6BF2D2E1ABE7600437591 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		18D448AC2E1AD4AC0097BE99 /* MockedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				18119BAA2DEAF4F300CD23E5 /* Producers.swift */,
 				18A8C3E42DEB30A1006767CF /* Regions.swift */,
 				18ADDD272E1971AA005BD42A /* AppSchema.swift */,
+				18D448AC2E1AD4AC0097BE99 /* MockedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				18119B982DE9981700CD23E5 /* Island.swift in Sources */,
 				1897325C2DE272D10032112E /* App.swift in Sources */,
 				18119B9D2DE99F0000CD23E5 /* IslandsListView.swift in Sources */,
+				18D448AD2E1AD4AC0097BE99 /* MockedModel.swift in Sources */,
 				18119B9F2DE9E66300CD23E5 /* IslandCell.swift in Sources */,
 				18ADDDD22E1984D2005BD42A /* AppState.swift in Sources */,
 				1897325D2DE272D10032112E /* ContentView.swift in Sources */,

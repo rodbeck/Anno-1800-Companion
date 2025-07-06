@@ -22,8 +22,10 @@ extension IslandDetailsView {
         }
         var isCalculateEnabled: Bool {
             switch island.region.id {
-            case 1, 4:
+            case 1:
                 return island.name != "" && island.farmers > 50
+            case 4:
+                return island.name != "" && island.explorers > 50
             case 2, 3, 5:
                 return island.name != "" && island.population > 0
             default:

@@ -85,12 +85,15 @@ private extension IslandsListView {
             Text("No match found")
                 .font(.footnote)
         }
-        List(islands) { island in
-            NavigationLink {
-                IslandDetailsView(island: island)
-            } label: {
-                IslandCell(island: island)
+        List {
+            ForEach(islands) { island in
+                NavigationLink {
+                    IslandDetailsView(island: island)
+                } label: {
+                    IslandCell(island: island)
+                }
             }
+            .onDelete(perform: delete)
         }
         .onAppear {
             loadIslandsList(forceReload: true)
@@ -112,6 +115,15 @@ private extension IslandsListView {
     
     private func reloadIslandsList() {
         loadIslandsList(forceReload: true)
+    }
+    
+    private func delete(at offsets: IndexSet) {
+        Task {
+            for index in offsets {
+                let island = self.islands[index]
+                try await injected.interactors.islands.delete(island: island)
+            }
+        }
     }
 }
 

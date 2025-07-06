@@ -24,6 +24,8 @@ struct IslandCell: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: 60, alignment: .leading)
+        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+        
     }
 }
 
