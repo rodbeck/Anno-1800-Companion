@@ -9,7 +9,7 @@ import Foundation
 
 protocol IslandsInteractor {
     func fetchIslandsList() async throws -> [DBModel.Island]
-    func store(island: ApiModel.Island) async throws
+    func store(island: DBModel.Island) async throws
     func delete(island: DBModel.Island) async throws
 }
 
@@ -20,7 +20,7 @@ struct RealIslandInteractor: IslandsInteractor {
         try await dbRepository.fetchIslandsList()
     }
     
-    func store(island: ApiModel.Island) async throws {
+    func store(island: DBModel.Island) async throws {
         try await dbRepository.store(island: island)
     }
     
@@ -40,7 +40,7 @@ struct StubIslandInteractor: IslandsInteractor {
         
     }
     
-    func store(island: ApiModel.Island) async throws {
+    func store(island: DBModel.Island) async throws {
         
     }
     

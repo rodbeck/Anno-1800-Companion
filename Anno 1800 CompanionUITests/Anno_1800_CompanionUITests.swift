@@ -30,6 +30,10 @@ final class Anno_1800_CompanionUITests: XCTestCase {
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    @MainActor
+    func testScreenshots() throws {
+    }
 
     @MainActor
     func testLaunchPerformance() throws {

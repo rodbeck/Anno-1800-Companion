@@ -64,6 +64,13 @@ private extension IslandDetailsView {
                 viewModel.calculate()
             }
             .disabled(!viewModel.isCalculateEnabled)
+            Button("Save") {
+                Task {
+                    await save()
+                }
+                dismiss()
+            }
+            .disabled(!viewModel.isSaveEnabled)
             Button("Delete") {
                 Task {
                     await delete()
@@ -108,7 +115,7 @@ private extension IslandDetailsView {
             }
         case 5:
             Section("Enbesa") {
-                workerDisplay(workerName: "shepherds", rightImageId: "icons/workforce-shepherds", count: $viewModel.island.elders)
+                workerDisplay(workerName: "shepherds", rightImageId: "icons/workforce-shepherds", count: $viewModel.island.sheperds)
                 workerDisplay(workerName: "elders", rightImageId: "icons/workforce-elders", count: $viewModel.island.elders)
             }
         default:
@@ -165,6 +172,14 @@ extension IslandDetailsView {
             print("Failed to delete \(error)")
         }
         dismiss()
+    }
+    
+    func save() async {
+        do {
+            try await injected.interactors.islands.store(island: viewModel.island)
+        } catch {
+            print("Failed to save \(error)")
+        }
     }
 }
 

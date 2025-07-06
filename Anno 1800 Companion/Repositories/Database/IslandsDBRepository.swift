@@ -11,7 +11,8 @@ import Foundation
 protocol IslandsDBRepository {
     @MainActor
     func fetchIslandsList() async throws -> [DBModel.Island]
-    func store(island: ApiModel.Island) async throws
+    @MainActor
+    func store(island: DBModel.Island) async throws
     @MainActor
     func delete(island: DBModel.Island) async throws
 }
@@ -34,10 +35,10 @@ extension MainDBRepository: IslandsDBRepository {
         try modelContainer.mainContext.save()
     }
     
-    func store(island: ApiModel.Island) async throws {
-        print("Inserting island \(island.name)")
-        modelContext.insert(island.dbModel())
-        try modelContext.save()
+    @MainActor
+    func store(island: DBModel.Island) async throws {
+        modelContainer.mainContext.insert(island)
+        try modelContainer.mainContext.save()
     }
 }
 

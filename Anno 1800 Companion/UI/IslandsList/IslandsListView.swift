@@ -40,7 +40,7 @@ struct IslandsListView: View {
                         }
                     }
                     .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
-                        NewIslandView(viewModel: .init(island: .init()))
+                        IslandDetailsView(island: DBModel.Island())
                     }
             }
         }

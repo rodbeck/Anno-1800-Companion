@@ -100,14 +100,6 @@ extension NewIslandView {
             calculatedNeeds = calculateProductionNeeds()
         }
     }
-    
-//    static var oldWorldExample: ViewModel {
-//        ViewModel(island: .oldWorldExample)
-//    }
-//    
-//    static var newWorldExample: ViewModel {
-//        ViewModel(island: .newWorldExample)
-//    }
 }
 
 struct ConsumptionEntry: Codable {

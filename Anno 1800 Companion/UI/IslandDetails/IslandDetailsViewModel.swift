@@ -11,7 +11,9 @@ extension IslandDetailsView {
     @Observable
     class ViewModel {
         var regions: Regions
-        var isSaveEnabled: Bool = false
+        var isSaveEnabled: Bool {
+            !island.name.isEmpty
+        }
         var calculatedNeeds: [ProductionNeed]
         var island: DBModel.Island {
             didSet {

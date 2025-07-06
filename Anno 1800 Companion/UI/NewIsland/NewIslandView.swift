@@ -148,7 +148,7 @@ private extension NewIslandView {
     
     func save() async {
         do {
-            try await injected.interactors.islands.store(island: viewModel.island)
+            //try await injected.interactors.islands.store(island: viewModel.island)
         } catch {
             print("Failed to save \(error)")
         }
