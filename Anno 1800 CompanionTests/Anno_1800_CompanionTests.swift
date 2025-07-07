@@ -70,4 +70,16 @@ struct Anno_1800_CompanionTests {
         #expect(population.entries.count > 0)
     }
 
+    @MainActor
+    @Test func loadLanguageFiles() {
+        let oldWorldVM = IslandDetailsView.ViewModel(island: .oldWorldExample)
+        
+        let regions = oldWorldVM.localizedRegions
+        
+        for region in regions.entries {
+            print("\(region.key): \(region.value)")
+        }
+        
+        #expect(regions.entries.count > 0)
+    }
 }

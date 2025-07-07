@@ -38,10 +38,11 @@ extension IslandDetailsView {
         var producers: Producers
         
         init(island: DBModel.Island) {
-            self.regions = Bundle.main.decode(Regions.self, from: "regions.json")
-            self.need = Bundle.main.decode(Consumption.self, from: "consumption.json")
-            self.population = Bundle.main.decode(Population.self, from: "population.json")
-            self.producers = Bundle.main.decode(Producers.self, from: "producers.json")
+            self.regions = Bundle.main.decodeLocalized(Regions.self, from: "regions.json")
+            self.need = Bundle.main.decodeLocalized(Consumption.self, from: "consumption.json")
+            self.population = Bundle.main.decodeLocalized(Population.self, from: "population.json")
+            self.producers = Bundle.main.decodeLocalized(Producers.self, from: "producers.json")
+
             self.calculatedNeeds = []
             self.island = island
         }

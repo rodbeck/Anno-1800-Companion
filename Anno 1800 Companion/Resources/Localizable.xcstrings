@@ -47,6 +47,9 @@
         }
       }
     },
+    "App Language" : {
+
+    },
     "Are you sure you want to delete this island? This action cannot be undone." : {
       "localizations" : {
         "fr" : {
@@ -87,6 +90,16 @@
         }
       }
     },
+    "Cape Trelawney" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cap Treylawney"
+          }
+        }
+      }
+    },
     "Create Island" : {
       "localizations" : {
         "fr" : {
@@ -106,6 +119,9 @@
           }
         }
       }
+    },
+    "Current Settings" : {
+
     },
     "Data is missing" : {
       "localizations" : {
@@ -147,6 +163,9 @@
         }
       }
     },
+    "Enbesa" : {
+      "shouldTranslate" : false
+    },
     "Enter island name" : {
       "localizations" : {
         "fr" : {
@@ -186,6 +205,12 @@
           }
         }
       }
+    },
+    "Language" : {
+
+    },
+    "Language Settings" : {
+
     },
     "Loading islands..." : {
       "localizations" : {
@@ -307,12 +332,48 @@
         }
       }
     },
+    "Select Language" : {
+
+    },
     "Something went wrong" : {
       "localizations" : {
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelque chose s’est mal passé"
+          }
+        }
+      }
+    },
+    "System Language" : {
+
+    },
+    "The Arctic" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’Arctique"
+          }
+        }
+      }
+    },
+    "The New World" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le Nouveau Monde"
+          }
+        }
+      }
+    },
+    "The Old World" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’Ancien Monde"
           }
         }
       }
@@ -346,6 +407,9 @@
           }
         }
       }
+    },
+    "Use System Language" : {
+
     }
   },
   "version" : "1.0"

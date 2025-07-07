@@ -57,6 +57,12 @@
 		18D448B82E1BAADA0097BE99 /* producers.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D448B62E1BAADA0097BE99 /* producers.json */; };
 		18D448BA2E1BCCD20097BE99 /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D448B92E1BCCD20097BE99 /* regions.json */; };
 		18D448BC2E1BCD0D0097BE99 /* population.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D448BB2E1BCD0D0097BE99 /* population.json */; };
+		18D448BE2E1C4CC60097BE99 /* AppContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448BD2E1C4CC60097BE99 /* AppContent.swift */; };
+		18D448C02E1C4CDB0097BE99 /* LocalizationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448BF2E1C4CDB0097BE99 /* LocalizationCache.swift */; };
+		18D448C22E1C4CFF0097BE99 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448C12E1C4CFF0097BE99 /* LocalizationManager.swift */; };
+		18D448C42E1C61840097BE99 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448C32E1C61840097BE99 /* Language.swift */; };
+		18D448C72E1C61C20097BE99 /* LanguageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448C62E1C61C20097BE99 /* LanguageSelectionView.swift */; };
+		18D448C92E1C62A10097BE99 /* AppLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448C82E1C62A10097BE99 /* AppLanguageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +136,12 @@
 		18D448B72E1BAADA0097BE99 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = producers.json; sourceTree = "<group>"; };
 		18D448B92E1BCCD20097BE99 /* regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		18D448BB2E1BCD0D0097BE99 /* population.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = population.json; sourceTree = "<group>"; };
+		18D448BD2E1C4CC60097BE99 /* AppContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContent.swift; sourceTree = "<group>"; };
+		18D448BF2E1C4CDB0097BE99 /* LocalizationCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationCache.swift; sourceTree = "<group>"; };
+		18D448C12E1C4CFF0097BE99 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		18D448C32E1C61840097BE99 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		18D448C62E1C61C20097BE99 /* LanguageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionView.swift; sourceTree = "<group>"; };
+		18D448C82E1C62A10097BE99 /* AppLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +189,7 @@
 		18119B932DE98F8400CD23E5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				18D448C52E1C61A40097BE99 /* LanguageSelection */,
 				18ADDD1A2E196F40005BD42A /* Common */,
 				18B6BDFC2E1A589700437591 /* IslandDetails */,
 				18119B992DE99D7A00CD23E5 /* IslandsList */,
@@ -189,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				18ADDD182E192419005BD42A /* Region.swift */,
-				1897329D2DE724240032112E /* Extensions.swift */,
 				18ADDD122E183B61005BD42A /* ProductionNeed.swift */,
 				18119B972DE9981700CD23E5 /* Island.swift */,
 				18119BA02DE9FD0700CD23E5 /* Consumption.swift */,
@@ -277,11 +289,17 @@
 		189732762DE6E4EA0032112E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1897329D2DE724240032112E /* Extensions.swift */,
 				18ADDD162E1921BB005BD42A /* Environment.swift */,
 				18ADDDCB2E198096005BD42A /* Helpers.swift */,
 				18ADDDCF2E19844A005BD42A /* Store.swift */,
 				18ADDDD62E19893F005BD42A /* Loadable.swift */,
 				18ADDDD82E198968005BD42A /* CancelBag.swift */,
+				18D448BD2E1C4CC60097BE99 /* AppContent.swift */,
+				18D448BF2E1C4CDB0097BE99 /* LocalizationCache.swift */,
+				18D448C12E1C4CFF0097BE99 /* LocalizationManager.swift */,
+				18D448C32E1C61840097BE99 /* Language.swift */,
+				18D448C82E1C62A10097BE99 /* AppLanguageManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -375,6 +393,14 @@
 				18D448B32E1B9B610097BE99 /* consumption.json */,
 			);
 			path = fr.lproj;
+			sourceTree = "<group>";
+		};
+		18D448C52E1C61A40097BE99 /* LanguageSelection */ = {
+			isa = PBXGroup;
+			children = (
+				18D448C62E1C61C20097BE99 /* LanguageSelectionView.swift */,
+			);
+			path = LanguageSelection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,7 +557,9 @@
 				18ADDD2D2E1973C4005BD42A /* IslandsDBRepository.swift in Sources */,
 				18B6BE002E1A7BCA00437591 /* IslandDetailsViewModel.swift in Sources */,
 				18ADDD172E1921BB005BD42A /* Environment.swift in Sources */,
+				18D448C02E1C4CDB0097BE99 /* LocalizationCache.swift in Sources */,
 				18ADDD2B2E1972CA005BD42A /* WebRepository.swift in Sources */,
+				18D448C42E1C61840097BE99 /* Language.swift in Sources */,
 				18ADDD262E197168005BD42A /* ModelContainer.swift in Sources */,
 				18ADDDCE2E19829F005BD42A /* AppDelegate.swift in Sources */,
 				18119BA12DE9FD0700CD23E5 /* Consumption.swift in Sources */,
@@ -539,10 +567,12 @@
 				18ADDD192E192419005BD42A /* Region.swift in Sources */,
 				18ADDDD92E198968005BD42A /* CancelBag.swift in Sources */,
 				18119BA72DEA216900CD23E5 /* Population.swift in Sources */,
+				18D448C22E1C4CFF0097BE99 /* LocalizationManager.swift in Sources */,
 				18119B982DE9981700CD23E5 /* Island.swift in Sources */,
 				1897325C2DE272D10032112E /* App.swift in Sources */,
 				18119B9D2DE99F0000CD23E5 /* IslandsListView.swift in Sources */,
 				18D448AD2E1AD4AC0097BE99 /* MockedModel.swift in Sources */,
+				18D448C72E1C61C20097BE99 /* LanguageSelectionView.swift in Sources */,
 				18119B9F2DE9E66300CD23E5 /* IslandCell.swift in Sources */,
 				18ADDDD22E1984D2005BD42A /* AppState.swift in Sources */,
 				1897325D2DE272D10032112E /* ContentView.swift in Sources */,
@@ -551,6 +581,7 @@
 				18ADDDCC2E198096005BD42A /* Helpers.swift in Sources */,
 				18B6BDFE2E1A58DE00437591 /* IslandDetailsView.swift in Sources */,
 				18ADDD1C2E196F61005BD42A /* Query+Search.swift in Sources */,
+				18D448C92E1C62A10097BE99 /* AppLanguageManager.swift in Sources */,
 				18ADDD152E187786005BD42A /* IslandCalculationView.swift in Sources */,
 				18119BAB2DEAF4F300CD23E5 /* Producers.swift in Sources */,
 				18A8C3E52DEB30A1006767CF /* Regions.swift in Sources */,
@@ -560,6 +591,7 @@
 				18ADDD312E197C9E005BD42A /* AppEnvironment.swift in Sources */,
 				18ADDD2F2E19796A005BD42A /* DIContainer.swift in Sources */,
 				18ADDDD72E19893F005BD42A /* Loadable.swift in Sources */,
+				18D448BE2E1C4CC60097BE99 /* AppContent.swift in Sources */,
 				18119B9B2DE99D9800CD23E5 /* IslandsListViewModel.swift in Sources */,
 				18ADDD222E19700C005BD42A /* IslandsInteractor.swift in Sources */,
 			);

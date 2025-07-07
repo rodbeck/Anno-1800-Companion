@@ -1,5 +1,5 @@
 {
-  "fermiers": {
+  "farmers": {
     "basic": {
       "Marché": "",
       "Poisson": 0.025000002,
@@ -10,7 +10,7 @@
       "Taverne": ""
     }
   },
-  "ouvriers": {
+  "workers": {
     "basic": {
       "Marché": "",
       "Poisson": 0.050000004,
@@ -45,7 +45,7 @@
       "Rhum": 0.05714286
     }
   },
-  "ingénieurs": {
+  "engineers": {
     "basic": {
       "Conserves": 0.0205128,
       "Machines à coudre": 0.05714286,
@@ -64,7 +64,7 @@
       "Banque": ""
     }
   },
-  "investisseurs": {
+  "investors": {
     "basic": {
       "Lunettes": 0.01777776,
       "Café": 0.09411762,
@@ -84,7 +84,7 @@
       "Gramophones": 0.005262
     }
   },
-  "savants": {
+  "scholars": {
     "basic": {
       "Université": "",
       "Conserves": 0.06,
@@ -135,7 +135,7 @@
     }
   },
 
-  "explorateurs": {
+  "explorers": {
     "basic": {
       "Cantine": "",
       "Pemmican": 0.012,
@@ -147,7 +147,7 @@
       "Schnaps": 0.015
     }
   },
-  "techniciens": {
+  "technicians": {
     "basic": {
       "Cantine": "",
       "Pemmican": 0.024,
@@ -165,7 +165,7 @@
     }
   },
 
-  "bergers": {
+  "shepherds": {
     "basic": {
       "Marché": "",
       "Lait de chèvre": 0.03,
@@ -177,7 +177,7 @@
       "Thé à l'hibiscus": 0.012
     }
   },
-  "anciens": {
+  "elders": {
     "basic": {
       "Marché": "",
       "Lait de chèvre": 0.06,

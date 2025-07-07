@@ -205,7 +205,7 @@ private extension IslandDetailsView {
         VStack(alignment: .leading, spacing: 16) {
             switch viewModel.island.region.id {
             case 1:
-                populationCard(title: "The Old World", workers: [
+                populationCard(title: String(localized:"The Old World"), workers: [
                     ("farmers", "icons/workforce-farmers", $viewModel.island.farmers),
                     ("workers", "icons/workforce-workers", $viewModel.island.workers),
                     ("artisans", "icons/workforce-artisans", $viewModel.island.artisans),
@@ -213,12 +213,12 @@ private extension IslandDetailsView {
                     ("investors", "icons/icon-credits", $viewModel.island.investors)
                 ])
             case 2:
-                populationCard(title: "The New World", workers: [
+                populationCard(title: String(localized:"The New World"), workers: [
                     ("jornaleros", "icons/workforce-jornaleros", $viewModel.island.jornaleros),
                     ("obreros", "icons/workforce-obreros", $viewModel.island.obreros)
                 ])
             case 3:
-                populationCard(title: "Cape Treylawney", workers: [
+                populationCard(title: String(localized:"Cape Trelawney"), workers: [
                     ("farmers", "icons/workforce-farmers", $viewModel.island.farmers),
                     ("workers", "icons/workforce-workers", $viewModel.island.workers),
                     ("artisans", "icons/workforce-artisans", $viewModel.island.artisans),
@@ -226,7 +226,7 @@ private extension IslandDetailsView {
                     ("investors", "icons/icon-credits", $viewModel.island.investors)
                 ])
             case 4:
-                populationCard(title: "The Arctics", workers: [
+                populationCard(title: String(localized:"The Arctic"), workers: [
                     ("explorers", "icons/workforce-explorers", $viewModel.island.explorers),
                     ("technicians", "icons/workforce-technicians", $viewModel.island.technicians)
                 ])
@@ -283,7 +283,7 @@ private extension IslandDetailsView {
                 }
             
             VStack(alignment: .leading, spacing: 4) {
-                Text(workerName.capitalized)
+                Text(viewModel.population.entries[workerName]?.name ?? "?".capitalized)
                     .font(.subheadline)
                     .fontWeight(.medium)
                     .foregroundColor(.primary)

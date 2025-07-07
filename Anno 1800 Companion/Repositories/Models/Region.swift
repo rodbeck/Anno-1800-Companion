@@ -28,15 +28,15 @@ enum RegionEnum: Int, CaseIterable, Identifiable, CustomStringConvertible, Hasha
     var description: String {
         switch self {
         case .oldWorld:
-            return "The Old World"
+            return String(localized: "The Old World")
         case .newWorld:
-            return "The New World"
+            return String(localized: "The New World")
         case .capeTrelawney:
-            return "Cape Trelawney"
+            return String(localized: "Cape Trelawney")
         case .theArctic:
-            return "The Arctic"
+            return String(localized: "The Arctic")
         case .enbesa:
-            return "Enbesa"
+            return String(localized: "Enbesa")
         }
     }
     
