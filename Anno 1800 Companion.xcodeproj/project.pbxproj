@@ -63,6 +63,10 @@
 		18D448C42E1C61840097BE99 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448C32E1C61840097BE99 /* Language.swift */; };
 		18D448C72E1C61C20097BE99 /* LanguageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448C62E1C61C20097BE99 /* LanguageSelectionView.swift */; };
 		18D448C92E1C62A10097BE99 /* AppLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D448C82E1C62A10097BE99 /* AppLanguageManager.swift */; };
+		18D448CE2E1C6D520097BE99 /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D448CA2E1C6D520097BE99 /* regions.json */; };
+		18D448CF2E1C6D520097BE99 /* producers.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D448CB2E1C6D520097BE99 /* producers.json */; };
+		18D448D02E1C6D520097BE99 /* population.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D448CC2E1C6D520097BE99 /* population.json */; };
+		18D448D12E1C6D520097BE99 /* consumption.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D448CD2E1C6D520097BE99 /* consumption.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +146,10 @@
 		18D448C32E1C61840097BE99 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		18D448C62E1C61C20097BE99 /* LanguageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionView.swift; sourceTree = "<group>"; };
 		18D448C82E1C62A10097BE99 /* AppLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguageManager.swift; sourceTree = "<group>"; };
+		18D448CA2E1C6D520097BE99 /* regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
+		18D448CB2E1C6D520097BE99 /* producers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = producers.json; sourceTree = "<group>"; };
+		18D448CC2E1C6D520097BE99 /* population.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = population.json; sourceTree = "<group>"; };
+		18D448CD2E1C6D520097BE99 /* consumption.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = consumption.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +388,10 @@
 		18D448B12E1B9A290097BE99 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				18D448CA2E1C6D520097BE99 /* regions.json */,
+				18D448CB2E1C6D520097BE99 /* producers.json */,
+				18D448CC2E1C6D520097BE99 /* population.json */,
+				18D448CD2E1C6D520097BE99 /* consumption.json */,
 			);
 			path = en.lproj;
 			sourceTree = "<group>";
@@ -524,6 +536,10 @@
 				189732782DE6E51C0032112E /* consumption.json in Resources */,
 				1897325A2DE272D10032112E /* Preview Assets.xcassets in Resources */,
 				18119BA92DEA535500CD23E5 /* producers.json in Resources */,
+				18D448CE2E1C6D520097BE99 /* regions.json in Resources */,
+				18D448CF2E1C6D520097BE99 /* producers.json in Resources */,
+				18D448D02E1C6D520097BE99 /* population.json in Resources */,
+				18D448D12E1C6D520097BE99 /* consumption.json in Resources */,
 				1897325B2DE272D10032112E /* Assets.xcassets in Resources */,
 				18D448BA2E1BCCD20097BE99 /* regions.json in Resources */,
 				18D448AF2E1B093F0097BE99 /* Localizable.xcstrings in Resources */,

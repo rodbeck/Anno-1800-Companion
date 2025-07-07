@@ -14,6 +14,9 @@ extension IslandDetailsView {
         var isSaveEnabled: Bool {
             !island.name.isEmpty
         }
+        var regionName: String {
+            regions.entries[island.region.keyString]?.name ?? "?"
+        }
         var calculatedNeeds: [ProductionNeed]
         var island: DBModel.Island {
             didSet {

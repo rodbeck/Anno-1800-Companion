@@ -127,7 +127,45 @@ private extension IslandsListView {
         .listStyle(.sidebar)
         .searchable(text: $searchText, prompt: "Search islands...")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            // Groupe les boutons à droite
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                // Menu de sélection de langue
+                Menu {
+                    // Section pour basculer entre système et personnalisé
+                    Button(action: {
+                        AppLanguageManager.shared.resetToSystemLanguage()
+                    }) {
+                        HStack {
+                            Text("System Language")
+                            if !AppLanguageManager.shared.isUsingCustomLanguage {
+                                Image(systemName: "checkmark")
+                            }
+                        }
+                    }
+                    
+                    Divider()
+                    
+                    // Liste des langues disponibles
+                    ForEach(Language.availableLanguages) { language in
+                        Button(action: {
+                            AppLanguageManager.shared.currentLanguage = language.id
+                        }) {
+                            HStack {
+                                Text(language.nativeName)
+                                if AppLanguageManager.shared.currentLanguage == language.id && AppLanguageManager.shared.isUsingCustomLanguage {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
+                        }
+                    }
+                } label: {
+                    Image(systemName: "globe")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.blue)
+                }
+                
+                // Bouton d'ajout existant
                 Button {
                     viewModel.showingSheet.toggle()
                 } label: {
@@ -143,10 +181,15 @@ private extension IslandsListView {
                         }
                 }
             }
+            
             ToolbarItem(placement: .topBarLeading) {
                 EditButton()
                     .fontWeight(.semibold)
             }
+        }
+        // Observer les changements de langue pour recharger les données
+        .onLanguageChange {
+            loadIslandsList(forceReload: true)
         }
     }
 }
@@ -239,10 +282,10 @@ private extension IslandsListView {
         } else {
             // Utiliser List directement sans ScrollView/LazyVStack
             navigationView
-            .searchable(text: $searchText, prompt: "Search islands...")
-            .refreshable {
-                loadIslandsList(forceReload: true)
-            }
+                .searchable(text: $searchText, prompt: "Search islands...")
+                .refreshable {
+                    loadIslandsList(forceReload: true)
+                }
         }
     }
 }

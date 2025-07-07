@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class AppLanguageManager {
     static let shared = AppLanguageManager()
     

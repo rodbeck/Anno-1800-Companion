@@ -135,7 +135,7 @@ private extension IslandDetailsView {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 20, height: 20)
-                                    Text(region.description)
+                                    Text(viewModel.regions.entries[region.keyString]?.name ?? "?")
                                 }
                             }
                         }
@@ -146,7 +146,7 @@ private extension IslandDetailsView {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 24, height: 24)
                             
-                            Text(viewModel.island.region.description)
+                            Text(viewModel.regionName)
                                 .font(.body)
                                 .foregroundColor(.primary)
                             

@@ -14,6 +14,21 @@ enum RegionEnum: Int, CaseIterable, Identifiable, CustomStringConvertible, Hasha
     case theArctic
     case enbesa
     
+    var keyString: String {
+        switch self {
+        case .oldWorld:
+            return "oldWorld"
+        case .newWorld:
+            return "newWorld"
+        case .capeTrelawney:
+            return "capeTrelawney"
+        case .theArctic:
+            return "theArctic"
+        case .enbesa:
+            return "theArctic"
+        }
+    }
+    
     init(rawValue: Int) {
         switch rawValue {
         case 1: self = .oldWorld

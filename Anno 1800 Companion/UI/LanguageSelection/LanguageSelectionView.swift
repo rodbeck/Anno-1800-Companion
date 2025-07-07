@@ -16,7 +16,7 @@ struct LanguageSelectionView: View {
             Form {
                 Section(header: Text("Language Settings")) {
                     Toggle("Use System Language", isOn: $useSystemLanguage)
-                        .onChange(of: useSystemLanguage) { value in
+                        .onChange(of: useSystemLanguage) { oldValue, value in
                             if value {
                                 AppLanguageManager.shared.resetToSystemLanguage()
                                 selectedLanguage = AppLanguageManager.shared.systemLanguage
@@ -36,7 +36,7 @@ struct LanguageSelectionView: View {
                             }
                         }
                         .pickerStyle(DefaultPickerStyle())
-                        .onChange(of: selectedLanguage) { value in
+                        .onChange(of: selectedLanguage) { oldValue, value in
                             AppLanguageManager.shared.currentLanguage = value
                         }
                     }
