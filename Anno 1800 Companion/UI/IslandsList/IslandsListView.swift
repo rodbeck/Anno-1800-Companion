@@ -228,9 +228,6 @@ private extension IslandsListView {
     private func loadIslandsList(forceReload: Bool) {
         guard forceReload || islands.isEmpty else { return }
         
-        // Mettre à jour l'état
-        //islandsState = .isLoading
-        
         Task {
             do {
                 let loadedIslands = try await injected.interactors.islands.fetchIslandsList()
