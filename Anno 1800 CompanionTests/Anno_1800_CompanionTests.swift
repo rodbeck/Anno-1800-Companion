@@ -74,7 +74,7 @@ struct Anno_1800_CompanionTests {
     @Test func loadLanguageFiles() {
         let oldWorldVM = IslandDetailsView.ViewModel(island: .oldWorldExample)
         
-        let regions = oldWorldVM.localizedRegions
+        let regions = oldWorldVM.regions
         
         for region in regions.entries {
             print("\(region.key): \(region.value)")
