@@ -2,16 +2,16 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "shouldTranslate" : false
     },
     "%" : {
-
+      "shouldTranslate" : false
     },
     "%@" : {
-
+      "shouldTranslate" : false
     },
     "%lld" : {
-
+      "shouldTranslate" : false
     },
     "^[%lld %@](inflect: true)" : {
       "localizations" : {
@@ -21,7 +21,8 @@
             "value" : "^[%1$lld %2$@](inflect: true)"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "⚠️ There is an issue with local database" : {
       "localizations" : {
@@ -34,7 +35,7 @@
       }
     },
     "0" : {
-
+      "shouldTranslate" : false
     },
     "An Error Occured" : {
       "localizations" : {
@@ -186,16 +187,6 @@
         }
       }
     },
-    "Islands" : {
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Iles"
-          }
-        }
-      }
-    },
     "Loading islands..." : {
       "localizations" : {
         "fr" : {
@@ -302,6 +293,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechercher île…"
+          }
+        }
+      }
+    },
+    "Select an island to see the details..." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner une île pour en voir les détails…"
           }
         }
       }

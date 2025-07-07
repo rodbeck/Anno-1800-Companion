@@ -10,60 +10,72 @@ import SwiftUI
 
 struct IslandsListView: View {
     @State private(set) var viewModel: ViewModel = ViewModel()
+    @State private var selectedIsland: DBModel.Island?
     @State private var islands: [DBModel.Island] = []
     @State private(set) var islandsState: Loadable<Void>
     @State internal var searchText = ""
     @Environment(\.injected) private var injected: DIContainer
+    @State private var columnVisibility = NavigationSplitViewVisibility.all
     
     init(state: Loadable<Void> = .notRequested) {
         self._islandsState = .init(initialValue: state)
     }
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                // Background gradient moderne
-                LinearGradient(
-                    colors: [Color(.systemGroupedBackground), Color(.systemBackground)],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .ignoresSafeArea()
-                
-                self.content
+        //navigationView
+        content
+            .onAppear {
+                loadIslandsList(forceReload: false)
             }
-            .navigationTitle("Islands")
-            .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        viewModel.showingSheet.toggle()
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .frame(width: 36, height: 36)
-                            .background {
-                                Circle()
-                                    .fill(.blue.gradient)
-                                    .shadow(color: .blue.opacity(0.3), radius: 8, x: 0, y: 4)
-                            }
-                    }
-                }
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
-                        .fontWeight(.semibold)
-                }
-            }
+            .blur(radius: viewModel.showingSheet ? 3 : 0) // flou appliqué dynamiquement
+            .animation(.easeInOut(duration: 0.3), value: viewModel.showingSheet)
             .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
                 IslandDetailsView(island: DBModel.Island())
             }
-        }
-        .onAppear {
-            loadIslandsList(forceReload: false)
-        }
+        //        NavigationStack {
+        //            ZStack {
+        //                // Background gradient moderne
+        //                LinearGradient(
+        //                    colors: [Color(.systemGroupedBackground), Color(.systemBackground)],
+        //                    startPoint: .topLeading,
+        //                    endPoint: .bottomTrailing
+        //                )
+        //                .ignoresSafeArea()
+        //
+        //                self.content
+        //            }
+        //            .navigationTitle("Islands")
+        //            .navigationBarTitleDisplayMode(.large)
+        //            .toolbar {
+        //                ToolbarItem(placement: .topBarTrailing) {
+        //                    Button {
+        //                        viewModel.showingSheet.toggle()
+        //                    } label: {
+        //                        Image(systemName: "plus")
+        //                            .font(.title2)
+        //                            .fontWeight(.semibold)
+        //                            .foregroundColor(.white)
+        //                            .frame(width: 36, height: 36)
+        //                            .background {
+        //                                Circle()
+        //                                    .fill(.blue.gradient)
+        //                                    .shadow(color: .blue.opacity(0.3), radius: 8, x: 0, y: 4)
+        //                            }
+        //                    }
+        //                }
+        //
+        //                ToolbarItem(placement: .topBarLeading) {
+        //                    EditButton()
+        //                        .fontWeight(.semibold)
+        //                }
+        //            }
+        //            .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
+        //                IslandDetailsView(island: DBModel.Island())
+        //            }
+        //        }
+        //        .onAppear {
+        //            loadIslandsList(forceReload: false)
+        //        }
     }
     
     @ViewBuilder private var content: some View {
@@ -73,9 +85,89 @@ struct IslandsListView: View {
         case .isLoading:
             loadingView()
         case .loaded:
-            loadedView()
+            //loadedView()
+            loadedNavigationSplitView()
         case .failed(let error):
             failedView(error)
+        }
+    }
+}
+
+private extension IslandsListView {
+    private var navigationView: some View {
+        ZStack {
+            // Background gradient moderne
+            LinearGradient(
+                colors: [Color(.systemGroupedBackground), Color(.systemBackground)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            NavigationSplitView(columnVisibility: $columnVisibility) {
+                masterView
+            } detail: {
+                detailView
+            }
+            .navigationSplitViewStyle(.balanced)
+        }
+    }
+}
+
+private extension IslandsListView {
+    private var masterView: some View {
+        List(selection: $selectedIsland) {
+            ForEach(filteredIslands) { island in
+                NavigationLink(value: island) {
+                    IslandCell(island: island)
+                }
+            }
+            .onDelete(perform: delete)
+        }
+        .listStyle(.sidebar)
+        .searchable(text: $searchText, prompt: "Search islands...")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    viewModel.showingSheet.toggle()
+                } label: {
+                    Image(systemName: "plus")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(width: 36, height: 36)
+                        .background {
+                            Circle()
+                                .fill(.blue.gradient)
+                                .shadow(color: .blue.opacity(0.3), radius: 8, x: 0, y: 4)
+                        }
+                }
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                EditButton()
+                    .fontWeight(.semibold)
+            }
+        }
+    }
+}
+
+private extension IslandsListView {
+    private var detailView: some View {
+        Group {
+            if let island = selectedIsland {
+                IslandDetailsView(island: island)
+                    .id(UUID())
+            } else {
+                VStack(spacing: 24) {
+                    Image(systemName: "map")
+                        .font(.system(size: 64))
+                        .foregroundColor(.blue)
+                    Text("Select an island to see the details...")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+            }
         }
     }
 }
@@ -135,6 +227,25 @@ private extension IslandsListView {
 }
 
 //MARK: - Displaying Content
+
+@MainActor
+private extension IslandsListView {
+    @ViewBuilder
+    func loadedNavigationSplitView() -> some View {
+        if islands.isEmpty && !searchText.isEmpty {
+            emptySearchView()
+        } else if islands.isEmpty {
+            emptyStateView()
+        } else {
+            // Utiliser List directement sans ScrollView/LazyVStack
+            navigationView
+            .searchable(text: $searchText, prompt: "Search islands...")
+            .refreshable {
+                loadIslandsList(forceReload: true)
+            }
+        }
+    }
+}
 
 @MainActor
 private extension IslandsListView {
