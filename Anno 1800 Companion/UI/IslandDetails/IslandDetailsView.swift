@@ -68,12 +68,13 @@ struct IslandDetailsView: View {
                             .fontWeight(.semibold)
                     }
                 }
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Done") {
-                        dismiss()
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("Done") {
+                            dismiss()
+                        }
+                        .fontWeight(.semibold)
                     }
-                    .fontWeight(.semibold)
                 }
             }
             .alert("Delete Island", isPresented: $showingDeleteAlert) {
