@@ -1,0 +1,200 @@
+{
+  "fermiers": {
+    "basic": {
+      "Marché": "",
+      "Poisson": 0.025000002,
+      "Vêtements de travail": 0.03076926
+    },
+    "luxury": {
+      "Schnaps": 0.03333336,
+      "Taverne": ""
+    }
+  },
+  "ouvriers": {
+    "basic": {
+      "Marché": "",
+      "Poisson": 0.050000004,
+      "Vêtements de travail": 0.06153852,
+      "Saucisses": 0.02000004,
+      "Pain": 0.018181799999999998,
+      "Savon": 0.00833334,
+      "École": ""
+    },
+    "luxury": {
+      "Schnaps": 0.06666672,
+      "Taverne": "",
+      "Église": "",
+      "Bière": 0.0153846
+    }
+  },
+  "artisans": {
+    "basic": {
+      "Saucisses": 0.040000020000000004,
+      "Pain": 0.03636366,
+      "Savon": 0.01666668,
+      "École": "",
+      "Conserves": 0.0102564,
+      "Machines à coudre": 0.0285714,
+      "Manteaux de fourrure": 0.02666664,
+      "Université": ""
+    },
+    "luxury": {
+      "Église": "",
+      "Bière": 0.03076926,
+      "Théâtre de variétés": "",
+      "Rhum": 0.05714286
+    }
+  },
+  "ingénieurs": {
+    "basic": {
+      "Conserves": 0.0205128,
+      "Machines à coudre": 0.05714286,
+      "Manteaux de fourrure": 0.05333334,
+      "Université": "",
+      "Lunettes": 0.00888888,
+      "Électricité": "",
+      "Café": 0.047058840000000005,
+      "Ampoules": 0.01249998
+    },
+    "luxury": {
+      "Théâtre de variétés": "",
+      "Rhum": 0.11428572,
+      "Grands-bis": 0.02500002,
+      "Montres de poche": 0.00784314,
+      "Banque": ""
+    }
+  },
+  "investisseurs": {
+    "basic": {
+      "Lunettes": 0.01777776,
+      "Café": 0.09411762,
+      "Électricité": "",
+      "Ampoules": 0.02500002,
+      "Champagne": 0.02352,
+      "Cigares": 0.0222222,
+      "Chocolat": 0.05333334,
+      "Voitures à vapeur": 0.00666666
+    },
+    "luxury": {
+      "Grands-bis": 0.04999998,
+      "Montres de poche": 0.01568628,
+      "Banque": "",
+      "Club privé": "",
+      "Bijoux": 0.021052619999999998,
+      "Gramophones": 0.005262
+    }
+  },
+  "savants": {
+    "basic": {
+      "Université": "",
+      "Conserves": 0.06,
+      "Costumes sur mesure": 0.16499999999999998,
+      "Électricité": "",
+      "Ragoût de fruits de mer": 0.09,
+      "Téléphones": 0.09,
+      "Tour radio": ""
+    },
+    "luxury": {
+      "Bottes en cuir": 0.12,
+      "Rhum": 0.048,
+      "Chapeaux melons": 0.048,
+      "Thé à l'hibiscus": 0.105,
+      "Tapisseries": 0.075,
+      "Pipes en argile": 0.045,
+      "Gramophones": 0.042
+    }
+  },
+
+  "jornaleros": {
+    "basic": {
+      "Marché": "",
+      "Bananes plantains frites": 0.0285714,
+      "Ponchos": 0.02500002
+    },
+    "luxury": {
+      "Rhum": 0.0142857,
+      "Chapelle": ""
+    }
+  },
+  "obreros": {
+    "basic": {
+      "Marché": "",
+      "Bananes plantains frites": 0.05714286,
+      "Ponchos": 0.04999998,
+      "Tortillas": 0.0285714,
+      "Café": 0.01176474,
+      "Chapeaux melons": 0.02666664,
+      "Machines à coudre": 0.02500002
+    },
+    "luxury": {
+      "Rhum": 0.02857146,
+      "Chapelle": "",
+      "Arène de boxe": "",
+      "Bière": 0.02666664,
+      "Cigares": 0.0111111
+    }
+  },
+
+  "explorateurs": {
+    "basic": {
+      "Cantine": "",
+      "Pemmican": 0.012,
+      "Lampes à huile": 0.006
+    },
+    "luxury": {
+      "Radiateur": "",
+      "Sacs de couchage": 0.009,
+      "Schnaps": 0.015
+    }
+  },
+  "techniciens": {
+    "basic": {
+      "Cantine": "",
+      "Pemmican": 0.024,
+      "Lampes à huile": 0.012,
+      "Bureau de poste": "",
+      "Conserves": 0.012,
+      "Traîneaux à chiens": 0.018
+    },
+    "luxury": {
+      "Radiateur": "",
+      "Sacs de couchage": 0.018,
+      "Schnaps": 0.03,
+      "Parkas": 0.024,
+      "Café": 0.024
+    }
+  },
+
+  "bergers": {
+    "basic": {
+      "Marché": "",
+      "Lait de chèvre": 0.03,
+      "Parures": 0.015,
+      "Viande séchée": 0.021
+    },
+    "luxury": {
+      "Cour des musiciens": "",
+      "Thé à l'hibiscus": 0.012
+    }
+  },
+  "anciens": {
+    "basic": {
+      "Marché": "",
+      "Lait de chèvre": 0.06,
+      "Parures": 0.03,
+      "Viande séchée": 0.042,
+      "Céramiques": 0.024,
+      "Ragoût de fruits de mer": 0.0222,
+      "Manuscrits enluminés": 0.0108,
+      "Lanternes": 0.018
+    },
+    "luxury": {
+      "Cour des musiciens": "",
+      "Thé à l'hibiscus": 0.024,
+      "Tapisseries": 0.021,
+      "Pipes en argile": 0.009,
+      "Lunettes": 0.0072,
+      "Monastère": ""
+    }
+  }
+}

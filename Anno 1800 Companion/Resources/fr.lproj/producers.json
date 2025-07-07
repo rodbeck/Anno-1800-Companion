@@ -1,0 +1,2360 @@
+{
+  "Sawmill Old": {
+    "product": "Planches",
+    "building": "Scierie",
+    "img": "farmers/timber",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 100
+    },
+    "maintenance": {
+      "cash": 10,
+      "farmer": 10
+    }
+  },
+  "Lumberjack Hut Old": {
+    "product": "Bois",
+    "building": "Cabane de bûcheron",
+    "img": "farmers/wood",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 100
+    },
+    "maintenance": {
+      "cash": 10,
+      "farmer": 5
+    }
+  },
+  "Fishery": {
+    "product": "Poisson",
+    "building": "Pêcherie",
+    "img": "farmers/fish",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 100,
+      "wood": 2
+    },
+    "maintenance": {
+      "cash": 40,
+      "farmer": 25
+    }
+  },
+  "Schnapps Distillery": {
+    "product": "Schnaps",
+    "building": "Distillerie",
+    "img": "farmers/schnapps",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 100,
+      "wood": 2
+    },
+    "maintenance": {
+      "cash": 40,
+      "farmer": 50
+    }
+  },
+  "Potato Farm": {
+    "product": "Pommes de terre",
+    "building": "Exploitation de pommes de terre",
+    "img": "farmers/potato",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 100,
+      "wood": 2
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 20
+    }
+  },
+  "Framework Knitters": {
+    "product": "Vêtements de travail",
+    "building": "Filature",
+    "img": "farmers/work-clothes",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 100,
+      "wood": 2
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 50
+    }
+  },
+  "Sheep Farm": {
+    "product": "Laine",
+    "building": "Élevage de moutons",
+    "img": "farmers/wool",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 100,
+      "wood": 2
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 10
+    }
+  },
+  "Clay Pit Old": {
+    "product": "Argile",
+    "building": "Carrière d’argile",
+    "img": "workers/clay",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 4
+    },
+    "maintenance": {
+      "cash": 10,
+      "worker": 50
+    }
+  },
+  "Brick Factory Old": {
+    "product": "Briques",
+    "building": "Briqueterie",
+    "img": "workers/bricks",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 8
+    },
+    "maintenance": {
+      "cash": 20,
+      "worker": 25
+    }
+  },
+  "Pig Farm": {
+    "product": "Cochons",
+    "building": "Élevage de porcs",
+    "img": "workers/pigs",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 4
+    },
+    "maintenance": {
+      "cash": 40,
+      "worker": 30
+    }
+  },
+  "Slaughterhouse": {
+    "product": "Saucisses",
+    "building": "Boucherie",
+    "img": "workers/sausages",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5
+    },
+    "maintenance": {
+      "cash": 80,
+      "worker": 50
+    }
+  },
+  "Sailmakers Old": {
+    "product": "Voiles",
+    "building": "Voilerie",
+    "img": "workers/sails",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 8,
+      "brick": 10
+    },
+    "maintenance": {
+      "cash": 75,
+      "worker": 50
+    }
+  },
+  "Grain Farm": {
+    "product": "Céréales",
+    "building": "Ferme céréalière",
+    "img": "workers/grain",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 4
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 20
+    }
+  },
+  "Flour Mill": {
+    "product": "Farine",
+    "building": "Moulin",
+    "img": "workers/flour",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 10
+    }
+  },
+  "Bakery": {
+    "product": "Pain",
+    "building": "Boulangerie",
+    "img": "workers/bread",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5
+    },
+    "maintenance": {
+      "cash": 60,
+      "worker": 50
+    }
+  },
+  "Rendering Works": {
+    "product": "Suif",
+    "building": "Fonderie de suif",
+    "img": "workers/tallow",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5,
+      "steel": 4
+    },
+    "maintenance": {
+      "cash": 40,
+      "worker": 40
+    }
+  },
+  "Soap Factory": {
+    "product": "Savon",
+    "building": "Savonnerie",
+    "img": "workers/soap",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5,
+      "steel": 4
+    },
+    "maintenance": {
+      "cash": 50,
+      "worker": 50
+    }
+  },
+  "Iron Mine": {
+    "product": "Minerai de fer",
+    "building": "Mine de fer",
+    "img": "workers/iron",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5
+    },
+    "maintenance": {
+      "cash": 50,
+      "worker": 50
+    }
+  },
+  "Charcoal Kiln": {
+    "product": "Charbon",
+    "building": "Charbonnière",
+    "img": "workers/charcoal-kiln",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5
+    },
+    "maintenance": {
+      "cash": 20,
+      "worker": 10
+    }
+  },
+  "Furnace": {
+    "product": "Acier",
+    "building": "Fourneau",
+    "img": "workers/steel",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5
+    },
+    "maintenance": {
+      "cash": 20,
+      "worker": 100
+    }
+  },
+  "Steelworks": {
+    "product": "Poutres en acier",
+    "building": "Aciérie",
+    "img": "workers/steel-beams",
+    "regionID": 1,
+    "productionTime": 45,
+    "construction": {
+      "cash": 500,
+      "wood": 8,
+      "brick": 10
+    },
+    "maintenance": {
+      "cash": 100,
+      "worker": 200
+    }
+  },
+  "Weapon Factory": {
+    "product": "Armes",
+    "building": "Usine d’armements",
+    "img": "workers/weapons",
+    "regionID": 1,
+    "productionTime": 90,
+    "construction": {
+      "cash": 500,
+      "wood": 8,
+      "brick": 10,
+      "steel": 8
+    },
+    "maintenance": {
+      "cash": 120,
+      "worker": 50
+    }
+  },
+  "Malthouse": {
+    "product": "Malt",
+    "building": "Malterie",
+    "img": "workers/malt",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5,
+      "steel": 4
+    },
+    "maintenance": {
+      "cash": 150,
+      "worker": 25
+    }
+  },
+  "Hop Farm": {
+    "product": "Houblon",
+    "building": "Houblonnière",
+    "img": "workers/hops",
+    "regionID": 1,
+    "productionTime": 90,
+    "construction": {
+      "cash": 500,
+      "wood": 4
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 20
+    }
+  },
+  "Brewery": {
+    "product": "Bière",
+    "building": "Brasserie",
+    "img": "workers/beer",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5,
+      "steel": 4
+    },
+    "maintenance": {
+      "cash": 200,
+      "worker": 75
+    }
+  },
+  "Sand Mine": {
+    "product": "Sable de quartz",
+    "building": "Mine de solice",
+    "img": "artisans/quartz-sand",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2000,
+      "wood": 6,
+      "brick": 5
+    },
+    "maintenance": {
+      "cash": 120,
+      "worker": 25
+    }
+  },
+  "Glassmakers": {
+    "product": "Verre",
+    "building": "Verrerie",
+    "img": "artisans/glass",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2000,
+      "wood": 6,
+      "brick": 10,
+      "steel": 8
+    },
+    "maintenance": {
+      "cash": 100,
+      "artisan": 100
+    }
+  },
+  "Window Makers": {
+    "product": "Fenêtres",
+    "building": "Vitrerie",
+    "img": "artisans/windows",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2000,
+      "wood": 12,
+      "brick": 20,
+      "steel": 16
+    },
+    "maintenance": {
+      "cash": 100,
+      "artisan": 100
+    }
+  },
+  "Cattle Farm Old": {
+    "product": "Bœuf",
+    "building": "Élevage de gros bétail",
+    "img": "artisans/beef",
+    "regionID": 1,
+    "productionTime": 120,
+    "construction": {
+      "cash": 2000,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 50,
+      "artisan": 20
+    }
+  },
+  "Cattle Farm": {
+    "product": "Bœuf",
+    "building": "Élevage de gros bétail",
+    "img": "artisans/beef",
+    "regionID": 2,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wood": 8
+    },
+    "maintenance": {
+      "cash": 20,
+      "jornaleros": 20
+    }
+  },
+  "Red Pepper farm": {
+    "product": "Poivrons rouges",
+    "building": "Ferme de poivrons rouges",
+    "img": "artisans/red-peppers",
+    "regionID": 1,
+    "productionTime": 120,
+    "construction": {
+      "cash": 2000,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 10
+    }
+  },
+  "Artisanal Kitchen": {
+    "product": "Goulash",
+    "building": "Cuisine artisanale",
+    "img": "artisans/goulash",
+    "regionID": 1,
+    "productionTime": 120,
+    "construction": {
+      "cash": 2000,
+      "wood": 6,
+      "brick": 10,
+      "steel": 8,
+      "window": 8
+    },
+    "maintenance": {
+      "cash": 100,
+      "artisan": 75
+    }
+  },
+  "Cannery": {
+    "product": "Conserves",
+    "building": "Conserverie",
+    "img": "artisans/canned-food",
+    "regionID": 1,
+    "productionTime": 90,
+    "construction": {
+      "cash": 2000,
+      "wood": 6,
+      "brick": 10,
+      "steel": 8,
+      "window": 8
+    },
+    "maintenance": {
+      "cash": 100,
+      "artisan": 75
+    }
+  },
+  "Coal Mine": {
+    "product": "Charbon",
+    "building": "Mine de charbon",
+    "img": "artisans/coal",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 5
+    },
+    "maintenance": {
+      "cash": 50,
+      "worker": 50
+    }
+  },
+  "Sewing Machine Factory": {
+    "product": "Machines à coudre",
+    "building": "Usine de machines à coudre",
+    "img": "artisans/sewing-machines",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6,
+      "brick": 10,
+      "steel": 8,
+      "window": 8
+    },
+    "maintenance": {
+      "cash": 500,
+      "artisan": 150
+    }
+  },
+  "Sugar Cane Plantation": {
+    "product": "Canne à sucre",
+    "building": "Plantatio de canne à sucre",
+    "img": "artisans/sugar-cane",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 5,
+      "jornaleros": 10
+    }
+  },
+  "Rum Distillery": {
+    "product": "Rhum",
+    "building": "Rhumerie",
+    "img": "artisans/rum",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 30,
+      "jornaleros": 50
+    }
+  },
+  "Hunting Cabin": {
+    "product": "Fourrures",
+    "building": "Cabane de chasse",
+    "img": "artisans/furs",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2000,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 10
+    }
+  },
+  "Fur Dealer": {
+    "product": "Manteaux de fourrure",
+    "building": "Pelleterie",
+    "img": "artisans/fur-coats",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2000,
+      "wood": 6,
+      "brick": 10,
+      "steel": 8,
+      "window": 5
+    },
+    "maintenance": {
+      "cash": 500,
+      "artisan": 200
+    }
+  },
+  "Limestone Quarry": {
+    "product": "Ciment",
+    "building": "Carrière de calcaire",
+    "img": "engineers/cement",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10
+    },
+    "maintenance": {
+      "cash": 250,
+      "worker": 25
+    }
+  },
+  "Concrete Factory": {
+    "product": "Béton renforcé",
+    "building": "Cimenterie",
+    "img": "engineers/reinforced-concrete",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 10000,
+      "wood": 20,
+      "brick": 30,
+      "steel": 24,
+      "window": 25
+    },
+    "maintenance": {
+      "cash": 500,
+      "engineer": 125
+    }
+  },
+  "Oil Refinery Old": {
+    "product": "Pétrole",
+    "building": "rafinerie de pétrole",
+    "img": "engineers/oil",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 250,
+      "worker": 100
+    }
+  },
+  "Oil Well Old": {
+    "product": "Pétrole",
+    "building": "Puits de pétrole",
+    "img": "engineers/oil-well.png",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 4000,
+      "wood": 6,
+      "brick": 10,
+      "steel": 8
+    },
+    "maintenance": {
+      "investor": 0
+    }
+  },
+  "Oil Power Plant": {
+    "product": "Électricité",
+    "building": "Centrale pétrolière",
+    "img": "engineers/oil-power-plant",
+    "regionID": 1,
+    "productionTime": -1,
+    "construction": {
+      "cash": 25000,
+      "wood": 30,
+      "brick": 50,
+      "steel": 40,
+      "window": 30,
+      "concrete": 25
+    },
+    "maintenance": {
+      "cash": 400,
+      "engineer": 150
+    }
+  },
+  "Coal Power Plant": {
+    "product": "Électricité",
+    "building": "Coal Power Plant",
+    "img": "engineers/coal-power-plant",
+    "regionID": 1,
+    "productionTime": -1,
+    "construction": {
+      "cash": 25000,
+      "wood": 30,
+      "brick": 50,
+      "steel": 40,
+      "window": 30,
+      "concrete": 25
+    },
+    "maintenance": {
+      "cash": 150,
+      "engineer": 150
+    }
+  },
+  "Zinc Mine": {
+    "product": "Zinc",
+    "building": "Mine de zinc",
+    "img": "engineers/zinc",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 250,
+      "worker": 25
+    }
+  },
+  "Copper Mine": {
+    "product": "Cuivre",
+    "building": "Mine de cuivre",
+    "img": "engineers/copper",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 250,
+      "worker": 25
+    }
+  },
+  "Brass Smeltery": {
+    "product": "Laiton",
+    "building": "Fonderie de laiton",
+    "img": "engineers/brass",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 250,
+      "worker": 25
+    }
+  },
+  "Spectacle Factory": {
+    "product": "Lunettes",
+    "building": "Usine de lunettes",
+    "img": "engineers/glasses",
+    "regionID": 1,
+    "productionTime": 90,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 1000,
+      "engineer": 100
+    }
+  },
+  "Motor Assembly Line": {
+    "product": "Moteurs à vapeur",
+    "building": "Usine de moteurs",
+    "img": "engineers/steam-motors",
+    "regionID": 1,
+    "productionTime": 90,
+    "construction": {
+      "cash": 10000,
+      "wood": 16,
+      "brick": 30,
+      "steel": 24,
+      "window": 20,
+      "concrete": 20
+    },
+    "maintenance": {
+      "cash": 5500,
+      "engineer": 250
+    }
+  },
+  "Bicycle Factory": {
+    "product": "Grands-bis",
+    "building": "Usine de grands-bis",
+    "img": "engineers/high-wheeler",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 1625,
+      "engineer": 150
+    }
+  },
+  "Gold Mine": {
+    "product": "Minerai d'or",
+    "building": "Mine d'or",
+    "img": "engineers/gold-ore",
+    "regionID": 2,
+    "productionTime": 150,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 250,
+      "obreros": 100
+    }
+  },
+  "Goldsmiths": {
+    "product": "Or",
+    "building": "Orfèvrerie",
+    "img": "engineers/gold",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 750,
+      "engineer": 125
+    }
+  },
+  "Clockmakers": {
+    "product": "Montres à gousset",
+    "building": "Horlogerie",
+    "img": "engineers/pocket-watch",
+    "regionID": 1,
+    "productionTime": 90,
+    "construction": {
+      "cash": 10000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 1700,
+      "engineer": 150
+    }
+  },
+  "Filament Factory": {
+    "product": "Filaments",
+    "building": "Usine de filaments",
+    "img": "engineers/carbon-filament",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 5000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 750,
+      "engineer": 150
+    }
+  },
+  "Light Bulb Factory": {
+    "product": "Ampoules",
+    "building": "Usine d'ampoules",
+    "img": "engineers/light-bulb",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 10000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 1250,
+      "engineer": 150
+    }
+  },
+  "Saltpeter Works": {
+    "product": "Salpêtre",
+    "building": "Salpêtrière",
+    "img": "engineers/saltpeter",
+    "regionID": 1,
+    "productionTime": 120,
+    "construction": {
+      "cash": 10000,
+      "wood": 10,
+      "brick": 20,
+      "steel": 16
+    },
+    "maintenance": {
+      "cash": 500,
+      "worker": 25
+    }
+  },
+  "Dynamite Factory": {
+    "product": "Dynamite",
+    "building": "Usine de dynamite",
+    "img": "engineers/dynamite",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 10000,
+      "wood": 10,
+      "brick": 20,
+      "steel": 16,
+      "window": 15,
+      "concrete": 15
+    },
+    "maintenance": {
+      "cash": 1000,
+      "engineer": 250
+    }
+  },
+  "Heavy Weapons Factory": {
+    "product": "Armes lourdes",
+    "building": "Usine d'armements lourds",
+    "img": "engineers/advanced-weapons",
+    "regionID": 1,
+    "productionTime": 120,
+    "construction": {
+      "cash": 25000,
+      "wood": 20,
+      "brick": 40,
+      "steel": 32,
+      "window": 30,
+      "concrete": 30
+    },
+    "maintenance": {
+      "cash": 5000,
+      "engineer": 250
+    }
+  },
+  "Vineyard": {
+    "product": "Raisin",
+    "building": "Vignoble",
+    "img": "investors/grapes",
+    "regionID": 1,
+    "productionTime": 120,
+    "construction": {
+      "cash": 10000,
+      "wood": 10
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 10
+    }
+  },
+  "Champagne Cellar": {
+    "product": "Champagne",
+    "building": "Cave à Champagne",
+    "img": "investors/champagne",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 25000,
+      "wood": 10,
+      "brick": 20,
+      "steel": 16,
+      "window": 15,
+      "concrete": 15
+    },
+    "maintenance": {
+      "cash": 1000,
+      "artisan": 150
+    }
+  },
+  "Jewellers": {
+    "product": "Bijoux",
+    "building": "Joaillerie",
+    "img": "investors/jewelry",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 25000,
+      "wood": 10,
+      "brick": 20,
+      "steel": 16,
+      "window": 15,
+      "concrete": 15
+    },
+    "maintenance": {
+      "cash": 8500,
+      "engineer": 150
+    }
+  },
+  "Marquetry Workshop Old": {
+    "product": "Placages de bois",
+    "building": "Atelier de marqueterie",
+    "img": "investors/wood-veneers",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 10000,
+      "wood": 10,
+      "brick": 20,
+      "steel": 16,
+      "window": 15,
+      "concrete": 15
+    },
+    "maintenance": {
+      "cash": 750,
+      "engineer": 150
+    }
+  },
+  "Gramophone Factory": {
+    "product": "Gramophones",
+    "building": "Usine de gramophones",
+    "img": "investors/gramophone",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 25000,
+      "wood": 10,
+      "brick": 20,
+      "steel": 16,
+      "window": 15,
+      "concrete": 15
+    },
+    "maintenance": {
+      "cash": 6250,
+      "engineer": 150
+    }
+  },
+  "Coachmakers": {
+    "product": "Châssis",
+    "building": "Carrossier",
+    "img": "investors/chassis",
+    "regionID": 1,
+    "productionTime": 120,
+    "construction": {
+      "cash": 10000,
+      "wood": 10,
+      "brick": 20,
+      "steel": 16,
+      "window": 15,
+      "concrete": 15
+    },
+    "maintenance": {
+      "cash": 1000,
+      "engineer": 150
+    }
+  },
+  "Cab Assembly Line": {
+    "product": "Automobiles à vapeur",
+    "building": "Usine d'automobiles à vapeur",
+    "img": "investors/steam-carriages",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 25000,
+      "wood": 20,
+      "brick": 40,
+      "steel": 32,
+      "window": 30,
+      "concrete": 30
+    },
+    "maintenance": {
+      "cash": 10000,
+      "engineer": 500
+    }
+  },
+  "Lumberjack Hut": {
+    "product": "Bois",
+    "building": "Cabane de bûcheron",
+    "img": "jornaleros/wood",
+    "regionID": 2,
+    "productionTime": 15,
+    "construction": {
+      "cash": 500
+    },
+    "maintenance": {
+      "cash": 10,
+      "jornaleros": 10
+    }
+  },
+  "Sawmill": {
+    "product": "Planches",
+    "building": "Scierie",
+    "img": "jornaleros/timber",
+    "regionID": 2,
+    "productionTime": 15,
+    "construction": {
+      "cash": 500
+    },
+    "maintenance": {
+      "cash": 10,
+      "jornaleros": 20
+    }
+  },
+  "Fish Oil Factory": {
+    "product": "Huile de poisson",
+    "building": "Fabrique d'huile de poisson",
+    "img": "jornaleros/fish-oil",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 5,
+      "jornaleros": 15
+    }
+  },
+  "Plantain Plantation": {
+    "product": "Plantains",
+    "building": "Plantation de bananes",
+    "img": "jornaleros/plantains",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 5,
+      "jornaleros": 10
+    }
+  },
+  "Fried Plantain Kitchen": {
+    "product": "Plantains frits",
+    "building": "Cuisine de plantains frits",
+    "img": "jornaleros/fried-plantains",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 2
+    },
+    "maintenance": {
+      "cash": 15,
+      "jornaleros": 25
+    }
+  },
+  "Pearl Farm": {
+    "product": "Perles",
+    "building": "Ferme perlière",
+    "img": "jornaleros/pearls",
+    "regionID": 2,
+    "productionTime": 90,
+    "construction": {
+      "cash": 2500,
+      "wood": 10
+    },
+    "maintenance": {
+      "cash": 25,
+      "jornaleros": 50
+    }
+  },
+  "Cotton Plantation": {
+    "product": "Coton",
+    "building": "Plantation de coton",
+    "img": "jornaleros/cotton",
+    "regionID": 2,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 5,
+      "jornaleros": 10
+    }
+  },
+  "Cotton Mill": {
+    "product": "Tissu de coton",
+    "building": "Filature de coton",
+    "img": "jornaleros/cotton-fabric",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 10,
+      "jornaleros": 10
+    }
+  },
+  "Sailmakers": {
+    "product": "Voiles",
+    "building": "Voilerie",
+    "img": "jornaleros/sails",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 8
+    },
+    "maintenance": {
+      "cash": 15,
+      "jornaleros": 20
+    }
+  },
+  "Alpaca Farm": {
+    "product": "Laine d'alpagas",
+    "building": "Élevage d'alpagas",
+    "img": "jornaleros/alpaca-wool",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 5,
+      "jornaleros": 10
+    }
+  },
+  "Poncho Darner": {
+    "product": "Ponchos",
+    "building": "Fabricant ponchos",
+    "img": "jornaleros/poncho",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 15,
+      "jornaleros": 30
+    }
+  },
+  "Caoutchouc Plantation": {
+    "product": "Caoutchouc",
+    "building": "Plantation de latex",
+    "img": "jornaleros/caoutchouc",
+    "regionID": 2,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wood": 8
+    },
+    "maintenance": {
+      "cash": 25,
+      "jornaleros": 10
+    }
+  },
+  "Clay Pit": {
+    "product": "Argile",
+    "building": "Carrière d’argile",
+    "img": "obreros/clay",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2500,
+      "wood": 4
+    },
+    "maintenance": {
+      "cash": 10,
+      "obreros": 100
+    }
+  },
+  "Brick Factory": {
+    "product": "Briques",
+    "building": "Briqueterie",
+    "img": "obreros/bricks",
+    "regionID": 2,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wood": 8
+    },
+    "maintenance": {
+      "cash": 20,
+      "obreros": 50
+    }
+  },
+  "Corn Farm": {
+    "product": "Maïs",
+    "building": "Exploitation de maïs",
+    "img": "obreros/corn",
+    "regionID": 2,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wood": 3
+    },
+    "maintenance": {
+      "cash": 25,
+      "jornaleros": 10
+    }
+  },
+  "Tortilla Maker": {
+    "product": "Tortillas",
+    "building": "Fabricant de tortillas",
+    "img": "obreros/tortilla",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2500,
+      "wood": 3,
+      "brick": 2
+    },
+    "maintenance": {
+      "cash": 100,
+      "obreros": 100
+    }
+  },
+  "Coffee Plantation": {
+    "product": "Grains de café",
+    "building": "Plantation de café",
+    "img": "obreros/coffee-beans",
+    "regionID": 2,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wood": 5
+    },
+    "maintenance": {
+      "cash": 25,
+      "jornaleros": 10
+    }
+  },
+  "Coffee Roaster": {
+    "product": "Café",
+    "building": "Brûlerie de café",
+    "img": "obreros/coffee",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2500,
+      "wood": 5,
+      "brick": 3
+    },
+    "maintenance": {
+      "cash": 150,
+      "obreros": 150
+    }
+  },
+  "Felt Producer": {
+    "product": "Feutre",
+    "building": "Producteur de feutre",
+    "img": "obreros/felt",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2500,
+      "wood": 3,
+      "brick": 2
+    },
+    "maintenance": {
+      "cash": 10,
+      "jornaleros": 10
+    }
+  },
+  "Bombin Weaver": {
+    "product": "Bombín",
+    "building": "Fabricant de chapeaux melon",
+    "img": "obreros/bowler-hats",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2500,
+      "wood": 3,
+      "brick": 2
+    },
+    "maintenance": {
+      "cash": 50,
+      "obreros": 20
+    }
+  },
+  "Oil Refinery": {
+    "product": "Pétrole",
+    "building": "Raffinerie de pétrole",
+    "img": "obreros/oil",
+    "regionID": 2,
+    "productionTime": 15,
+    "construction": {
+      "cash": 2500,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 250,
+      "obreros": 75
+    }
+  },
+  "Oil Storage": {
+    "product": "Dépôt de pétrole",
+    "building": "Réservoir de pétrole",
+    "img": "obreros/oil-storage",
+    "regionID": 2,
+    "productionTime": 0,
+    "construction": {
+      "cash": 2500,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 50
+    }
+  },
+  "Small Oil Harbour": {
+    "product": "Dépôt de pétrole",
+    "building": "Petit port pétrolier",
+    "img": "obreros/oil-harbour",
+    "regionID": 2,
+    "productionTime": 0,
+    "construction": {
+      "cash": 10000,
+      "wood": 20,
+      "brick": 25,
+      "steel": 20,
+      "window": 15,
+      "concrete": 15
+    },
+    "maintenance": {
+      "cash": 100
+    }
+  },
+  "Tobacco Plantation": {
+    "product": "Tabas",
+    "building": "Plantation de tabac",
+    "img": "obreros/tobacco",
+    "regionID": 2,
+    "productionTime": 120,
+    "construction": {
+      "cash": 2500,
+      "wood": 10
+    },
+    "maintenance": {
+      "cash": 25,
+      "jornaleros": 10
+    }
+  },
+  "Cigar Factory": {
+    "product": "Cigares",
+    "building": "Usine de cigares",
+    "img": "obreros/cigars",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2500,
+      "wood": 10,
+      "brick": 20
+    },
+    "maintenance": {
+      "cash": 250,
+      "obreros": 175
+    }
+  },
+  "Marquetry Workshop": {
+    "product": "Placages de bois",
+    "building": "Atelier de marqueterie",
+    "img": "obreros/wood-veneers",
+    "regionID": 2,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wood": 10,
+      "brick": 20
+    },
+    "maintenance": {
+      "cash": 100,
+      "obreros": 100
+    }
+  },
+  "Cocoa Plantation": {
+    "product": "Cacao",
+    "building": "Plantation de cacao",
+    "img": "obreros/cocoa",
+    "regionID": 2,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 5,
+      "jornaleros": 10
+    }
+  },
+  "Sugar Refinery": {
+    "product": "Sucre",
+    "building": "Raffinerie de sucre",
+    "img": "obreros/chocolate",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 10,
+      "obreros": 50
+    }
+  },
+  "Chocolate Factory": {
+    "product": "Chocolat",
+    "building": "Chocolaterie",
+    "img": "obreros/chocolate",
+    "regionID": 2,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 6
+    },
+    "maintenance": {
+      "cash": 50,
+      "obreros": 100
+    }
+  },
+  "Bootmakers": {
+    "product": "Bottes en cuir",
+    "building": "Bottier",
+    "img": "scholars/leather-shoes",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 4000,
+      "wood": 6,
+      "brick": 10,
+      "steel": 8,
+      "window": 5
+    },
+    "maintenance": {
+      "cash": 350,
+      "artisan": 150
+    }
+  },
+  "Tailor’s Shop": {
+    "product": "Vêtements de couturier",
+    "building": "Atelier de tailleur",
+    "img": "scholars/suits",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 9000,
+      "wood": 6,
+      "brick": 10,
+      "steel": 8,
+      "window": 8
+    },
+    "maintenance": {
+      "cash": 1200,
+      "artisan": 150
+    }
+  },
+  "Telephone Manufacturer": {
+    "product": "Téléphones",
+    "building": "Fabricant de téléphones",
+    "img": "scholars/telephones",
+    "regionID": 1,
+    "productionTime": 45,
+    "construction": {
+      "cash": 38000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 1200,
+      "engineer": 150
+    }
+  },
+  "Advanced Coffee Roaster": {
+    "product": "Café",
+    "building": "Brûlerie de café avancée",
+    "img": "scholars/coffee",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 12000,
+      "wood": 20,
+      "brick": 10,
+      "steel": 20,
+      "window": 5,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 3500,
+      "engineer": 150
+    }
+  },
+  "Advanced Rum Distillery": {
+    "product": "Rhum",
+    "building": "Rhumerie avancée",
+    "img": "scholars/rum",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 12000,
+      "wood": 30,
+      "brick": 10,
+      "steel": 30,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 3000,
+      "engineer": 130
+    }
+  },
+  "Advanced Cotton Mill": {
+    "product": "Tissu de coton",
+    "building": "Filature de coton avancée",
+    "img": "scholars/cotton-fabric",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 12000,
+      "wood": 45,
+      "brick": 30,
+      "steel": 10,
+      "window": 10,
+      "concrete": 5
+    },
+    "maintenance": {
+      "cash": 3300,
+      "engineer": 140
+    }
+  },
+  "Sawmill Arctic": {
+    "product": "Planches",
+    "building": "Scierie",
+    "img": "explorers/timber",
+    "regionID": 4,
+    "productionTime": 15,
+    "construction": {
+      "cash": 100
+    },
+    "maintenance": {
+      "cash": 20,
+      "explorer": 10
+    }
+  },
+  "Lumberjack Hut Arctic": {
+    "product": "Bois",
+    "building": "Cabane de bûcheron",
+    "img": "jornaleros/wood",
+    "regionID": 4,
+    "productionTime": 15,
+    "construction": {
+      "cash": 100
+    },
+    "maintenance": {
+      "cash": 20,
+      "explorer": 10
+    }
+  },
+  "Charcoal Kiln Arctic": {
+    "product": "Charbon",
+    "building": "Charbonnière",
+    "img": "explorers/charcoal-kiln",
+    "regionID": 4,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wood": 2
+    },
+    "maintenance": {
+      "cash": 20,
+      "explorer": 10
+    }
+  },
+  "Whaling Station": {
+    "product": "Huile de baleine",
+    "building": "Pêcherie de baleines",
+    "img": "explorers/whaling-station",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 200,
+      "wood": 5
+    },
+    "maintenance": {
+      "cash": 40,
+      "explorer": 30
+    }
+  },
+  "Caribou Hunting Cabin": {
+    "product": "Viande de caribou",
+    "building": "Cabane de chasseur de caribous",
+    "img": "explorers/caribou-hunting-cabin",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 200,
+      "wood": 2
+    },
+    "maintenance": {
+      "cash": 40
+    }
+  },
+  "Pemmican Cookhouse": {
+    "product": "Pemmican",
+    "building": "Usine de pemmican",
+    "img": "explorers/pemmican-cookhouse",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 1000,
+      "wood": 5
+    },
+    "maintenance": {
+      "cash": 60,
+      "explorer": 30
+    }
+  },
+  "Seal Hunting Docks": {
+    "product": "Peau de phoque",
+    "building": "Pêcherie de phoques",
+    "img": "explorers/seal-hunting-docks",
+    "regionID": 4,
+    "productionTime": 30,
+    "construction": {
+      "cash": 200,
+      "wood": 5
+    },
+    "maintenance": {
+      "cash": 50,
+      "explorer": 20
+    }
+  },
+  "Goose Farm": {
+    "product": "Plumes d'oie",
+    "building": "Élevage d'oies",
+    "img": "explorers/goose-farm",
+    "regionID": 4,
+    "productionTime": 120,
+    "construction": {
+      "cash": 200,
+      "wood": 10
+    },
+    "maintenance": {
+      "cash": 70,
+      "explorer": 35
+    }
+  },
+  "Sleeping Bag Factory": {
+    "product": "Sacs de couchage",
+    "building": "Usine de sacs de couchage",
+    "img": "explorers/sleeping-bag-factory",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 1500,
+      "wood": 15
+    },
+    "maintenance": {
+      "cash": 120,
+      "explorer": 50
+    }
+  },
+  "Oil Lamps Factory": {
+    "product": "Lampes à huile",
+    "building": "Usine de lampes à huile",
+    "img": "explorers/oil-lamp-factory",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2000,
+      "wood": 15
+    },
+    "maintenance": {
+      "cash": 200,
+      "explorer": 70
+    }
+  },
+  "Bear Hunting Cabin": {
+    "product": "Peau d'ours",
+    "building": "cabane de chasseur d'ours",
+    "img": "technicians/bear-hunting-cabin",
+    "regionID": 4,
+    "productionTime": 90,
+    "construction": {
+      "cash": 4000,
+      "wood": 10,
+      "steel": 5
+    },
+    "maintenance": {
+      "cash": 20,
+      "explorer": 10
+    }
+  },
+  "Parka Factory": {
+    "product": "Parkas",
+    "building": "Usine de parkas",
+    "img": "technicians/parka-factory",
+    "regionID": 4,
+    "productionTime": 90,
+    "construction": {
+      "cash": 4000,
+      "wood": 10,
+      "steel": 5
+    },
+    "maintenance": {
+      "cash": 70,
+      "technicians": 35
+    }
+  },
+  "Pristine Hunting Cabin": {
+    "product": "Fourrures",
+    "building": "cabane de chasse supérieure",
+    "img": "technicians/furs",
+    "regionID": 4,
+    "productionTime": 15,
+    "construction": {
+      "cash": 4000,
+      "wood": 10,
+      "steel": 5
+    },
+    "maintenance": {
+      "cash": 40,
+      "explorer": 30
+    }
+  },
+  "Husky Farm": {
+    "product": "Huskies",
+    "building": "Élevage de huskies",
+    "img": "technicians/husky-farm",
+    "regionID": 4,
+    "productionTime": 120,
+    "construction": {
+      "cash": 4000,
+      "wood": 10,
+      "steel": 5
+    },
+    "maintenance": {
+      "cash": 70,
+      "technicians": 35
+    }
+  },
+  "Sled Frame Factory": {
+    "product": "Traîneaux",
+    "building": "Usine de châssis pour traîneaux",
+    "img": "technicians/sled-frame-factory",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 4000,
+      "wood": 10,
+      "steel": 5
+    },
+    "maintenance": {
+      "cash": 70,
+      "technicians": 35
+    }
+  },
+  "Husky Sled Factory": {
+    "product": "Traîneaux à huskies",
+    "building": "Usine de traîneaux à huskies",
+    "img": "technicians/husky-sled-factory",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 4000,
+      "wood": 10,
+      "steel": 5
+    },
+    "maintenance": {
+      "cash": 70,
+      "technicians": 35
+    }
+  },
+  "Deep Gold Mine": {
+    "product": "Minerai d'or",
+    "building": "Mine d'or profonde",
+    "img": "technicians/gold-ore",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 5000,
+      "wood": 20,
+      "steel": 5
+    },
+    "maintenance": {
+      "cash": 400,
+      "technicians": 100
+    }
+  },
+  "Wanza Woodcutter": {
+    "product": "Bois de wanza",
+    "building": "Bûcheron de wanza",
+    "img": "shepherds/wansa-wood",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 500
+    },
+    "maintenance": {
+      "cash": 15,
+      "shepherds": 15
+    }
+  },
+  "Goat Farm": {
+    "product": "Lait de chèvres",
+    "building": "Élevage de chèvres",
+    "img": "shepherds/goat-milk",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wanza_timber": 5
+    },
+    "maintenance": {
+      "cash": 5,
+      "shepherds": 30
+    }
+  },
+  "Linseed Farm": {
+    "product": "Graines de lin",
+    "building": "Ferme de lin",
+    "img": "shepherds/linen-farm",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wanza_timber": 2
+    },
+    "maintenance": {
+      "cash": 10,
+      "shepherds": 5
+    }
+  },
+  "Linen Mill": {
+    "product": "Lin",
+    "building": "Moulin à lin",
+    "img": "shepherds/linen-fabric",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wanza_timber": 6
+    },
+    "maintenance": {
+      "cash": 20,
+      "shepherds": 25
+    }
+  },
+  "Embroiderer": {
+    "product": "Beaux habits",
+    "building": "Atelier de broderie",
+    "img": "shepherds/traditional-clothing",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 1250,
+      "wanza_timber": 8
+    },
+    "maintenance": {
+      "cash": 20,
+      "shepherds": 40
+    }
+  },
+  "Sanga Farm": {
+    "product": "Bœf sanga",
+    "building": "Élevage de sangas",
+    "img": "shepherds/watusi",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 750,
+      "wanza_timber": 4
+    },
+    "maintenance": {
+      "cash": 10,
+      "shepherds": 20
+    }
+  },
+  "Salt Works": {
+    "product": "Sel",
+    "building": "Saline",
+    "img": "shepherds/salt",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 750,
+      "wanza_timber": 8
+    },
+    "maintenance": {
+      "cash": 15,
+      "shepherds": 15
+    }
+  },
+  "Dry-House": {
+    "product": "Viande séchée",
+    "building": "Séchoir",
+    "img": "shepherds/dried-meat",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 750,
+      "wanza_timber": 6
+    },
+    "maintenance": {
+      "cash": 25,
+      "shepherds": 50
+    }
+  },
+  "Hibiscus Farm": {
+    "product": "Pétales d'hibiscus",
+    "building": "Ferme d'hibiscus",
+    "img": "shepherds/hibiscus-farm",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 1250,
+      "wanza_timber": 6
+    },
+    "maintenance": {
+      "cash": 15,
+      "shepherds": 15
+    }
+  },
+  "Tea Spicer": {
+    "product": "Thé d'hibiscus",
+    "building": "Maison de thé",
+    "img": "shepherds/hibiscus-tea",
+    "regionID": 5,
+    "productionTime": 90,
+    "construction": {
+      "cash": 2500,
+      "wanza_timber": 10
+    },
+    "maintenance": {
+      "cash": 60,
+      "shepherds": 35
+    }
+  },
+  "Clay Harvester": {
+    "product": "Argile",
+    "building": "Collecteur d'argile",
+    "img": "elders/clay",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 2500,
+      "wanza_timber": 6
+    },
+    "maintenance": {
+      "cash": 20,
+      "shepherds": 35
+    }
+  },
+  "Teff Farm": {
+    "product": "Teff",
+    "building": "Ferme de teff",
+    "img": "elders/teff-grass",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 1500,
+      "wanza_timber": 5
+    },
+    "maintenance": {
+      "cash": 20,
+      "shepherds": 20
+    }
+  },
+  "Brick Dry-House": {
+    "product": "Briques de boue",
+    "building": "Séchoir à briques",
+    "img": "elders/mud-bricks",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wanza_timber": 8
+    },
+    "maintenance": {
+      "cash": 40,
+      "elders": 100
+    }
+  },
+  "Indigo Farm": {
+    "product": "Teinture d'indigo",
+    "building": "Ferme d'indigo",
+    "img": "elders/mud-bricks",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2000,
+      "wanza_timber": 5
+    },
+    "maintenance": {
+      "cash": 25,
+      "shepherds": 20
+    }
+  },
+  "Ceramics Workshop": {
+    "product": "Céramiques",
+    "building": "Atelier de poterie",
+    "img": "elders/ceramics",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 4000,
+      "wanza_timber": 12,
+      "mud_bricks": 3
+    },
+    "maintenance": {
+      "cash": 100,
+      "elders": 100
+    }
+  },
+  "Tapestry Looms": {
+    "product": "Tapisseries",
+    "building": "Filature de tapisserie",
+    "img": "elders/tapestries",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 5000,
+      "wanza_timber": 10,
+      "mud_bricks": 7
+    },
+    "maintenance": {
+      "cash": 190,
+      "elders": 90
+    }
+  },
+  "Spice Farm": {
+    "product": "Épices",
+    "building": "Ferme d'épices",
+    "img": "elders/spices",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wanza_timber": 10
+    },
+    "maintenance": {
+      "cash": 25,
+      "shepherds": 15
+    }
+  },
+  "Teff Mill": {
+    "product": "Farine épicée",
+    "building": "Moulin à teff",
+    "img": "elders/teff-flour",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2500,
+      "wanza_timber": 10,
+      "mud_bricks": 5
+    },
+    "maintenance": {
+      "cash": 75,
+      "elders": 50
+    }
+  },
+  "Lobster Fishery": {
+    "product": "Homard",
+    "building": "Pêcherie de homards",
+    "img": "elders/seafood",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 3000,
+      "wanza_timber": 12,
+      "mud_bricks": 8
+    },
+    "maintenance": {
+      "cash": 40,
+      "shepherds": 35
+    }
+  },
+  "Wat Kitchen": {
+    "product": "ragout du pêcheur",
+    "building": "Cantine de wat",
+    "img": "elders/wat-stew",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 4500,
+      "wanza_timber": 15,
+      "mud_bricks": 10
+    },
+    "maintenance": {
+      "cash": 150,
+      "elders": 70
+    }
+  },
+  "Pipe Maker": {
+    "product": "Pipe en argile",
+    "building": "Pipier",
+    "img": "elders/tobacco-pipes",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 9000,
+      "wanza_timber": 10,
+      "mud_bricks": 15
+    },
+    "maintenance": {
+      "cash": 180,
+      "elders": 75
+    }
+  },
+  "Paper Mill": {
+    "product": "Papier",
+    "building": "Moulin à papier",
+    "img": "elders/paper",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 6500,
+      "wanza_timber": 10,
+      "mud_bricks": 15
+    },
+    "maintenance": {
+      "cash": 55,
+      "elders": 85
+    }
+  },
+  "Luminer": {
+    "product": "Manuscrit enluminé",
+    "building": "Atelier d'enluminures",
+    "img": "elders/scriptures",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 12000,
+      "wanza_timber": 15,
+      "mud_bricks": 20
+    },
+    "maintenance": {
+      "cash": 250,
+      "elders": 100
+    }
+  },
+  "Fuel Station": {
+    "product": "Carburant",
+    "building": "Station essence",
+    "img": "elders/fuel",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 25000,
+      "wanza_timber": 30,
+      "mud_bricks": 50,
+      "steel": 40,
+      "windows": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 350,
+      "elders": 75
+    }
+  },
+  "Apiary": {
+    "product": "Cire d'abeille",
+    "building": "Élevage apicole",
+    "img": "elders/beeswax",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 9000,
+      "wanza_timber": 15
+    },
+    "maintenance": {
+      "cash": 70,
+      "shepherds": 30
+    }
+  },
+  "Chandler": {
+    "product": "Bougies décorées",
+    "building": "Chandellerie",
+    "img": "elders/candles",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 7000,
+      "wanza_timber": 15,
+      "mud_bricks": 10
+    },
+    "maintenance": {
+      "cash": 120,
+      "elders": 30
+    }
+  },
+  "Lanternsmith": {
+    "product": "Lanternes",
+    "building": "Fabrique à lanternes",
+    "img": "elders/lanterns",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 18000,
+      "wanza_timber": 20,
+      "mud_bricks": 20
+    },
+    "maintenance": {
+      "cash": 300,
+      "elders": 75
+    }
+  }
+}
