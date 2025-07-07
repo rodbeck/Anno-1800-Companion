@@ -146,7 +146,7 @@ class LocalizationManager: ObservableObject {
             for: NSLocale.currentLocaleDidChangeNotification
         )
         .sink { [weak self] _ in
-            let newLanguage = Locale.current.languageCode ?? "en"
+            let newLanguage = Locale.current.language.languageCode?.identifier ?? "en"
             self?.switchLanguage(newLanguage)
         }
         .store(in: &cancellables)
