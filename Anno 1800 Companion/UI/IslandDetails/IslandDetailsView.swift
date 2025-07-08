@@ -256,35 +256,35 @@ private extension IslandDetailsView {
     @ViewBuilder
     func populationSection() -> some View {
         VStack(alignment: .leading, spacing: 16) {
-            switch viewModel.island.region.id {
-            case 1:
-                populationCard(title: String(localized:"The Old World"), workers: [
+            switch viewModel.island.region.keyString {
+            case "oldWorld":
+                populationCard(title: viewModel.regions.entries["oldWorld"]?.name ?? "?", workers: [
                     ("farmers", "icons/workforce-farmers", $viewModel.island.farmers),
                     ("workers", "icons/workforce-workers", $viewModel.island.workers),
                     ("artisans", "icons/workforce-artisans", $viewModel.island.artisans),
                     ("engineers", "icons/workforce-engineers", $viewModel.island.engineers),
                     ("investors", "icons/icon-credits", $viewModel.island.investors)
                 ])
-            case 2:
-                populationCard(title: String(localized:"The New World"), workers: [
+            case "newWorld":
+                populationCard(title: viewModel.regions.entries["newWorld"]?.name ?? "?", workers: [
                     ("jornaleros", "icons/workforce-jornaleros", $viewModel.island.jornaleros),
                     ("obreros", "icons/workforce-obreros", $viewModel.island.obreros)
                 ])
-            case 3:
-                populationCard(title: String(localized:"Cape Trelawney"), workers: [
+            case "capeTrelawney":
+                populationCard(title: viewModel.regions.entries["capeTrelawney"]?.name ?? "?", workers: [
                     ("farmers", "icons/workforce-farmers", $viewModel.island.farmers),
                     ("workers", "icons/workforce-workers", $viewModel.island.workers),
                     ("artisans", "icons/workforce-artisans", $viewModel.island.artisans),
                     ("engineers", "icons/workforce-engineers", $viewModel.island.engineers),
                     ("investors", "icons/icon-credits", $viewModel.island.investors)
                 ])
-            case 4:
-                populationCard(title: String(localized:"The Arctic"), workers: [
+            case "theArctic":
+                populationCard(title: viewModel.regions.entries["theArctic"]?.name ?? "?", workers: [
                     ("explorers", "icons/workforce-explorers", $viewModel.island.explorers),
                     ("technicians", "icons/workforce-technicians", $viewModel.island.technicians)
                 ])
-            case 5:
-                populationCard(title: "Enbesa", workers: [
+            case "enbesa":
+                populationCard(title: viewModel.regions.entries["enbesa"]?.name ?? "?", workers: [
                     ("shepherds", "icons/workforce-shepherds", $viewModel.island.sheperds),
                     ("elders", "icons/workforce-elders", $viewModel.island.elders)
                 ])

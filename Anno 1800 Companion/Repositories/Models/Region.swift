@@ -25,7 +25,7 @@ enum RegionEnum: Int, CaseIterable, Identifiable, CustomStringConvertible, Hasha
         case .theArctic:
             return "theArctic"
         case .enbesa:
-            return "theArctic"
+            return "enbesa"
         }
     }
     
