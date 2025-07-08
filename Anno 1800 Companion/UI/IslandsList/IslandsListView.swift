@@ -15,6 +15,8 @@ struct IslandsListView: View {
     @State private(set) var islandsState: Loadable<Void>
     @State internal var searchText = ""
     @Environment(\.injected) private var injected: DIContainer
+    @State var editMode: EditMode = .inactive
+    @State var isEditing = false
     @State private var columnVisibility = NavigationSplitViewVisibility.all
     @State private var selectedLanguage = AppLanguageManager.shared.currentLanguage
     @State private var isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
@@ -82,6 +84,7 @@ private extension IslandsListView {
             }
             .onDelete(perform: delete)
         }
+        .environment(\.editMode, $editMode)
         .listStyle(.sidebar)
         .searchable(text: $searchText, prompt: "Search islands...")
         .toolbar {
@@ -148,8 +151,13 @@ private extension IslandsListView {
             }
             
             ToolbarItem(placement: .topBarLeading) {
-                EditButton()
-                    .fontWeight(.semibold)
+                Button(action: {
+                    self.isEditing.toggle()
+                    editMode = isEditing ? .active : .inactive
+                }) {
+                    Text(self.isEditing ? L("Done") : L("Edit"))
+                        .fontWeight(.semibold)
+                }
             }
         }
         // Observer les changements de langue pour recharger les données
