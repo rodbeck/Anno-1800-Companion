@@ -24,8 +24,6 @@ extension MainDBRepository: IslandsDBRepository {
         let islandFetchDescriptor = FetchDescriptor<DBModel.Island>()
         let islands = try modelContainer.mainContext.fetch(islandFetchDescriptor)
         
-        print("Fetching islands: \(islands.count)")
-        
         return islands
     }
     
