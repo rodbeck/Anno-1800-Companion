@@ -46,16 +46,10 @@ struct IslandCell: View {
             }
             
             Spacer()
-            
-            // Chevron avec animation
-            Image(systemName: "chevron.right")
-                .font(.caption)
-                .fontWeight(.semibold)
-                .foregroundColor(.secondary)
-                .scaleEffect(0.8)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 16)
+        .frame(maxWidth: .infinity)
         .background {
             RoundedRectangle(cornerRadius: 16)
                 .fill(.regularMaterial)
