@@ -104,3 +104,26 @@ extension View {
         }
     }
 }
+
+extension String {
+    func localized() -> String {
+        return AppLanguageManager.shared.localizedString(for: self)
+    }
+    
+    // Version avec paramètres pour String.localizedStringWithFormat
+    func localized(with arguments: CVarArg...) -> String {
+        let localizedString = AppLanguageManager.shared.localizedString(for: self)
+        return String(format: localizedString, arguments: arguments)
+    }
+}
+
+// MARK: - Macro globale pour simplifier l'utilisation
+func L(_ key: String) -> String {
+    return AppLanguageManager.shared.localizedString(for: key)
+}
+
+// Version avec paramètres
+func L(_ key: String, _ arguments: CVarArg...) -> String {
+    let localizedString = AppLanguageManager.shared.localizedString(for: key)
+    return String(format: localizedString, arguments: arguments)
+}

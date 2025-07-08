@@ -213,8 +213,8 @@
 		18119B992DE99D7A00CD23E5 /* IslandsList */ = {
 			isa = PBXGroup;
 			children = (
-				18119B9A2DE99D9800CD23E5 /* IslandsListViewModel.swift */,
 				18119B9C2DE99F0000CD23E5 /* IslandsListView.swift */,
+				18119B9A2DE99D9800CD23E5 /* IslandsListViewModel.swift */,
 				18119B9E2DE9E66300CD23E5 /* IslandCell.swift */,
 			);
 			path = IslandsList;

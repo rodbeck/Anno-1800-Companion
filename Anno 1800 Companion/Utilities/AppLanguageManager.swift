@@ -14,6 +14,7 @@ class AppLanguageManager {
     private let userDefaultsKey = "app_selected_language"
     
     private init() {}
+    private(set) var currentBundle: Bundle = Bundle.main
     
     // Langue actuellement sélectionnée dans l'app
     var currentLanguage: String {
@@ -41,5 +42,36 @@ class AppLanguageManager {
     // Vérifier si une langue personnalisée est définie
     var isUsingCustomLanguage: Bool {
         return UserDefaults.standard.string(forKey: userDefaultsKey) != nil
+    }
+    
+    private func updateBundle() {
+        if isUsingCustomLanguage {
+            // Pour xcstrings, on utilise le bundle avec la langue spécifiée
+            if let path = Bundle.main.path(forResource: currentLanguage, ofType: "lproj"),
+               let bundle = Bundle(path: path) {
+                currentBundle = bundle
+            } else {
+                // Fallback: créer un bundle temporaire pour la langue
+                currentBundle = Bundle.main
+            }
+        } else {
+            currentBundle = Bundle.main
+        }
+    }
+    
+    // Méthode pour obtenir une chaîne localisée avec xcstrings
+    func localizedString(for key: String) -> String {
+        if !isUsingCustomLanguage {
+            return NSLocalizedString(key, comment: "")
+        }
+        
+        // Pour xcstrings, on peut utiliser cette approche
+        if let path = Bundle.main.path(forResource: currentLanguage, ofType: "lproj"),
+           let bundle = Bundle(path: path) {
+            return NSLocalizedString(key, bundle: bundle, comment: "")
+        }
+        
+        // Fallback vers la localisation par défaut
+        return NSLocalizedString(key, comment: "")
     }
 }

@@ -42,7 +42,7 @@ struct IslandDetailsView: View {
                     .padding(.bottom, 24)
                 }
             }
-            .navigationTitle("Island Details")
+            .navigationTitle(L("Island Details"))
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
@@ -53,7 +53,7 @@ struct IslandDetailsView: View {
                             AppLanguageManager.shared.resetToSystemLanguage()
                         }) {
                             HStack {
-                                Text("System Language")
+                                Text(L("System Language"))
                                 if !AppLanguageManager.shared.isUsingCustomLanguage {
                                     Image(systemName: "checkmark")
                                         .foregroundColor(.blue)
@@ -91,12 +91,12 @@ struct IslandDetailsView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
-                        Button("Calculate", systemImage: "function") {
+                        Button(L("Calculate"), systemImage: "function") {
                             viewModel.calculate()
                         }
                         .disabled(!viewModel.isCalculateEnabled)
                         
-                        Button("Save", systemImage: "square.and.arrow.down") {
+                        Button(L("Save"), systemImage: "square.and.arrow.down") {
                             Task {
                                 await save()
                             }
@@ -105,7 +105,7 @@ struct IslandDetailsView: View {
                         
                         Divider()
                         
-                        Button("Delete", systemImage: "trash", role: .destructive) {
+                        Button(L("Delete"), systemImage: "trash", role: .destructive) {
                             showingDeleteAlert = true
                         }
                     } label: {
@@ -116,22 +116,22 @@ struct IslandDetailsView: View {
                 }
                 if UIDevice.current.userInterfaceIdiom == .pad {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Done") {
+                        Button(L("Done")) {
                             dismiss()
                         }
                         .fontWeight(.semibold)
                     }
                 }
             }
-            .alert("Delete Island", isPresented: $showingDeleteAlert) {
-                Button("Cancel", role: .cancel) {}
-                Button("Delete", role: .destructive) {
+            .alert(L("Delete Island"), isPresented: $showingDeleteAlert) {
+                Button(L("Cancel"), role: .cancel) {}
+                Button(L("Delete"), role: .destructive) {
                     Task {
                         await delete()
                     }
                 }
             } message: {
-                Text("Are you sure you want to delete this island? This action cannot be undone.")
+                Text(L("Are you sure you want to delete this island? This action cannot be undone."))
             }
         }
         .onLanguageChange {
@@ -153,7 +153,7 @@ private extension IslandDetailsView {
     @ViewBuilder
     func globalSection() -> some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("General Information")
+            Text(L("General Information"))
                 .font(.headline)
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
@@ -161,19 +161,19 @@ private extension IslandDetailsView {
             VStack(spacing: 16) {
                 // Island name
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Island Name")
+                    Text(L("Island Name"))
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .foregroundColor(.secondary)
                     
-                    TextField("Enter island name", text: $viewModel.island.name)
+                    TextField(L("Enter island name"), text: $viewModel.island.name)
                         .textFieldStyle(.roundedBorder)
                         .font(.body)
                 }
                 
                 // Region selector
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Region")
+                    Text(L("Region"))
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .foregroundColor(.secondary)
@@ -221,14 +221,14 @@ private extension IslandDetailsView {
                 
                 // Action buttons
                 HStack(spacing: 12) {
-                    Button("Calculate") {
+                    Button(L("Calculate")) {
                         viewModel.calculate()
                     }
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .disabled(!viewModel.isCalculateEnabled)
                     
-                    Button("Save Changes") {
+                    Button(L("Save Changes")) {
                         Task {
                             await save()
                             dismiss()

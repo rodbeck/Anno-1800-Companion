@@ -94,7 +94,7 @@ private extension IslandsListView {
                         AppLanguageManager.shared.resetToSystemLanguage()
                     }) {
                         HStack {
-                            Text("System Language")
+                            Text(L("System Language"))
                             if !AppLanguageManager.shared.isUsingCustomLanguage {
                                 Image(systemName: "checkmark")
                                     .foregroundColor(.blue)
@@ -172,7 +172,7 @@ private extension IslandsListView {
                     Image(systemName: "map")
                         .font(.system(size: 64))
                         .foregroundColor(.blue)
-                    Text("Select an island to see the details...")
+                    Text(L("Select an island to see the details..."))
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
@@ -201,7 +201,7 @@ private extension IslandsListView {
                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                 .scaleEffect(1.2)
             
-            Text("Loading islands...")
+            Text(L("Loading islands..."))
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
@@ -215,7 +215,7 @@ private extension IslandsListView {
                 .font(.system(size: 48))
                 .foregroundColor(.orange)
             
-            Text("Something went wrong")
+            Text(L("Something went wrong"))
                 .font(.headline)
                 .fontWeight(.semibold)
             
@@ -224,7 +224,7 @@ private extension IslandsListView {
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
             
-            Button("Try Again") {
+            Button(L("Try Again")) {
                 loadIslandsList(forceReload: true)
             }
             .buttonStyle(.borderedProminent)
@@ -249,7 +249,7 @@ private extension IslandsListView {
         } else {
             // Utiliser List directement sans ScrollView/LazyVStack
             navigationView
-                .searchable(text: $searchText, prompt: "Search islands...")
+                .searchable(text: $searchText, prompt: L("Search islands..."))
                 .refreshable {
                     loadIslandsList(forceReload: true)
                 }
@@ -279,7 +279,7 @@ private extension IslandsListView {
                 .onDelete(perform: delete)
             }
             .listStyle(PlainListStyle())
-            .searchable(text: $searchText, prompt: "Search islands...")
+            .searchable(text: $searchText, prompt: L("Search islands..."))
             .refreshable {
                 loadIslandsList(forceReload: true)
             }
@@ -305,11 +305,11 @@ private extension IslandsListView {
                 .font(.system(size: 48))
                 .foregroundColor(.secondary)
             
-            Text("No islands found")
+            Text(L("No islands found"))
                 .font(.headline)
                 .fontWeight(.semibold)
             
-            Text("Try searching with different keywords")
+            Text(L("Try searching with different keywords"))
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
@@ -324,17 +324,17 @@ private extension IslandsListView {
                 .foregroundColor(.blue)
             
             VStack(spacing: 8) {
-                Text("No Islands Yet")
+                Text(L("No Islands Yet"))
                     .font(.title2)
                     .fontWeight(.bold)
                 
-                Text("Create your first island to get started with Anno 1800 calculations")
+                Text(L("Create your first island to get started with Anno 1800 calculations"))
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
             }
             
-            Button("Create Island") {
+            Button(L("Create Island")) {
                 viewModel.showingSheet.toggle()
             }
             .buttonStyle(.borderedProminent)

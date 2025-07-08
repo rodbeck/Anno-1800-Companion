@@ -58,6 +58,7 @@
       }
     },
     "Are you sure you want to delete this island? This action cannot be undone." : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -68,6 +69,7 @@
       }
     },
     "Calculate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -78,6 +80,7 @@
       }
     },
     "Cancel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -108,6 +111,7 @@
       }
     },
     "Create Island" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -118,6 +122,7 @@
       }
     },
     "Create your first island to get started with Anno 1800 calculations" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -148,6 +153,7 @@
       }
     },
     "Delete" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -158,6 +164,7 @@
       }
     },
     "Delete Island" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -168,6 +175,7 @@
       }
     },
     "Done" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -181,6 +189,7 @@
       "shouldTranslate" : false
     },
     "Enter island name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -191,6 +200,7 @@
       }
     },
     "General Information" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -201,6 +211,7 @@
       }
     },
     "Island Details" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -211,6 +222,7 @@
       }
     },
     "Island Name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -241,6 +253,7 @@
       }
     },
     "Loading islands..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -251,6 +264,7 @@
       }
     },
     "No islands found" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -261,6 +275,7 @@
       }
     },
     "No Islands Yet" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -291,6 +306,7 @@
       }
     },
     "Region" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -321,6 +337,7 @@
       }
     },
     "Save" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -331,6 +348,7 @@
       }
     },
     "Save Changes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -351,6 +369,7 @@
       }
     },
     "Select an island to see the details..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -371,6 +390,7 @@
       }
     },
     "Something went wrong" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -421,6 +441,7 @@
       }
     },
     "Try Again" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -431,6 +452,7 @@
       }
     },
     "Try searching with different keywords" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
