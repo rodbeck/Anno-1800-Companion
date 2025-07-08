@@ -14,6 +14,8 @@ struct IslandDetailsView: View {
     @State private var edit = false
     @State private(set) var viewModel: ViewModel
     @State private var showingDeleteAlert = false
+    @State private var selectedLanguage = AppLanguageManager.shared.currentLanguage
+    @State private var isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
     
     init(island: DBModel.Island) {
         viewModel = .init(island: island)
@@ -43,6 +45,50 @@ struct IslandDetailsView: View {
             .navigationTitle("Island Details")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    // Menu de sélection de langue
+                    Menu {
+                        // Section pour basculer entre système et personnalisé
+                        Button(action: {
+                            AppLanguageManager.shared.resetToSystemLanguage()
+                        }) {
+                            HStack {
+                                Text("System Language")
+                                if !AppLanguageManager.shared.isUsingCustomLanguage {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.blue)
+                                }
+                            }
+                        }
+                        
+                        Divider()
+                        
+                        // Liste des langues disponibles
+                        ForEach(Language.availableLanguages) { language in
+                            Button(action: {
+                                AppLanguageManager.shared.currentLanguage = language.id
+                                // Mise à jour immédiate de l'état local
+                                selectedLanguage = language.id
+                                isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
+                            }) {
+                                HStack {
+                                    Text(language.nativeName)
+                                    Spacer()
+                                    if AppLanguageManager.shared.isUsingCustomLanguage &&
+                                        AppLanguageManager.shared.currentLanguage == language.id {
+                                        Image(systemName: "checkmark")
+                                            .foregroundColor(.blue)
+                                    }
+                                }
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "globe")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.blue)
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
                         Button("Calculate", systemImage: "function") {
@@ -88,7 +134,14 @@ struct IslandDetailsView: View {
                 Text("Are you sure you want to delete this island? This action cannot be undone.")
             }
         }
+        .onLanguageChange {
+            selectedLanguage = AppLanguageManager.shared.currentLanguage
+            isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
+            viewModel.reload()
+        }
         .onAppear {
+            selectedLanguage = AppLanguageManager.shared.currentLanguage
+            isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
             viewModel.calculate()
         }
     }

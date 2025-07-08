@@ -48,7 +48,14 @@
       }
     },
     "App Language" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langage de l’app"
+          }
+        }
+      }
     },
     "Are you sure you want to delete this island? This action cannot be undone." : {
       "localizations" : {
@@ -121,7 +128,14 @@
       }
     },
     "Current Settings" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres"
+          }
+        }
+      }
     },
     "Data is missing" : {
       "localizations" : {
@@ -207,10 +221,24 @@
       }
     },
     "Language" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langage"
+          }
+        }
+      }
     },
     "Language Settings" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres de langue"
+          }
+        }
+      }
     },
     "Loading islands..." : {
       "localizations" : {
@@ -333,7 +361,14 @@
       }
     },
     "Select Language" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir une langue"
+          }
+        }
+      }
     },
     "Something went wrong" : {
       "localizations" : {
@@ -346,7 +381,14 @@
       }
     },
     "System Language" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langue du système"
+          }
+        }
+      }
     },
     "The Arctic" : {
       "localizations" : {
@@ -409,7 +451,14 @@
       }
     },
     "Use System Language" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser le langage système"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

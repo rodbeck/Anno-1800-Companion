@@ -16,15 +16,18 @@ struct IslandsListView: View {
     @State internal var searchText = ""
     @Environment(\.injected) private var injected: DIContainer
     @State private var columnVisibility = NavigationSplitViewVisibility.all
+    @State private var selectedLanguage = AppLanguageManager.shared.currentLanguage
+    @State private var isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
     
     init(state: Loadable<Void> = .notRequested) {
         self._islandsState = .init(initialValue: state)
     }
     
     var body: some View {
-        //navigationView
         content
             .onAppear {
+                selectedLanguage = AppLanguageManager.shared.currentLanguage
+                isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
                 loadIslandsList(forceReload: false)
             }
             .blur(radius: viewModel.showingSheet ? 3 : 0) // flou appliqué dynamiquement
@@ -32,50 +35,6 @@ struct IslandsListView: View {
             .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
                 IslandDetailsView(island: DBModel.Island())
             }
-        //        NavigationStack {
-        //            ZStack {
-        //                // Background gradient moderne
-        //                LinearGradient(
-        //                    colors: [Color(.systemGroupedBackground), Color(.systemBackground)],
-        //                    startPoint: .topLeading,
-        //                    endPoint: .bottomTrailing
-        //                )
-        //                .ignoresSafeArea()
-        //
-        //                self.content
-        //            }
-        //            .navigationTitle("Islands")
-        //            .navigationBarTitleDisplayMode(.large)
-        //            .toolbar {
-        //                ToolbarItem(placement: .topBarTrailing) {
-        //                    Button {
-        //                        viewModel.showingSheet.toggle()
-        //                    } label: {
-        //                        Image(systemName: "plus")
-        //                            .font(.title2)
-        //                            .fontWeight(.semibold)
-        //                            .foregroundColor(.white)
-        //                            .frame(width: 36, height: 36)
-        //                            .background {
-        //                                Circle()
-        //                                    .fill(.blue.gradient)
-        //                                    .shadow(color: .blue.opacity(0.3), radius: 8, x: 0, y: 4)
-        //                            }
-        //                    }
-        //                }
-        //
-        //                ToolbarItem(placement: .topBarLeading) {
-        //                    EditButton()
-        //                        .fontWeight(.semibold)
-        //                }
-        //            }
-        //            .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
-        //                IslandDetailsView(island: DBModel.Island())
-        //            }
-        //        }
-        //        .onAppear {
-        //            loadIslandsList(forceReload: false)
-        //        }
     }
     
     @ViewBuilder private var content: some View {
@@ -85,7 +44,6 @@ struct IslandsListView: View {
         case .isLoading:
             loadingView()
         case .loaded:
-            //loadedView()
             loadedNavigationSplitView()
         case .failed(let error):
             failedView(error)
@@ -139,6 +97,7 @@ private extension IslandsListView {
                             Text("System Language")
                             if !AppLanguageManager.shared.isUsingCustomLanguage {
                                 Image(systemName: "checkmark")
+                                    .foregroundColor(.blue)
                             }
                         }
                     }
@@ -149,11 +108,17 @@ private extension IslandsListView {
                     ForEach(Language.availableLanguages) { language in
                         Button(action: {
                             AppLanguageManager.shared.currentLanguage = language.id
+                            // Mise à jour immédiate de l'état local
+                            selectedLanguage = language.id
+                            isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
                         }) {
                             HStack {
                                 Text(language.nativeName)
-                                if AppLanguageManager.shared.currentLanguage == language.id && AppLanguageManager.shared.isUsingCustomLanguage {
+                                Spacer()
+                                if isUsingCustomLanguage &&
+                                    selectedLanguage == language.id {
                                     Image(systemName: "checkmark")
+                                        .foregroundColor(.blue)
                                 }
                             }
                         }
@@ -189,6 +154,8 @@ private extension IslandsListView {
         }
         // Observer les changements de langue pour recharger les données
         .onLanguageChange {
+            selectedLanguage = AppLanguageManager.shared.currentLanguage
+            isUsingCustomLanguage = AppLanguageManager.shared.isUsingCustomLanguage
             loadIslandsList(forceReload: true)
         }
     }

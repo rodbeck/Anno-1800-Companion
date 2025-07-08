@@ -50,6 +50,13 @@ extension IslandDetailsView {
             self.island = island
         }
         
+        func reload() {
+            self.regions = Bundle.main.decodeLocalized(Regions.self, from: "regions.json")
+            self.need = Bundle.main.decodeLocalized(Consumption.self, from: "consumption.json")
+            self.population = Bundle.main.decodeLocalized(Population.self, from: "population.json")
+            self.producers = Bundle.main.decodeLocalized(Producers.self, from: "producers.json")
+        }
+        
         func calculateProductionNeeds() -> [ProductionNeed] {
             if !isCalculateEnabled { return [] }
             var resultsDict: [String: ProductionNeed] = [:]
