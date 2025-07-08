@@ -185,6 +185,7 @@
 		18119B932DE98F8400CD23E5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				189732582DE272D10032112E /* ContentView.swift */,
 				18D448C52E1C61A40097BE99 /* LanguageSelection */,
 				18ADDD1A2E196F40005BD42A /* Common */,
 				18B6BDFC2E1A589700437591 /* IslandDetails */,
@@ -259,7 +260,6 @@
 				18119B932DE98F8400CD23E5 /* UI */,
 				18119B922DE98F7B00CD23E5 /* Resources */,
 				189732552DE272D10032112E /* Preview Content */,
-				189732582DE272D10032112E /* ContentView.swift */,
 			);
 			path = "Anno 1800 Companion";
 			sourceTree = "<group>";
