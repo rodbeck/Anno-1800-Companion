@@ -86,7 +86,7 @@ private extension IslandsListView {
         }
         .environment(\.editMode, $editMode)
         .listStyle(.sidebar)
-        .searchable(text: $searchText, prompt: "Search islands...")
+        .searchable(text: $searchText, prompt: L("Search islands..."))
         .toolbar {
             // Groupe les boutons à droite
             ToolbarItemGroup(placement: .topBarTrailing) {

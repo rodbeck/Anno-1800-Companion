@@ -370,11 +370,12 @@
       }
     },
     "Search islands..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rechercher île…"
+            "value" : "Rechercher…"
           }
         }
       }

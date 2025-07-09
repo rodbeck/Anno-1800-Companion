@@ -335,8 +335,8 @@ private extension IslandDetailsView {
                         .fill(.ultraThinMaterial)
                         .frame(width: 48, height: 48)
                 }
-            
-            VStack(alignment: .leading, spacing: 4) {
+            Spacer()
+            VStack(alignment: .center, spacing: 4) {
                 Text(viewModel.population.entries[workerName]?.name ?? "?".capitalized)
                     .font(.subheadline)
                     .fontWeight(.medium)
