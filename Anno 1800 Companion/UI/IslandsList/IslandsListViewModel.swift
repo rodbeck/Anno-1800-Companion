@@ -13,6 +13,7 @@ extension IslandsListView {
         
         var showingSheet: Bool = false
         var selectedIslandId: Int?
+        var showingAbout: Bool = false
         
         //var islands: [Island] = []
         

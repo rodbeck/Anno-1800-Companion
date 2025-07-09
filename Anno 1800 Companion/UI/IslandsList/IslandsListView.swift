@@ -37,6 +37,11 @@ struct IslandsListView: View {
             .sheet(isPresented: $viewModel.showingSheet, onDismiss: reloadIslandsList) {
                 IslandDetailsView(island: DBModel.Island())
             }
+            .blur(radius: viewModel.showingAbout ? 3 : 0) // flou appliqué dynamiquement
+            .animation(.easeInOut(duration: 0.3), value: viewModel.showingAbout)
+            .sheet(isPresented: $viewModel.showingAbout) {
+                AboutView()
+            }
     }
     
     @ViewBuilder private var content: some View {
@@ -131,6 +136,21 @@ private extension IslandsListView {
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(.blue)
+                }
+                
+                Button {
+                    viewModel.showingAbout.toggle()
+                } label: {
+                    Image(systemName: "text.page")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.blue)
+                        .frame(width: 36, height: 36)
+//                        .background {
+//                            Rectangle()
+//                                .fill(.blue.gradient)
+//                                .shadow(color: .blue.opacity(0.3), radius: 8, x: 0, y: 4)
+//                        }
                 }
                 
                 // Bouton d'ajout existant
