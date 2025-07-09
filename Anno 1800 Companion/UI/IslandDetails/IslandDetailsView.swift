@@ -167,6 +167,7 @@ private extension IslandDetailsView {
                         .foregroundColor(.secondary)
                     
                     TextField(L("Enter island name"), text: $viewModel.island.name)
+                        .autocorrectionDisabled()
                         .textFieldStyle(.roundedBorder)
                         .font(.body)
                 }
